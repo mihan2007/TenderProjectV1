@@ -7,6 +7,38 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Button Content="close" Click="Button_Click" Margin="335,199,319,169"/>
+        <Button Content="Добавить тендер" Click="Button_Click" Margin="10,10,670,380"/>
+        <StackPanel Margin="10,89,10,10">
+            <ListBox x:Name="TenderList" MouseDoubleClick="TenderList_MouseDoubleClick">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Grid ShowGridLines="false" >
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="120"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <TextBlock Text="{Binding Subject}" Grid.Row="0" Grid.Column="0" Margin="5"/>
+                            <TextBlock Text="{Binding Customer}" Grid.Row="1" Grid.Column="0" Margin="5"/>
+                            <TextBlock Text="{Binding Law}" Grid.Row="2" Grid.Column="0" Margin="5"/>
+                            <TextBlock Text="{Binding Link}" Grid.Row="1" Grid.Column="1" Margin="5"/>
+                            <TextBlock Text="{Binding ExpirationDate}" Grid.Row="1" Grid.Column="2" Margin="5"/>
+                        </Grid>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+                <ListBox.ItemContainerStyle>
+                    <Style TargetType="ListBoxItem">
+                        <Setter Property="Margin" Value="0,0,0,10"/>
+                     
+                    </Style>
+                </ListBox.ItemContainerStyle>
+            </ListBox>
+        </StackPanel>
     </Grid>
 </Window>

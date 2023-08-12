@@ -18,3 +18,5 @@ D:\TenderProject\TenderProject\obj\Debug\netcoreapp3.1\TenderProject.csproj.Core
 D:\TenderProject\TenderProject\obj\Debug\netcoreapp3.1\TenderProject.dll
 D:\TenderProject\TenderProject\obj\Debug\netcoreapp3.1\TenderProject.pdb
 D:\TenderProject\TenderProject\obj\Debug\netcoreapp3.1\TenderProject.genruntimeconfig.cache
+D:\TenderProject\TenderProject\obj\Debug\netcoreapp3.1\PassportTender.g.cs
+D:\TenderProject\TenderProject\obj\Debug\netcoreapp3.1\PassportTender.baml
