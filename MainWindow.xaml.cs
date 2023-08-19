@@ -12,14 +12,21 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.IO;
+
 
 namespace TenderProject
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
+        public class TenderInfo
+        {
+            public string Subject { get; set; }
+            public string Customer { get; set; }
+            public string ExpirationDate { get; set; }
+            public string Law { get; set; }
+            public string Link { get; set; }
+        }
         public MainWindow()
         {
             InitializeComponent();
@@ -28,8 +35,27 @@ namespace TenderProject
 
         private void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
-            TenderList.ItemsSource = new[] { new { Subject = "бинты", Customer = "Мэрия Мухсранска", ExpirationDate = "10/09/2023", Law ="44ФЗ", Link = "https:/zakupki"},
-            new { Subject = "гондоны", Customer = "Мэрия УстьПиздюйск", ExpirationDate = "11/09/2023", Law ="223ФЗ", Link = "https:/zakupki"}};
+            TenderInfo[] tenderItems = new[]
+           {
+                new TenderInfo
+                {
+                    Subject = "бинты",
+                    Customer = "Мэрия Мухсранска",
+                    ExpirationDate = "10/09/2023",
+                    Law = "44ФЗ",
+                    Link = "https:/zakupki"
+                },
+                new TenderInfo
+                {
+                    Subject = "гондоны",
+                    Customer = "Мэрия УстьПиздюйск",
+                    ExpirationDate = "11/09/2023",
+                    Law = "223ФЗ",
+                    Link = "https:/zakupki"
+                }
+            };
+
+            TenderList.ItemsSource = tenderItems;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -41,8 +67,13 @@ namespace TenderProject
 
         private void TenderList_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            PassportTender passportTender = new PassportTender();
-            passportTender.Show();
+            TenderInfo selectedTender = (TenderInfo)TenderList.SelectedItem;
+            
+                PassportTender passportTender = new PassportTender();
+                passportTender.InitializeTenderInfo(selectedTender);
+                passportTender.Show();
+            
         }
+
     }
 }
