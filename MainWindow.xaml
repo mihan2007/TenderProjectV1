@@ -8,8 +8,32 @@
         Title="MainWindow" Height="450" Width="800"
         MinWidth="250" MinHeight="250">
     <Grid>
-        <Button Content="Добавить тендер" Click="Button_Click" Margin="10,10,670,380"/>
-        <ScrollViewer VerticalScrollBarVisibility="Auto" Margin="10,89,10,10">
+
+        <StackPanel>
+            <Grid Height="81" Width="776" ShowGridLines="false" Background="White"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <!-- Остальное содержимое вашего окна -->
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <!-- Ширина кнопок будет фиксированной -->
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Button Content="Добавить"   Click="Button_Click" Width="100" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" Background="White" Margin="0,0,5,0"/>
+
+                <Button Content="Кнопка 2" Width="100" Height="30" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Background="White" Margin="0,0,5,0"/>
+
+                <Button Content="Кнопка 3" Width="100" Height="30" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Top" Background="White" Margin="0,0,5,0"/>
+           
+            </Grid>
+ 
+        </StackPanel>
+
+        <ScrollViewer VerticalScrollBarVisibility="Auto" Margin="10,89,10,10" >
             <StackPanel>
                 <ListBox x:Name="TenderList" MouseDoubleClick="TenderList_MouseDoubleClick">
                     <ListBox.ItemTemplate>
