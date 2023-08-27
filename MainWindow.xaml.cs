@@ -12,7 +12,7 @@ namespace TenderProject
     {
         public const string DirectoryPath = @"C:\tenderproject\";
         public const string Extension = "txt";
-        
+
         public class TenderInfo
         {
             public string Subject { get; set; }
@@ -21,17 +21,47 @@ namespace TenderProject
             public string Law { get; set; }
             public string Link { get; set; }
 
-            public TenderInfo(string[] rawData)
+            public string FilePath { get; set; }
+
+            public TenderInfo(string[] rawData, string filePath)
             {
-                Subject = rawData[0];
-                Customer = rawData[1];
-                ExpirationDate = rawData[2];
-                Law = rawData[3];
-                Link = rawData[4];
+                if (rawData.Length >= 5)
+                {
+                    Subject = rawData[0];
+                    Customer = rawData[1];
+                    ExpirationDate = rawData[2];
+                    Law = rawData[3];
+                    Link = rawData[4];
+                    FilePath = filePath;
+                }
+                else
+                {
+                    Subject = "N/A";
+                    Customer = "N/A";
+                    ExpirationDate = "N/A";
+                    Law = "N/A";
+                    Link = "N/A";
+                    FilePath = filePath;
+                }
+                
+
+            }
+            public string[] GetRawData() // нужно из полей сделать масив и вернуть его
+            {
+                string[] result = new string[] 
+                {                   
+                    Subject, 
+                    Customer, 
+                    ExpirationDate, 
+                    Law, 
+                    Link
+                };
+
+                return result;
             }
         }
 
-        private List<TenderInfo> tenderItems = new List<TenderInfo>(); // Создаем список для хранения объектов TenderInfo
+        private List<TenderInfo> tenderItems = new List<TenderInfo>();
 
         public MainWindow()
         {
@@ -70,11 +100,12 @@ namespace TenderProject
             foreach (string filePath in filePaths)
             {
                 string[] lines = File.ReadAllLines(filePath);
-                TenderInfo tender = new TenderInfo(lines);
+                TenderInfo tender = new TenderInfo(lines, filePath);
                 tenderItems.Add(tender); 
             }
 
             TenderList.ItemsSource = tenderItems; 
+
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -91,5 +122,6 @@ namespace TenderProject
             passportTender.InitializeTenderInfo(selectedTender);
             passportTender.Show();
         }
+
     }
 }

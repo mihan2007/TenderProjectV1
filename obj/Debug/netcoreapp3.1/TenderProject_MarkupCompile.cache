@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1;
 D:\TenderProject\TenderProject\App.xaml
-2-1634179774
+3-71690416
 
-4-601835068
+5-149711476
 192-1533232326
-MainWindow.xaml;PassportTender.xaml;
+AddTenderWindow.xaml;MainWindow.xaml;PassportTender.xaml;
 
 False
 

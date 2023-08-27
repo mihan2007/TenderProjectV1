@@ -50,11 +50,11 @@
                                     <RowDefinition Height="Auto"/>
                                     <RowDefinition Height="Auto"/>
                                 </Grid.RowDefinitions>
-                                <TextBlock Text="{Binding Subject}" Grid.Row="0" Grid.Column="0" Margin="5"/>
-                                <TextBlock Text="{Binding Customer}" Grid.Row="1" Grid.Column="0" Margin="5"/>
-                                <TextBlock Text="{Binding Law}" Grid.Row="2" Grid.Column="0" Margin="5"/>
-                                <TextBlock Text="{Binding Link}" Grid.Row="1" Grid.Column="1" Margin="5"/>
-                                <TextBlock Text="{Binding ExpirationDate}" Grid.Row="1" Grid.Column="2" Margin="5"/>
+                                    <TextBlock Text="{Binding Subject}" Grid.Row="0" Grid.Column="0" Margin="5"/>
+                                    <TextBlock Text="{Binding Customer}" Grid.Row="1" Grid.Column="0" Margin="5"/>
+                                    <TextBlock Text="{Binding Law}" Grid.Row="2" Grid.Column="0" Margin="5"/>
+                                    <TextBlock Text="{Binding Link}" Grid.Row="1" Grid.Column="1" Margin="5"/>
+                                    <TextBlock Text="{Binding ExpirationDate}" Grid.Row="1" Grid.Column="2" Margin="5"/>
                             </Grid>
                         </DataTemplate>
                     </ListBox.ItemTemplate>

@@ -3,13 +3,26 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:local="clr-namespace:TenderProject"
         Title="PassportTender" Height="300" Width="400">
-    <Grid>
-        <StackPanel Margin="10,10,10,0" DataContext="{Binding}">
-            <TextBlock Text="{Binding Subject}" />
-            <TextBlock Text="{Binding Customer}" />
-            <TextBlock Text="{Binding ExpirationDate}" />
-            <TextBlock Text="{Binding Law}" />
-            <TextBlock Text="{Binding Link}" />
+    <Grid Margin="10,0,10,8" ShowGridLines="False">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        
+         <StackPanel Margin="10,10,10,10" DataContext="{Binding}">
+            <TextBox Text="{Binding Subject}" />
+            <TextBox Text="{Binding Customer}" />
+            <TextBox Text="{Binding ExpirationDate}" />
+            <TextBox Text="{Binding Law}" />
+            <TextBox Text="{Binding Link}" />
         </StackPanel>
+        <Button Grid.Row="1" Grid.Column="0" Width="128" Click="Button_Click" Height="33" Content="Сохранить" HorizontalAlignment="Right"/>
+
     </Grid>
+
 </Window>
