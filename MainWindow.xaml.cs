@@ -131,7 +131,8 @@ namespace TenderProject
         public void UpdateTenderList()
         {
             string[] filePaths = FileHelper.GetFilesInDirectoryWithExtension(DirectoryPath, Extension);
-            tenderItems.Clear(); // Очищаем текущий список
+            TenderList.ItemsSource = null;
+            tenderItems.Clear(); 
 
             foreach (string filePath in filePaths)
             {
