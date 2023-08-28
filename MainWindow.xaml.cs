@@ -4,6 +4,8 @@ using System.IO;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using System.Collections.ObjectModel;
+
 
 namespace TenderProject
 {
@@ -22,6 +24,8 @@ namespace TenderProject
             public string Link { get; set; }
 
             public string FilePath { get; set; }
+
+
 
             public TenderInfo(string[] rawData, string filePath)
             {
@@ -43,17 +47,17 @@ namespace TenderProject
                     Link = "N/A";
                     FilePath = filePath;
                 }
-                
+
 
             }
             public string[] GetRawData() // нужно из полей сделать масив и вернуть его
             {
-                string[] result = new string[] 
-                {                   
-                    Subject, 
-                    Customer, 
-                    ExpirationDate, 
-                    Law, 
+                string[] result = new string[]
+                {
+                    Subject,
+                    Customer,
+                    ExpirationDate,
+                    Law,
                     Link
                 };
 
@@ -67,6 +71,7 @@ namespace TenderProject
         {
             InitializeComponent();
             Loaded += MainWindow_Loaded;
+
         }
 
         public class FileHelper
@@ -92,7 +97,7 @@ namespace TenderProject
             }
         }
 
-        private void MainWindow_Loaded(object sender, RoutedEventArgs e)
+        public void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
 
             string[] filePaths = FileHelper.GetFilesInDirectoryWithExtension(DirectoryPath, Extension);
@@ -101,10 +106,10 @@ namespace TenderProject
             {
                 string[] lines = File.ReadAllLines(filePath);
                 TenderInfo tender = new TenderInfo(lines, filePath);
-                tenderItems.Add(tender); 
+                tenderItems.Add(tender);
             }
 
-            TenderList.ItemsSource = tenderItems; 
+            TenderList.ItemsSource = tenderItems;
 
         }
 
@@ -123,5 +128,20 @@ namespace TenderProject
             passportTender.Show();
         }
 
+        public void UpdateTenderList()
+        {
+            string[] filePaths = FileHelper.GetFilesInDirectoryWithExtension(DirectoryPath, Extension);
+            tenderItems.Clear(); // Очищаем текущий список
+
+            foreach (string filePath in filePaths)
+            {
+                string[] lines = File.ReadAllLines(filePath);
+                TenderInfo tender = new TenderInfo(lines, filePath);
+                tenderItems.Add(tender);
+            }
+
+            // Устанавливаем источник данных TenderList заново
+            TenderList.ItemsSource = tenderItems;
+        }
     }
 }

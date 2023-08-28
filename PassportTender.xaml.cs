@@ -32,11 +32,7 @@ namespace TenderProject
 
                 // Convert the updated data to a string array
                 string[] updatedData = _tenderInfo.GetRawData();
-                if (_tenderInfo == null)
-                    return;
-                {
-                    MessageBox.Show("Update data == null");
-                }
+
                 // Write the updated data to the file
                 File.WriteAllLines(filePath, updatedData);
 
@@ -55,8 +51,27 @@ namespace TenderProject
             {
                 SaveToFile(_tenderInfo.FilePath); // Здесь указываете путь к файлу, куда нужно сохранить информацию
             }
+            else
+            {
+                createNewFile();
+            }
 
             this.Close();
+        }
+
+        private void createNewFile()
+        {
+            var newFilePath = MainWindow.DirectoryPath + (countFilesInFolder(MainWindow.DirectoryPath)+1)+ "." +MainWindow.Extension;
+            MessageBox.Show(newFilePath);
+            File.Create(newFilePath).Close();
+            MainWindow mainWindow = Application.Current.MainWindow as MainWindow;
+            mainWindow.UpdateTenderList();
+        }
+
+        private int countFilesInFolder(string folderPath)
+        {
+            string[] files = Directory.GetFiles(folderPath);
+            return files.Length;
         }
     }
 }
