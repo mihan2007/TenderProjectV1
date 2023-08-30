@@ -7,6 +7,8 @@ namespace TenderProject
     public partial class PassportTender : Window
     {
         private MainWindow.TenderInfo _tenderInfo;
+
+        public string newFilePath;
         public string FilePath { get; set; }
 
         public PassportTender()
@@ -49,23 +51,56 @@ namespace TenderProject
             
             if (_tenderInfo != null)
             {
-                SaveToFile(_tenderInfo.FilePath); // Здесь указываете путь к файлу, куда нужно сохранить информацию
+                SaveToFile(_tenderInfo.FilePath); 
             }
             else
             {
                 createNewFile();
+                SaveToNewFile(newFilePath);
             }
+
+
 
             this.Close();
         }
 
+        private void SaveToNewFile(string newFilePath)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(newFilePath))
+                {
+                    MessageBox.Show("File path is empty.");
+                    return;
+                }
+
+                // Соберем значения всех текстовых полей в массив строк
+                string[] fieldValues = new string[]
+                {
+                    SubjectTextBox.Text,
+                    CustomerTextBox.Text,
+                    ExpirationDateTextBox.Text,
+                    LawTextBox.Text,
+                    LinkTextBox.Text
+                };
+
+                // Запишем массив строк в файл
+                File.WriteAllLines(newFilePath, fieldValues);
+                MainWindow mainWindow = Application.Current.MainWindow as MainWindow;
+                mainWindow.UpdateTenderList();
+                MessageBox.Show("Values saved successfully.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error saving values: {ex.ToString()}");
+            }
+        }
+
         private void createNewFile()
         {
-            var newFilePath = MainWindow.DirectoryPath + (countFilesInFolder(MainWindow.DirectoryPath)+1)+ "." +MainWindow.Extension;
+            newFilePath = MainWindow.DirectoryPath + (countFilesInFolder(MainWindow.DirectoryPath)+1)+ "." +MainWindow.Extension;
             MessageBox.Show(newFilePath);
             File.Create(newFilePath).Close();
-            MainWindow mainWindow = Application.Current.MainWindow as MainWindow;
-            mainWindow.UpdateTenderList();
         }
 
         private int countFilesInFolder(string folderPath)

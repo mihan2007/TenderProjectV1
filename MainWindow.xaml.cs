@@ -29,6 +29,13 @@ namespace TenderProject
 
             public TenderInfo(string[] rawData, string filePath)
             {
+                for (int i = 0; i < rawData.Length; i++)
+                {
+                    if (string.IsNullOrEmpty(rawData[i]))
+                    {
+                        rawData[i] = "NA";
+                    }
+                }
                 if (rawData.Length >= 5)
                 {
                     Subject = rawData[0];
@@ -38,19 +45,8 @@ namespace TenderProject
                     Link = rawData[4];
                     FilePath = filePath;
                 }
-                else
-                {
-                    Subject = "N/A";
-                    Customer = "N/A";
-                    ExpirationDate = "N/A";
-                    Law = "N/A";
-                    Link = "N/A";
-                    FilePath = filePath;
-                }
-
-
             }
-            public string[] GetRawData() // нужно из полей сделать масив и вернуть его
+            public string[] GetRawData() 
             {
                 string[] result = new string[]
                 {
