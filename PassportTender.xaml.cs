@@ -9,8 +9,7 @@ namespace TenderProject
     {
         private TenderInfo _tenderInfo;
 
-        public string newFilePath;
-        public string FilePath { get; set; }
+        private string _newFilePath;
 
         public PassportTender()
         {
@@ -23,85 +22,29 @@ namespace TenderProject
             _tenderInfo = tenderInfo;
            
         }
-        public void SaveToFile(string filePath)
-        {
-            try
-            {
-                if (string.IsNullOrEmpty(filePath))
-                {
-                    MessageBox.Show("File path is empty.");                   
-                    return;
-                }
 
-                // Convert the updated data to a string array
-                string[] updatedData = _tenderInfo.GetRawData();
-
-                // Write the updated data to the file
-                File.WriteAllLines(filePath, updatedData);
-
-                MessageBox.Show("Changes saved successfully.");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error saving changes: {ex.ToString()}");
-            }
-        }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             
             if (_tenderInfo != null)
             {
-                SaveToFile(_tenderInfo.FilePath); 
+                SaveData(_tenderInfo.FilePath, "TenderInfo");
             }
             else
             {
-                createNewFile();
-                SaveToNewFile(newFilePath);
+                CreateNewFile();
+                SaveData(_newFilePath, "TextFields");
             }
-
-
 
             this.Close();
         }
 
-        private void SaveToNewFile(string newFilePath)
+        private void CreateNewFile()
         {
-            try
-            {
-                if (string.IsNullOrEmpty(newFilePath))
-                {
-                    MessageBox.Show("File path is empty.");
-                    return;
-                }
-
-                // Соберем значения всех текстовых полей в массив строк
-                string[] fieldValues = new string[]
-                {
-                    SubjectTextBox.Text,
-                    CustomerTextBox.Text,
-                    ExpirationDateTextBox.Text,
-                    LawTextBox.Text,
-                    LinkTextBox.Text
-                };
-
-                // Запишем массив строк в файл
-                File.WriteAllLines(newFilePath, fieldValues);
-                MainWindow mainWindow = Application.Current.MainWindow as MainWindow;
-                mainWindow.UpdateTenderList();
-                MessageBox.Show("Values saved successfully.");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error saving values: {ex.ToString()}");
-            }
-        }
-
-        private void createNewFile()
-        {
-            newFilePath = MainWindow.DirectoryPath + (countFilesInFolder(MainWindow.DirectoryPath)+1)+ "." +MainWindow.Extension;
-            MessageBox.Show(newFilePath);
-            File.Create(newFilePath).Close();
+            _newFilePath = MainWindow.DirectoryPath + (countFilesInFolder(MainWindow.DirectoryPath)+1)+ "." +MainWindow.Extension;
+            MessageBox.Show(_newFilePath);
+            File.Create(_newFilePath).Close();
         }
 
         private int countFilesInFolder(string folderPath)
@@ -109,6 +52,58 @@ namespace TenderProject
             string[] files = Directory.GetFiles(folderPath);
             return files.Length;
         }
+
+        private void SaveData(string filePath, string operationType)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(filePath))
+                {
+                    MessageBox.Show("File path is empty.");
+                    return;
+                }
+
+                string[] dataToSave;
+
+                if (operationType == "TenderInfo")
+                {
+                    dataToSave = _tenderInfo.GetRawData();
+                }
+                else if (operationType == "TextFields")
+                {
+                    string[] fieldValues = new string[]
+                    {
+                SubjectTextBox.Text,
+                CustomerTextBox.Text,
+                ExpirationDateTextBox.Text,
+                LawTextBox.Text,
+                LinkTextBox.Text
+                    };
+
+                    dataToSave = fieldValues;
+                }
+                else
+                {
+                    MessageBox.Show("Invalid operation type.");
+                    return;
+                }
+
+                File.WriteAllLines(filePath, dataToSave);
+
+                if (operationType == "TextFields")
+                {
+                    MainWindow mainWindow = Application.Current.MainWindow as MainWindow;
+                    mainWindow.UpdateTenderList();
+                }
+
+                MessageBox.Show("Data saved successfully.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error saving data: {ex.ToString()}");
+            }
+        }
+
     }
 }
 
