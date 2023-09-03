@@ -6,6 +6,7 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using System.Collections.ObjectModel;
 using TenderProject.Model;
+using TenderProject.Infrastructure;
 
 namespace TenderProject
 {
@@ -14,8 +15,6 @@ namespace TenderProject
     {
         public const string DirectoryPath = @"C:\tenderproject\";
         public const string Extension = "txt";
-
-        
 
         private List<TenderInfo> tenderItems = new List<TenderInfo>();
 
@@ -26,30 +25,9 @@ namespace TenderProject
 
         }
 
-        public class FileHelper
-        {
-            public static string[] GetFilesInDirectoryWithExtension(string directoryPath, string extension)
-            {
-                if (!Directory.Exists(directoryPath))
-                {
-                    Console.WriteLine($"Директория {directoryPath} не существует.");
-                    return new string[0];
-                }
 
-                try
-                {
-                    string[] files = Directory.GetFiles(directoryPath, $"*.{extension}");
-                    return files;
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine($"Ошибка при поиске файлов: {ex.Message}");
-                    return new string[0];
-                }
-            }
-        }
 
-        public void MainWindow_Loaded(object sender, RoutedEventArgs e)
+        private  void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
 
             string[] filePaths = FileHelper.GetFilesInDirectoryWithExtension(DirectoryPath, Extension);
@@ -57,7 +35,7 @@ namespace TenderProject
             foreach (string filePath in filePaths)
             {
                 string[] lines = File.ReadAllLines(filePath);
-                TenderInfo tender = new TenderInfo(lines, filePath);
+                var tender = new TenderInfo(lines, filePath);
                 tenderItems.Add(tender);
             }
 
@@ -73,9 +51,9 @@ namespace TenderProject
 
         private void TenderList_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            TenderInfo selectedTender = (TenderInfo)TenderList.SelectedItem;
+            var selectedTender = (TenderInfo)TenderList.SelectedItem;
 
-            PassportTender passportTender = new PassportTender();
+            var passportTender = new PassportTender();
             passportTender.InitializeTenderInfo(selectedTender);
             passportTender.Show();
         }
@@ -86,14 +64,13 @@ namespace TenderProject
             TenderList.ItemsSource = null;
             tenderItems.Clear(); 
 
-            foreach (string filePath in filePaths)
+            foreach (var filePath in filePaths)
             {
                 string[] lines = File.ReadAllLines(filePath);
                 TenderInfo tender = new TenderInfo(lines, filePath);
                 tenderItems.Add(tender);
             }
 
-            // Устанавливаем источник данных TenderList заново
             TenderList.ItemsSource = tenderItems;
         }
     }
