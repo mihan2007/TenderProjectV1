@@ -1,12 +1,13 @@
 ﻿using System.Windows;
 using System.IO;
 using System;
+using TenderProject.Model;
 
 namespace TenderProject
 {
     public partial class PassportTender : Window
     {
-        private MainWindow.TenderInfo _tenderInfo;
+        private TenderInfo _tenderInfo;
 
         public string newFilePath;
         public string FilePath { get; set; }
@@ -16,7 +17,7 @@ namespace TenderProject
             InitializeComponent();
         }
 
-        public void InitializeTenderInfo(MainWindow.TenderInfo tenderInfo)
+        public void InitializeTenderInfo(TenderInfo tenderInfo)
         {
             DataContext = tenderInfo;
             _tenderInfo = tenderInfo;
