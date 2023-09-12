@@ -11,10 +11,8 @@ namespace TenderProject.Model
         public string ExpirationDate { get; set; }
         public string Law { get; set; }
         public string Link { get; set; }
-
         public string FilePath { get; set; }
-
-
+        //public string TenderStatus { get; set; } 
 
         public TenderInfo(string[] rawData, string filePath)
         {
@@ -25,25 +23,28 @@ namespace TenderProject.Model
                     rawData[i] = "NA";
                 }
             }
-            if (rawData.Length >= 5)
+            if (rawData.Length >= 5) 
             {
                 Subject = rawData[0];
                 Customer = rawData[1];
                 ExpirationDate = rawData[2];
                 Law = rawData[3];
                 Link = rawData[4];
+                //TenderStatus = rawData[5];
                 FilePath = filePath;
             }
         }
+
         public string[] GetRawData()
         {
             string[] result = new string[]
             {
-                    Subject,
-                    Customer,
-                    ExpirationDate,
-                    Law,
-                    Link
+                Subject,
+                Customer,
+                ExpirationDate,
+                Law,
+                Link,
+                //TenderStatus 
             };
 
             return result;
