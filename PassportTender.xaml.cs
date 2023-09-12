@@ -20,7 +20,17 @@ namespace TenderProject
         {
             DataContext = tenderInfo;
             _tenderInfo = tenderInfo;
-           
+
+            var tenderStatuses = new System.Collections.ObjectModel.ObservableCollection<string>
+            {
+                "Статус 1",
+                "Статус 2",
+                "Статус 3"
+            };
+
+            TenderStatus.ItemsSource = tenderStatuses;
+
+            TenderStatus.SelectedIndex = 0;
         }
 
 

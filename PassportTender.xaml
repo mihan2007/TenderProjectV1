@@ -15,6 +15,11 @@
         </Grid.ColumnDefinitions>
         
          <StackPanel Margin="10,10,10,10" DataContext="{Binding}">
+             
+            <ComboBox Grid.Row="0" Grid.Column="0" Margin="10" x:Name="TenderStatus">
+
+            </ComboBox>
+             
             <TextBox Text="{Binding Subject}" x:Name="SubjectTextBox" />
             <TextBox Text="{Binding Customer}" x:Name="CustomerTextBox" />
             <TextBox Text="{Binding ExpirationDate}" x:Name="ExpirationDateTextBox" />
