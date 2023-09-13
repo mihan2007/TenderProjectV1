@@ -73,5 +73,16 @@ namespace TenderProject
 
             TenderList.ItemsSource = tenderItems;
         }
+
+        private void TextBox_GotFocus(object sender, RoutedEventArgs e)
+        {
+            TextBox textBox = sender as TextBox;
+            if (textBox != null)
+            {
+                textBox.SelectAll();
+                
+            }
+        }
+
     }
 }
