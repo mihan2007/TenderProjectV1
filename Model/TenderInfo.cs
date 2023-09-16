@@ -12,6 +12,7 @@ namespace TenderProject.Model
         public string Law { get; set; }
         public string Link { get; set; }
         public string FilePath { get; set; }
+
         //public string TenderStatus { get; set; } 
 
         public TenderInfo(string[] rawData, string filePath)

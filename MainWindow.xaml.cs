@@ -7,6 +7,7 @@ using System.Windows.Input;
 using System.Collections.ObjectModel;
 using TenderProject.Model;
 using TenderProject.Infrastructure;
+using System.Linq;
 
 namespace TenderProject
 {
@@ -22,6 +23,8 @@ namespace TenderProject
         {
             InitializeComponent();
             Loaded += MainWindow_Loaded;
+
+            SearchButton.Click += SeatchButtonClick;
 
         }
 
@@ -82,6 +85,27 @@ namespace TenderProject
                 textBox.SelectAll();
                 
             }
+        }
+
+        private void SeatchButtonClick(object sender, RoutedEventArgs e)
+        {
+            string searchTerm = SearchTextBox.Text.Trim().ToLower();
+
+            if (string.IsNullOrEmpty(searchTerm))
+            {
+                // If the search term is empty or null, display all tenders
+                TenderList.ItemsSource = tenderItems;
+            }
+            else
+            {
+                // Filter tenders based on the search term (case-insensitive)
+                var filteredTenders = tenderItems
+                    .Where(tender => tender.Customer.ToLower().Contains(searchTerm))
+                    .ToList();
+
+                TenderList.ItemsSource = filteredTenders;
+            }
+
         }
 
     }
