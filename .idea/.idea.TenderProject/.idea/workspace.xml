@@ -8,22 +8,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="65978175-b3c0-4b24-9332-7a1be3022f73" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.vs/TenderProject/DesignTimeBuild/.dtbcache.v2" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/TenderProject/DesignTimeBuild/.dtbcache.v2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/TenderProject/v16/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/TenderProject/v16/.suo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.TenderProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TenderProject/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MainWindow.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/MainWindow.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MainWindow.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MainWindow.xaml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PassportTender.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PassportTender.xaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Model/TenderInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Model/TenderInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/netcoreapp3.1/TenderProject.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/netcoreapp3.1/TenderProject.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/netcoreapp3.1/TenderProject.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/netcoreapp3.1/TenderProject.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/netcoreapp3.1/AddTenderWindow.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/netcoreapp3.1/AddTenderWindow.g.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/netcoreapp3.1/MainWindow.baml" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/netcoreapp3.1/MainWindow.baml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/netcoreapp3.1/MainWindow.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/netcoreapp3.1/MainWindow.g.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/netcoreapp3.1/MainWindow.g.i.cs" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/netcoreapp3.1/MainWindow.g.i.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/netcoreapp3.1/PassportTender.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/netcoreapp3.1/PassportTender.g.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/netcoreapp3.1/TenderProject.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/netcoreapp3.1/TenderProject.csproj.CoreCompileInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/netcoreapp3.1/TenderProject.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/netcoreapp3.1/TenderProject.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/netcoreapp3.1/TenderProject.g.resources" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/netcoreapp3.1/TenderProject.g.resources" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/netcoreapp3.1/TenderProject.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/netcoreapp3.1/TenderProject.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/netcoreapp3.1/TenderProject_MarkupCompile.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/netcoreapp3.1/TenderProject_MarkupCompile.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/netcoreapp3.1/TenderProject_MarkupCompile.i.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/netcoreapp3.1/TenderProject_MarkupCompile.i.cache" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,6 +83,7 @@
       <workItem from="1693683556397" duration="925000" />
       <workItem from="1693745667962" duration="769000" />
       <workItem from="1693748467073" duration="238000" />
+      <workItem from="1694881752546" duration="3025000" />
     </task>
     <servers />
   </component>

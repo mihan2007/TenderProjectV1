@@ -58,7 +58,7 @@
                                 <TextBlock Text="{Binding Law}" Grid.Row="2" Grid.Column="0" Margin="5"/>
                                 <TextBlock Text="{Binding Link}" Grid.Row="1" Grid.Column="1" Margin="5"/>
                                 <TextBlock Text="{Binding ExpirationDate}" Grid.Row="1" Grid.Column="2" Margin="5"/>
-                                <TextBlock Text="{Binding TenderStatus}" Grid.Row="1" Grid.Column="2" Margin="5"/>
+                                <TextBlock Text="{Binding TenderStatus}" Grid.Row="3" Grid.Column="0" Margin="5"/>
                             </Grid>
                         </DataTemplate>
                     </ListBox.ItemTemplate>

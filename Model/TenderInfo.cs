@@ -13,7 +13,9 @@ namespace TenderProject.Model
         public string Link { get; set; }
         public string FilePath { get; set; }
 
-        //public string TenderStatus { get; set; } 
+        //public Dictionary<string, string> ExtendedFields;
+
+        public string TenderStatus { get; set; } 
 
         public TenderInfo(string[] rawData, string filePath)
         {
