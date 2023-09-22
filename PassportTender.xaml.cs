@@ -1,7 +1,8 @@
-﻿using System.Windows;
+﻿using System;
 using System.IO;
-using System;
+using System.Windows;
 using TenderProject.Model;
+using System.Text.Json;
 
 namespace TenderProject
 {
@@ -36,15 +37,14 @@ namespace TenderProject
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            
+
             if (_tenderInfo != null)
             {
                 SaveData(_tenderInfo.FilePath, "TenderInfo");
             }
             else
             {
-                CreateNewFile();
-                SaveData(_newFilePath, "TextFields");
+                CreateJsonFile();
             }
 
             this.Close();
@@ -52,7 +52,7 @@ namespace TenderProject
 
         private void CreateNewFile()
         {
-            _newFilePath = MainWindow.DirectoryPath + (countFilesInFolder(MainWindow.DirectoryPath)+1)+ "." +MainWindow.Extension;
+            _newFilePath = MainWindow.DirectoryPath + (countFilesInFolder(MainWindow.DirectoryPath) + 1) + "." + MainWindow.Extension;
             MessageBox.Show(_newFilePath);
             File.Create(_newFilePath).Close();
         }
@@ -114,6 +114,25 @@ namespace TenderProject
             }
         }
 
+        private void CreateJsonFile()
+        {
+            string[] fieldValues = new string[]
+             {
+               SubjectTextBox.Text,
+               CustomerTextBox.Text,
+               ExpirationDateTextBox.Text,
+               LawTextBox.Text,
+               LinkTextBox.Text
+             };
+
+            string jsonData = JsonSerializer.Serialize(fieldValues, new JsonSerializerOptions { WriteIndented = true });
+
+            string _newJsonFilePath = MainWindow.DirectoryPath + (countFilesInFolder(MainWindow.DirectoryPath) + 1) + MainWindow.Extension;
+
+            File.WriteAllText(_newJsonFilePath, jsonData);
+
+            MessageBox.Show(_newJsonFilePath);
+        }
     }
 }
 

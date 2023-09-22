@@ -8,6 +8,7 @@ using System.Collections.ObjectModel;
 using TenderProject.Model;
 using TenderProject.Infrastructure;
 using System.Linq;
+using System.Text.Json;
 
 namespace TenderProject
 {
@@ -15,7 +16,7 @@ namespace TenderProject
     public partial class MainWindow : Window
     {
         public const string DirectoryPath = @"C:\tenderproject\";
-        public const string Extension = "txt";
+        public const string Extension = "json";
 
         private List<TenderInfo> tenderItems = new List<TenderInfo>();
 
@@ -28,8 +29,6 @@ namespace TenderProject
 
         }
 
-
-
         private  void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
 
@@ -37,9 +36,20 @@ namespace TenderProject
 
             foreach (string filePath in filePaths)
             {
-                string[] lines = File.ReadAllLines(filePath);
-                var tender = new TenderInfo(lines, filePath);
-                tenderItems.Add(tender);
+                try
+                {
+                    string jsonContent = File.ReadAllText(filePath);
+                    List<TenderInfo> tenders = JsonSerializer.Deserialize<List<TenderInfo>>(jsonContent);
+                    if (tenders != null)
+                    {
+                        tenderItems.AddRange(tenders);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    // Handle deserialization error (e.g., log, show a message)
+                    MessageBox.Show($"Error deserializing file {filePath}: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
             }
 
             TenderList.ItemsSource = tenderItems;
