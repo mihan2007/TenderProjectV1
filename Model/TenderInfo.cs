@@ -8,25 +8,18 @@ namespace TenderProject.Model
 {
     public class TenderInfo
     {
-        [JsonPropertyName("subject")]
         public string Subject { get; set; }
 
-        [JsonPropertyName("customer")]
         public string Customer { get; set; }
 
-        [JsonPropertyName("expirationDate")]
         public string ExpirationDate { get; set; }
 
-        [JsonPropertyName("law")]
         public string Law { get; set; }
 
-        [JsonPropertyName("link")]
-        public string Link { get; set; }
+         public string Link { get; set; }
 
-        [JsonPropertyName("filePath")]
         public string FilePath { get; set; }
 
-        [JsonPropertyName("tenderStatus")]
         public string TenderStatus { get; set; }
 
         public TenderInfo() { }  // Parameterless constructor needed for deserialization

@@ -25,11 +25,12 @@ namespace TenderProject
             InitializeComponent();
             Loaded += MainWindow_Loaded;
 
-            SearchButton.Click += SeatchButtonClick;
+            SearchButton.Click += SearchButtonClick;
+
 
         }
 
-        private  void MainWindow_Loaded(object sender, RoutedEventArgs e)
+        public  void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
 
             string[] filePaths = FileHelper.GetFilesInDirectoryWithExtension(DirectoryPath, Extension);
@@ -47,7 +48,7 @@ namespace TenderProject
                 }
                 catch (Exception ex)
                 {
-                    // Handle deserialization error (e.g., log, show a message)
+
                     MessageBox.Show($"Error deserializing file {filePath}: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
             }
@@ -55,6 +56,7 @@ namespace TenderProject
             TenderList.ItemsSource = tenderItems;
 
         }
+
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -75,17 +77,29 @@ namespace TenderProject
         {
             string[] filePaths = FileHelper.GetFilesInDirectoryWithExtension(DirectoryPath, Extension);
             TenderList.ItemsSource = null;
-            tenderItems.Clear(); 
+            tenderItems.Clear();
 
             foreach (var filePath in filePaths)
             {
-                string[] lines = File.ReadAllLines(filePath);
-                TenderInfo tender = new TenderInfo(lines, filePath);
-                tenderItems.Add(tender);
+                try
+                {
+                    string jsonContent = File.ReadAllText(filePath);
+                    List<TenderInfo> tenders = JsonSerializer.Deserialize<List<TenderInfo>>(jsonContent);
+                    if (tenders != null)
+                    {
+                        tenderItems.AddRange(tenders);
+                    }
+                }
+                catch (Exception ex)
+                {
+
+                    MessageBox.Show($"Error deserializing file {filePath}: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
             }
 
             TenderList.ItemsSource = tenderItems;
         }
+
 
         private void TextBox_GotFocus(object sender, RoutedEventArgs e)
         {
@@ -97,22 +111,23 @@ namespace TenderProject
             }
         }
 
-        private void SeatchButtonClick(object sender, RoutedEventArgs e)
+        private void SearchButtonClick(object sender, RoutedEventArgs e)
         {
             string searchTerm = SearchTextBox.Text.Trim().ToLower();
 
             if (string.IsNullOrEmpty(searchTerm))
             {
-                // If the search term is empty or null, display all tenders
                 TenderList.ItemsSource = tenderItems;
             }
             else
             {
-                // Filter tenders based on the search term (case-insensitive)
                 var filteredTenders = tenderItems
-                    .Where(tender => tender.Customer.ToLower().Contains(searchTerm))
+                    .Where(tender =>
+                        tender.Customer.ToLower().Contains(searchTerm) ||
+                        tender.Subject.ToLower().Contains(searchTerm) ||
+                        tender.ExpirationDate.ToLower().Contains(searchTerm) ||
+                        tender.Law.ToLower().Contains(searchTerm))
                     .ToList();
-
                 TenderList.ItemsSource = filteredTenders;
             }
 

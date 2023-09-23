@@ -10,7 +10,9 @@ namespace TenderProject
     {
         private TenderInfo _tenderInfo;
 
-        private string _newFilePath;
+        //private string _newFilePath;
+
+        MainWindow mainWindow = Application.Current.MainWindow as MainWindow;
 
         public PassportTender()
         {
@@ -34,7 +36,6 @@ namespace TenderProject
             TenderStatus.SelectedIndex = 0;
         }
 
-
         private void Button_Click(object sender, RoutedEventArgs e)
         {
 
@@ -45,16 +46,10 @@ namespace TenderProject
             else
             {
                 CreateJsonFile();
+
             }
 
             this.Close();
-        }
-
-        private void CreateNewFile()
-        {
-            _newFilePath = MainWindow.DirectoryPath + (countFilesInFolder(MainWindow.DirectoryPath) + 1) + "." + MainWindow.Extension;
-            MessageBox.Show(_newFilePath);
-            File.Create(_newFilePath).Close();
         }
 
         private int countFilesInFolder(string folderPath)
@@ -102,7 +97,7 @@ namespace TenderProject
 
                 if (operationType == "TextFields")
                 {
-                    MainWindow mainWindow = Application.Current.MainWindow as MainWindow;
+
                     mainWindow.UpdateTenderList();
                 }
 
@@ -116,22 +111,28 @@ namespace TenderProject
 
         private void CreateJsonFile()
         {
-            string[] fieldValues = new string[]
-             {
-               SubjectTextBox.Text,
-               CustomerTextBox.Text,
-               ExpirationDateTextBox.Text,
-               LawTextBox.Text,
-               LinkTextBox.Text
-             };
+            var jsonObject = new[]
+            {
+        new
+        {
+            Subject = SubjectTextBox.Text,
+            Customer = CustomerTextBox.Text,
+            ExpirationDate = ExpirationDateTextBox.Text,
+            Law = LawTextBox.Text,
+            FilePath = LinkTextBox.Text,
+            TenderStatus = "4242" 
+        }
+    };
 
-            string jsonData = JsonSerializer.Serialize(fieldValues, new JsonSerializerOptions { WriteIndented = true });
+            string jsonData = JsonSerializer.Serialize(jsonObject, new JsonSerializerOptions { WriteIndented = true });
 
-            string _newJsonFilePath = MainWindow.DirectoryPath + (countFilesInFolder(MainWindow.DirectoryPath) + 1) + MainWindow.Extension;
+            string newJsonFilePath = MainWindow.DirectoryPath + (countFilesInFolder(MainWindow.DirectoryPath) + 1) + "." + MainWindow.Extension;
 
-            File.WriteAllText(_newJsonFilePath, jsonData);
+            File.WriteAllText(newJsonFilePath, jsonData);
 
-            MessageBox.Show(_newJsonFilePath);
+            MessageBox.Show(newJsonFilePath);
+
+            mainWindow.UpdateTenderList();
         }
     }
 }

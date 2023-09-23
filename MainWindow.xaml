@@ -31,7 +31,7 @@
 
                 <TextBox Text="Введите текст поиска" x:Name="SearchTextBox" Height="25" Grid.ColumnSpan="2" Grid.Column="0" Grid.Row="1" Margin="0,10,5,11" VerticalAlignment="Center"  Padding="0,2,0,0" GotMouseCapture="TextBox_GotFocus"/>
 
-                <Button Content="Поиск" x:Name="SearchButton" Click="SeatchButtonClick" Width="100" Height="30" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Left" Background="White"/>
+                <Button Content="Поиск" x:Name="SearchButton" Click="SearchButtonClick" Width="100" Height="30" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Left" Background="White"/>
             </Grid>
 
         </StackPanel>
