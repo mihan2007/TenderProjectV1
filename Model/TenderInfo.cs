@@ -22,7 +22,7 @@ namespace TenderProject.Model
 
         public string TenderStatus { get; set; }
 
-        public TenderInfo() { }  // Parameterless constructor needed for deserialization
+        public TenderInfo() { }  
 
         public TenderInfo(string[] rawData, string filePath)
         {
@@ -34,7 +34,7 @@ namespace TenderProject.Model
                 }
             }
 
-            if (rawData.Length >= 5)
+            if (rawData.Length >= 6)
             {
                 Subject = rawData[0];
                 Customer = rawData[1];
@@ -53,7 +53,8 @@ namespace TenderProject.Model
                 Customer,
                 ExpirationDate,
                 Law,
-                Link
+                Link,
+                FilePath
             };
 
             return result;

@@ -46,7 +46,6 @@ namespace TenderProject
             else
             {
                 CreateJsonFile();
-
             }
 
             this.Close();
@@ -68,40 +67,32 @@ namespace TenderProject
                     return;
                 }
 
-                string[] dataToSave;
-
                 if (operationType == "TenderInfo")
                 {
-                    dataToSave = _tenderInfo.GetRawData();
-                }
-                else if (operationType == "TextFields")
-                {
-                    string[] fieldValues = new string[]
-                    {
-                SubjectTextBox.Text,
-                CustomerTextBox.Text,
-                ExpirationDateTextBox.Text,
-                LawTextBox.Text,
-                LinkTextBox.Text
+                    var jsonObject = new[]
+                     {
+                        new
+                        {
+                            Subject = SubjectTextBox.Text,
+                            Customer = CustomerTextBox.Text,
+                            ExpirationDate = ExpirationDateTextBox.Text,
+                            Law = LawTextBox.Text,
+                            FilePath = filePath,
+                            TenderStatus = ""
+                        }
                     };
 
-                    dataToSave = fieldValues;
+                    string jsonData = JsonSerializer.Serialize(jsonObject, new JsonSerializerOptions { WriteIndented = true });
+
+                    File.WriteAllText(filePath, jsonData);
+
+                    mainWindow.UpdateTenderList();
+                    MessageBox.Show("Data saved successfully.");
                 }
                 else
                 {
                     MessageBox.Show("Invalid operation type.");
-                    return;
                 }
-
-                File.WriteAllLines(filePath, dataToSave);
-
-                if (operationType == "TextFields")
-                {
-
-                    mainWindow.UpdateTenderList();
-                }
-
-                MessageBox.Show("Data saved successfully.");
             }
             catch (Exception ex)
             {
@@ -111,22 +102,22 @@ namespace TenderProject
 
         private void CreateJsonFile()
         {
+            string newJsonFilePath = MainWindow.DirectoryPath + (countFilesInFolder(MainWindow.DirectoryPath) + 1) + "." + MainWindow.Extension;
+ 
             var jsonObject = new[]
             {
-        new
-        {
-            Subject = SubjectTextBox.Text,
-            Customer = CustomerTextBox.Text,
-            ExpirationDate = ExpirationDateTextBox.Text,
-            Law = LawTextBox.Text,
-            FilePath = LinkTextBox.Text,
-            TenderStatus = "4242" 
-        }
-    };
+                new
+                {
+                    Subject = SubjectTextBox.Text,
+                    Customer = CustomerTextBox.Text,
+                    ExpirationDate = ExpirationDateTextBox.Text,
+                    Law = LawTextBox.Text,
+                    FilePath = newJsonFilePath,
+                    TenderStatus = TenderStatus.ItemsSource
+                }
+            };
 
             string jsonData = JsonSerializer.Serialize(jsonObject, new JsonSerializerOptions { WriteIndented = true });
-
-            string newJsonFilePath = MainWindow.DirectoryPath + (countFilesInFolder(MainWindow.DirectoryPath) + 1) + "." + MainWindow.Extension;
 
             File.WriteAllText(newJsonFilePath, jsonData);
 
