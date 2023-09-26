@@ -41,11 +41,12 @@ namespace TenderProject
 
             if (_tenderInfo != null)
             {
-                SaveData(_tenderInfo.FilePath, "TenderInfo");
+                SaveData(_tenderInfo.FilePath);
             }
             else
             {
-                CreateJsonFile();
+                string newJsonFilePath = MainWindow.DirectoryPath + (countFilesInFolder(MainWindow.DirectoryPath) + 1) + "." + MainWindow.Extension;
+                SaveData(newJsonFilePath);
             }
 
             this.Close();
@@ -57,7 +58,7 @@ namespace TenderProject
             return files.Length;
         }
 
-        private void SaveData(string filePath, string operationType)
+        private void SaveData(string filePath)
         {
             try
             {
@@ -67,63 +68,29 @@ namespace TenderProject
                     return;
                 }
 
-                if (operationType == "TenderInfo")
+                var jsonObject = new[]
                 {
-                    var jsonObject = new[]
-                     {
-                        new
-                        {
-                            Subject = SubjectTextBox.Text,
-                            Customer = CustomerTextBox.Text,
-                            ExpirationDate = ExpirationDateTextBox.Text,
-                            Law = LawTextBox.Text,
-                            FilePath = filePath,
-                            TenderStatus = ""
-                        }
-                    };
+            new
+            {
+                Subject = SubjectTextBox.Text,
+                Customer = CustomerTextBox.Text,
+                ExpirationDate = ExpirationDateTextBox.Text,
+                Law = LawTextBox.Text,
+                FilePath = filePath,
+                TenderStatus = ""
+            }
+        };
 
-                    string jsonData = JsonSerializer.Serialize(jsonObject, new JsonSerializerOptions { WriteIndented = true });
+                string jsonData = JsonSerializer.Serialize(jsonObject, new JsonSerializerOptions { WriteIndented = true });
+                File.WriteAllText(filePath, jsonData);
 
-                    File.WriteAllText(filePath, jsonData);
-
-                    mainWindow.UpdateTenderList();
-                    MessageBox.Show("Data saved successfully.");
-                }
-                else
-                {
-                    MessageBox.Show("Invalid operation type.");
-                }
+                mainWindow.UpdateTenderList();
+                MessageBox.Show("Data saved successfully.");
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error saving data: {ex.ToString()}");
+                MessageBox.Show($"Error saving data: {ex}");
             }
-        }
-
-        private void CreateJsonFile()
-        {
-            string newJsonFilePath = MainWindow.DirectoryPath + (countFilesInFolder(MainWindow.DirectoryPath) + 1) + "." + MainWindow.Extension;
- 
-            var jsonObject = new[]
-            {
-                new
-                {
-                    Subject = SubjectTextBox.Text,
-                    Customer = CustomerTextBox.Text,
-                    ExpirationDate = ExpirationDateTextBox.Text,
-                    Law = LawTextBox.Text,
-                    FilePath = newJsonFilePath,
-                    TenderStatus = TenderStatus.ItemsSource
-                }
-            };
-
-            string jsonData = JsonSerializer.Serialize(jsonObject, new JsonSerializerOptions { WriteIndented = true });
-
-            File.WriteAllText(newJsonFilePath, jsonData);
-
-            MessageBox.Show(newJsonFilePath);
-
-            mainWindow.UpdateTenderList();
         }
     }
 }
