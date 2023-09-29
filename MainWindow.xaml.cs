@@ -23,16 +23,15 @@ namespace TenderProject
         public MainWindow()
         {
             InitializeComponent();
+            
             Loaded += MainWindow_Loaded;
 
             SearchButton.Click += SearchButtonClick;
-
 
         }
 
         public  void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
-
             string[] filePaths = FileHelper.GetFilesInDirectoryWithExtension(DirectoryPath, Extension);
 
             foreach (string filePath in filePaths)
@@ -56,7 +55,6 @@ namespace TenderProject
             TenderList.ItemsSource = tenderItems;
 
         }
-
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -99,7 +97,6 @@ namespace TenderProject
 
             TenderList.ItemsSource = tenderItems;
         }
-
 
         private void TextBox_GotFocus(object sender, RoutedEventArgs e)
         {

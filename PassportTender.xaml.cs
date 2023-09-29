@@ -10,8 +10,6 @@ namespace TenderProject
     {
         private TenderInfo _tenderInfo;
 
-        //private string _newFilePath;
-
         MainWindow mainWindow = Application.Current.MainWindow as MainWindow;
 
         public PassportTender()
@@ -70,16 +68,16 @@ namespace TenderProject
 
                 var jsonObject = new[]
                 {
-            new
-            {
-                Subject = SubjectTextBox.Text,
-                Customer = CustomerTextBox.Text,
-                ExpirationDate = ExpirationDateTextBox.Text,
-                Law = LawTextBox.Text,
-                FilePath = filePath,
-                TenderStatus = ""
-            }
-        };
+                    new
+                    {
+                        Subject = SubjectTextBox.Text,
+                        Customer = CustomerTextBox.Text,
+                        ExpirationDate = ExpirationDateTextBox.Text,
+                        Law = LawTextBox.Text,
+                        FilePath = filePath,
+                        TenderStatus = ""
+                    }
+                };
 
                 string jsonData = JsonSerializer.Serialize(jsonObject, new JsonSerializerOptions { WriteIndented = true });
                 File.WriteAllText(filePath, jsonData);
