@@ -17,6 +17,7 @@ namespace TenderProject
     {
         public const string DirectoryPath = @"C:\tenderproject\";
         public const string Extension = "json";
+        public const string SytemSettingFilePath = @"C:\tenderproject\SystemSetting\SytemSetting.json";
 
         private List<TenderInfo> tenderItems = new List<TenderInfo>();
 

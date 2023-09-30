@@ -22,6 +22,11 @@ namespace TenderProject
             DataContext = tenderInfo;
             _tenderInfo = tenderInfo;
 
+            if (File.Exists(MainWindow.SytemSettingFilePath))
+            {
+
+            }
+
             var tenderStatuses = new System.Collections.ObjectModel.ObservableCollection<string>
             {
                 "Статус 1",
@@ -31,7 +36,15 @@ namespace TenderProject
 
             TenderStatus.ItemsSource = tenderStatuses;
 
-            TenderStatus.SelectedIndex = 0;
+            if (!string.IsNullOrEmpty(tenderInfo.TenderStatus) && tenderStatuses.Contains(tenderInfo.TenderStatus))
+            {
+                TenderStatus.SelectedItem = tenderInfo.TenderStatus;
+            }
+            else
+            {
+                TenderStatus.SelectedIndex = 0;
+            }
+
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -66,6 +79,8 @@ namespace TenderProject
                     return;
                 }
 
+                string selectedTenderStatus = TenderStatus.SelectedItem as string;
+
                 var jsonObject = new[]
                 {
                     new
@@ -75,7 +90,7 @@ namespace TenderProject
                         ExpirationDate = ExpirationDateTextBox.Text,
                         Law = LawTextBox.Text,
                         FilePath = filePath,
-                        TenderStatus = ""
+                        TenderStatus = selectedTenderStatus
                     }
                 };
 
