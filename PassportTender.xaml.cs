@@ -22,17 +22,31 @@ namespace TenderProject
             DataContext = tenderInfo;
             _tenderInfo = tenderInfo;
 
+            var tenderStatuses = new System.Collections.ObjectModel.ObservableCollection<string>();
+
             if (File.Exists(MainWindow.SytemSettingFilePath))
             {
+                try
+                {
 
+                    string jsonContent = File.ReadAllText(MainWindow.SytemSettingFilePath);
+                    dynamic systemInfo = JsonSerializer.Deserialize<dynamic>(jsonContent);
+
+
+                    if (systemInfo != null && systemInfo.Status != null)
+                    {
+                        foreach (var status in systemInfo.Status)
+                        {
+                            tenderStatuses.Add(systemInfo.Status.ToString());
+                        }
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error loading system info: {ex}");
+                }
             }
-
-            var tenderStatuses = new System.Collections.ObjectModel.ObservableCollection<string>
-            {
-                "Статус 1",
-                "Статус 2",
-                "Статус 3"
-            };
 
             TenderStatus.ItemsSource = tenderStatuses;
 
