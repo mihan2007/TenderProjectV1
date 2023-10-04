@@ -15,6 +15,15 @@ namespace TenderProject.Model
         public string Link { get; set; }
         public string FilePath { get; set; }
         public string TenderStatus { get; set; }
+    }
 
+    public class SystemSettings
+    {
+        public TenderStatus Status { get; set; }
+    }
+
+    public class TenderStatus
+    {
+        public List<string> Items { get; set; }
     }
 }

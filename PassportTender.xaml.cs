@@ -3,6 +3,7 @@ using System.IO;
 using System.Windows;
 using TenderProject.Model;
 using System.Text.Json;
+using System.Collections.Generic;
 
 namespace TenderProject
 {
@@ -19,6 +20,7 @@ namespace TenderProject
 
         public void InitializeTenderInfo(TenderInfo tenderInfo)
         {
+            
             DataContext = tenderInfo;
             _tenderInfo = tenderInfo;
 
@@ -28,19 +30,17 @@ namespace TenderProject
             {
                 try
                 {
-
-                    string jsonContent = File.ReadAllText(MainWindow.SytemSettingFilePath);
-                    dynamic systemInfo = JsonSerializer.Deserialize<dynamic>(jsonContent);
-
+                   string jsonContent = File.ReadAllText(MainWindow.SytemSettingFilePath);
+                   
+                    SystemSettings systemInfo = JsonSerializer.Deserialize<SystemSettings>(jsonContent);
 
                     if (systemInfo != null && systemInfo.Status != null)
                     {
-                        foreach (var status in systemInfo.Status)
+                        foreach (var status in systemInfo.Status.Items)
                         {
-                            tenderStatuses.Add(systemInfo.Status.ToString());
+                            tenderStatuses.Add(status);
                         }
                     }
-
                 }
                 catch (Exception ex)
                 {
@@ -60,6 +60,8 @@ namespace TenderProject
             }
 
         }
+
+
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -118,6 +120,20 @@ namespace TenderProject
             {
                 MessageBox.Show($"Error saving data: {ex}");
             }
+        }
+        private void CreateSystemSettingsFile()
+        {
+            SystemSettings systemSettings = new SystemSettings();
+            systemSettings.Status = new TenderStatus();
+            systemSettings.Status.Items = new List<string>
+            {
+                "Статус 1",
+                "Статус 2",
+                "Статус 3"
+            };
+
+            string jsonData = JsonSerializer.Serialize(systemSettings, new JsonSerializerOptions { WriteIndented = true });
+            File.WriteAllText(MainWindow.SytemSettingFilePath, jsonData);
         }
     }
 }

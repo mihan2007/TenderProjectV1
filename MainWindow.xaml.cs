@@ -17,7 +17,7 @@ namespace TenderProject
     {
         public const string DirectoryPath = @"C:\tenderproject\";
         public const string Extension = "json";
-        public const string SytemSettingFilePath = @"C:\tenderproject\SystemSetting\SytemSetting.json";
+        public const string SytemSettingFilePath = "SystemSettings\\SystemSetting.json";
 
         private List<TenderInfo> tenderItems = new List<TenderInfo>();
 
@@ -66,7 +66,6 @@ namespace TenderProject
         private void TenderList_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             var selectedTender = (TenderInfo)TenderList.SelectedItem;
-
             var passportTender = new PassportTender();
             passportTender.InitializeTenderInfo(selectedTender);
             passportTender.Show();
