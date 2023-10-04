@@ -50,18 +50,7 @@ namespace TenderProject
 
             TenderStatus.ItemsSource = tenderStatuses;
 
-            if (!string.IsNullOrEmpty(tenderInfo.TenderStatus) && tenderStatuses.Contains(tenderInfo.TenderStatus))
-            {
-                TenderStatus.SelectedItem = tenderInfo.TenderStatus;
-            }
-            else
-            {
-                TenderStatus.SelectedIndex = 0;
-            }
-
         }
-
-
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {

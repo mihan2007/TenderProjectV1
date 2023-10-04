@@ -60,6 +60,7 @@ namespace TenderProject
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             PassportTender passportTender = new PassportTender();
+            passportTender.InitializeTenderInfo(null);
             passportTender.Show();
         }
 
