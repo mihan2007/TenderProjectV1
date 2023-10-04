@@ -23,34 +23,21 @@ namespace TenderProject
             
             DataContext = tenderInfo;
             _tenderInfo = tenderInfo;
-
-            var tenderStatuses = new System.Collections.ObjectModel.ObservableCollection<string>();
-
+        
             if (File.Exists(MainWindow.SytemSettingFilePath))
             {
                 try
                 {
-                   string jsonContent = File.ReadAllText(MainWindow.SytemSettingFilePath);
-                   
-                    SystemSettings systemInfo = JsonSerializer.Deserialize<SystemSettings>(jsonContent);
-
-                    if (systemInfo != null && systemInfo.Status != null)
-                    {
-                        foreach (var status in systemInfo.Status.Items)
-                        {
-                            tenderStatuses.Add(status);
-                        }
-                    }
+                    ReadAndAddTenderStatus(tenderInfo);
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show($"Error loading system info: {ex}");
                 }
             }
-
-            TenderStatus.ItemsSource = tenderStatuses;
-
         }
+
+
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -109,6 +96,34 @@ namespace TenderProject
             {
                 MessageBox.Show($"Error saving data: {ex}");
             }
+        }
+
+        public void ReadAndAddTenderStatus(TenderInfo tenderInfo)
+        {
+            var tenderStatuses = new System.Collections.ObjectModel.ObservableCollection<string>();
+            string jsonContent = File.ReadAllText(MainWindow.SytemSettingFilePath);
+            SystemSettings systemInfo = JsonSerializer.Deserialize<SystemSettings>(jsonContent);
+
+            if (tenderInfo == null)
+            {
+                TenderStatus.ItemsSource = tenderStatuses;
+            }
+            else
+            {
+                TenderStatus.SelectedItem = tenderInfo.TenderStatus;
+                TenderStatus.ItemsSource = tenderStatuses;
+            }
+
+            if (systemInfo != null && systemInfo.Status != null)
+            {
+                foreach (var status in systemInfo.Status.Items)
+                {
+                    tenderStatuses.Add(status);
+                }
+            }
+        }
+
+        private void ReadTenderStatus() { 
         }
         private void CreateSystemSettingsFile()
         {
