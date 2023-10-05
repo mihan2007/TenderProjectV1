@@ -131,5 +131,25 @@ namespace TenderProject
 
         }
 
+        private void DeletTenderClick(object sender, RoutedEventArgs e)
+        {
+            var selectedTender = (TenderInfo)TenderList.SelectedItem;
+
+            if (selectedTender != null)
+            {
+                MessageBoxResult result = MessageBox.Show("Are you sure?", "Confirm deleting", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+
+                if (result == MessageBoxResult.Yes)
+                {
+                    File.Delete(selectedTender.FilePath);
+                    UpdateTenderList();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Select Tender");
+            }
+           
+        }
     }
 }
