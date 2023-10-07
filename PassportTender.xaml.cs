@@ -4,18 +4,21 @@ using System.Windows;
 using TenderProject.Model;
 using System.Text.Json;
 using System.Collections.Generic;
-
+using System.Windows.Controls;
+using System.Windows.Media;
 namespace TenderProject
 {
     public partial class PassportTender : Window
     {
         private TenderInfo _tenderInfo;
+        private bool _isEditButtonPressed;
 
         MainWindow mainWindow = Application.Current.MainWindow as MainWindow;
 
         public PassportTender()
         {
             InitializeComponent();
+            Closing += PassportTender_Closing;
         }
 
         public void InitializeTenderInfo(TenderInfo tenderInfo)
@@ -23,7 +26,9 @@ namespace TenderProject
             
             DataContext = tenderInfo;
             _tenderInfo = tenderInfo;
-        
+
+            SetReadOnlyForAllTextFields(true);
+
             if (File.Exists(MainWindow.SytemSettingFilePath))
             {
                 try
@@ -39,18 +44,29 @@ namespace TenderProject
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
-            if (_tenderInfo != null)
+            if (!_isEditButtonPressed)
             {
-                SaveData(_tenderInfo.FilePath);
+                _isEditButtonPressed = true;
+                EditBeutton.Content = "Сохранить";
+                SetReadOnlyForAllTextFields(false);
             }
             else
             {
-                string newJsonFilePath = MainWindow.DirectoryPath + (countFilesInFolder(MainWindow.DirectoryPath) + 1) + "." + MainWindow.Extension;
-                SaveData(newJsonFilePath);
+                _isEditButtonPressed = false;
+                EditBeutton.Content = "Редактировать";
+
+                if (_tenderInfo != null)
+                {
+                    SaveData(_tenderInfo.FilePath,true);
+                }
+                else
+                {
+                    string newJsonFilePath = MainWindow.DirectoryPath + (countFilesInFolder(MainWindow.DirectoryPath) + 1) + "." + MainWindow.Extension;
+                    SaveData(newJsonFilePath,true);
+                }
+                SetReadOnlyForAllTextFields(true);
             }
 
-            this.Close();
         }
 
         private int countFilesInFolder(string folderPath)
@@ -59,7 +75,7 @@ namespace TenderProject
             return files.Length;
         }
 
-        private void SaveData(string filePath)
+        private void SaveData(string filePath, bool ShowSaveWinodw)
         {
             try
             {
@@ -88,7 +104,11 @@ namespace TenderProject
                 File.WriteAllText(filePath, jsonData);
 
                 mainWindow.UpdateTenderList();
-                MessageBox.Show("Data saved successfully.");
+                
+                if(ShowSaveWinodw)
+                {
+                    MessageBox.Show("Data saved successfully.");
+                }
             }
             catch (Exception ex)
             {
@@ -121,8 +141,38 @@ namespace TenderProject
             }
         }
 
-        private void ReadTenderStatus() { 
+        private void PassportTender_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (!_isEditButtonPressed)
+            {
+                SaveData(_tenderInfo.FilePath, false);
+            }
+            else
+            {
+                MessageBoxResult result = MessageBox.Show("Do you want to save changes?", "Confirm", MessageBoxButton.YesNoCancel, MessageBoxImage.Question);
+               
+                if (result == MessageBoxResult.Yes)
+                {
+                    SaveData(_tenderInfo.FilePath, true);
+                }
+                else if (result == MessageBoxResult.Cancel)
+                {
+                    e.Cancel = true;  
+                }
+            }
         }
+ 
+        private void SetReadOnlyForAllTextFields(bool isReadOnly)
+        {
+            foreach (UIElement child in MainInfoPanel.Children)
+            {
+                if (child is TextBox textBox)
+                {
+                    textBox.IsReadOnly = isReadOnly;
+                }
+            }
+        }
+
         private void CreateSystemSettingsFile()
         {
             SystemSettings systemSettings = new SystemSettings();
