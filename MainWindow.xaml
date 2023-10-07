@@ -41,11 +41,14 @@
                 <ListBox x:Name="TenderList" MouseDoubleClick="TenderList_MouseDoubleClick">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
-                            <Grid ShowGridLines="true">
+                            <Grid ShowGridLines="false">
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="120"/>
-                                    <ColumnDefinition Width="*"/>
-                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="250"/>
+                                    <ColumnDefinition Width="30"/>
+                                    <ColumnDefinition Width="auto"/>
+                                    <ColumnDefinition Width="30"/>
+                                    <ColumnDefinition Width="auto"/>
+                                    <ColumnDefinition Width="auto"/>
                                 </Grid.ColumnDefinitions>
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="Auto"/>
@@ -53,13 +56,21 @@
                                     <RowDefinition Height="Auto"/>
                                     <RowDefinition Height="Auto"/>
                                 </Grid.RowDefinitions>
-                                <TextBlock Text="НМЦК" Grid.Row="0" Grid.Column="1" Margin="5"/>
-                                <TextBlock Text="{Binding Subject}" Grid.Row="0" Grid.Column="0" Margin="5"/>
-                                <TextBlock Text="{Binding Customer}" Grid.Row="1" Grid.Column="0" Margin="5"/>
-                                <TextBlock Text="{Binding Law}" Grid.Row="2" Grid.Column="0" Margin="5"/>
+                                <TextBlock Text="1 000 000" Grid.Row="1" Grid.Column="2" Margin="5"/>
+                                <TextBlock Text="Дата окончания" Grid.Row="1" Grid.Column="4" Margin="5"/>
+                                <TextBlock Text="Дата аукциона" Grid.Row="2" Grid.Column="4" Margin="5"/>
+                                <TextBlock Text="Дата подведения итогов" Grid.Row="3" Grid.Column="4" Margin="5"/>
+
+                                
+                                <TextBlock Text="30.09.2023" Grid.Row="2" Grid.Column="5" Margin="5"/>
+                                <TextBlock Text="16.10.2023" Grid.Row="3" Grid.Column="5" Margin="5"/>
+
+                                <TextBlock Text="{Binding Customer}" Grid.Row="2" Grid.Column="0" Margin="5"/>
+                                <TextBlock Text="{Binding Subject}" Grid.Row="1" Grid.Column="0" Margin="5"/>
+                                <TextBlock Text="{Binding Law}" Grid.Row="3" Grid.Column="0" Margin="5"/>
                                 <TextBlock Text="{Binding Link}" Grid.Row="1" Grid.Column="1" Margin="5"/>
-                                <TextBlock Text="{Binding ExpirationDate}" Grid.Row="1" Grid.Column="2" Margin="5"/>
-                                <TextBlock Text="{Binding TenderStatus}" Grid.Row="3" Grid.Column="0" Margin="5"/>
+                                <TextBlock Text="{Binding ExpirationDate}" Grid.Row="1" Grid.Column="6" Margin="5"/>
+                                <TextBlock Text="{Binding TenderStatus}" Grid.Row="0" Grid.Column="0" Margin="5"/>
                             </Grid>
                         </DataTemplate>
                     </ListBox.ItemTemplate>

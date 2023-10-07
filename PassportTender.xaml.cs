@@ -125,6 +125,7 @@ namespace TenderProject
             if (tenderInfo == null)
             {
                 TenderStatus.ItemsSource = tenderStatuses;
+                SetReadOnlyForAllTextFields(false);
             }
             else
             {
@@ -143,7 +144,7 @@ namespace TenderProject
 
         private void PassportTender_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            if (!_EditionMode)
+            if (!_EditionMode && _tenderInfo != null)
             {
                 SaveData(_tenderInfo.FilePath, false);
             }
@@ -153,7 +154,8 @@ namespace TenderProject
                
                 if (result == MessageBoxResult.Yes)
                 {
-                    SaveData(_tenderInfo.FilePath, true);
+                    string newJsonFilePath = MainWindow.DirectoryPath + (countFilesInFolder(MainWindow.DirectoryPath) + 1) + "." + MainWindow.Extension;
+                    SaveData(newJsonFilePath, true);
                 }
                 else if (result == MessageBoxResult.Cancel)
                 {

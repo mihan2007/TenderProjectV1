@@ -7,9 +7,10 @@
         <StackPanel Margin="10,10,10,203" DataContext="{Binding}">
             <Grid x:Name="MainInfoPanel">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="300"/>
                     <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="100" />
+                    <ColumnDefinition Width="100" />
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto" />
@@ -21,10 +22,10 @@
                 </Grid.RowDefinitions>
 
                 <ComboBox x:Name="TenderStatus" Width="100"  HorizontalAlignment="Left" Grid.Row="0" Grid.Column="0"/>
-                <Label Content="Даты поцедуры" Grid.Row="0" Grid.Column="1"/>
-                <Label Content="Дата окончания подачи док-в" Grid.Row="1" Grid.Column="1"/>
-                <Label Content="Дата проведения аукциона" Grid.Row="2" Grid.Column="1"/>
-                <Label Content="Дата подведения итогов" Grid.Row="3" Grid.Column="1"/>
+                <Label Content="Даты поцедуры" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Right"/>
+                <Label Content="Дата окончания подачи док-в" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Right"/>
+                <Label Content="Дата проведения аукциона" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Right"/>
+                <Label Content="Дата подведения итогов" Grid.Row="4" Grid.Column="1" HorizontalAlignment="Right"/>
 
                 <TextBox Text="16.08.2023" Grid.Row="3" Grid.Column="2"/>
                 <TextBox Text="16.08.2023" Grid.Row="2" Grid.Column="2"/>
