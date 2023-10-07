@@ -11,7 +11,7 @@ namespace TenderProject
     public partial class PassportTender : Window
     {
         private TenderInfo _tenderInfo;
-        private bool _isEditButtonPressed;
+        private bool _EditionMode;
 
         MainWindow mainWindow = Application.Current.MainWindow as MainWindow;
 
@@ -44,15 +44,15 @@ namespace TenderProject
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            if (!_isEditButtonPressed)
+            if (!_EditionMode)
             {
-                _isEditButtonPressed = true;
+                _EditionMode = true;
                 EditBeutton.Content = "Сохранить";
                 SetReadOnlyForAllTextFields(false);
             }
             else
             {
-                _isEditButtonPressed = false;
+                _EditionMode = false;
                 EditBeutton.Content = "Редактировать";
 
                 if (_tenderInfo != null)
@@ -143,7 +143,7 @@ namespace TenderProject
 
         private void PassportTender_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            if (!_isEditButtonPressed)
+            if (!_EditionMode)
             {
                 SaveData(_tenderInfo.FilePath, false);
             }
