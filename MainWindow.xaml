@@ -9,8 +9,8 @@
         MinWidth="250" MinHeight="250">
     <Grid>
 
-        <StackPanel>
-            <Grid Height="81" Width="776" ShowGridLines="false" Background="White"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10">
+        <StackPanel >
+            <Grid Height="81" Width="776" ShowGridLines="false"   HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="*"/>
@@ -27,7 +27,7 @@
 
                 <Button Content="Удалить" x:Name="DeletTender_Click" Click ="DeletTenderClick" Width="100" Height="30" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Background="White" Margin="0,0,5,0"/>
 
-                <Button Content="Кнопка 3" Width="100" Height="30" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Top" Background="White" Margin="0,0,5,0"/>
+                <Button Content="Экспорт" x:Name="EportToExcel" Click="ExportToExcelButtonClick"  Width="100" Height="30" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Top" Background="White" Margin="0,0,5,0"/>
 
                 <TextBox Text="Введите текст поиска" x:Name="SearchTextBox" Height="25" Grid.ColumnSpan="2" Grid.Column="0" Grid.Row="1" Margin="0,10,5,11" VerticalAlignment="Center"  Padding="0,2,0,0" GotMouseCapture="TextBox_GotFocus"/>
 
@@ -36,13 +36,13 @@
 
         </StackPanel>
 
-        <ScrollViewer VerticalScrollBarVisibility="Auto" Margin="10,89,10,10" >
+        <ScrollViewer VerticalScrollBarVisibility="Auto" Margin="10,89,10,10"  >
             <StackPanel>
-                <ListBox x:Name="TenderList" MouseDoubleClick="TenderList_MouseDoubleClick">
+                <ListBox x:Name="TenderList" MouseDoubleClick="TenderList_MouseDoubleClick" Background="#f0f0f0">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
-                            <Grid ShowGridLines="false">
-                                <Grid.ColumnDefinitions>
+                            <Grid ShowGridLines="true" Background="White">
+                                    <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="250"/>
                                     <ColumnDefinition Width="30"/>
                                     <ColumnDefinition Width="auto"/>
@@ -65,7 +65,7 @@
                                 <TextBlock Text="30.09.2023" Grid.Row="2" Grid.Column="5" Margin="5"/>
                                 <TextBlock Text="16.10.2023" Grid.Row="3" Grid.Column="5" Margin="5"/>
 
-                                <TextBlock Text="{Binding Customer}" Grid.Row="2" Grid.Column="0" Margin="5"/>
+                                <TextBlock Text="{Binding Customer}" Grid.Row="2" Grid.Column="0" Margin="5" TextWrapping="Wrap" />
                                 <TextBlock Text="{Binding Subject}" Grid.Row="1" Grid.Column="0" Margin="5"/>
                                 <TextBlock Text="{Binding Law}" Grid.Row="3" Grid.Column="0" Margin="5"/>
                                 <TextBlock Text="{Binding Link}" Grid.Row="1" Grid.Column="1" Margin="5"/>

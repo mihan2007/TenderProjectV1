@@ -104,8 +104,7 @@ namespace TenderProject
             TextBox textBox = sender as TextBox;
             if (textBox != null)
             {
-                textBox.SelectAll();
-                
+                textBox.SelectAll();                
             }
         }
 
@@ -128,7 +127,6 @@ namespace TenderProject
                     .ToList();
                 TenderList.ItemsSource = filteredTenders;
             }
-
         }
 
         private void DeletTenderClick(object sender, RoutedEventArgs e)
@@ -150,6 +148,10 @@ namespace TenderProject
                 MessageBox.Show("Select Tender");
             }
            
+        }
+        private void ExportToExcelButtonClick(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("экспорт");
         }
     }
 }

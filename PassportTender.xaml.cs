@@ -61,12 +61,10 @@ namespace TenderProject
                 }
                 else
                 {
-                    string newJsonFilePath = MainWindow.DirectoryPath + (countFilesInFolder(MainWindow.DirectoryPath) + 1) + "." + MainWindow.Extension;
-                    SaveData(newJsonFilePath,true);
+                    CreateNewTenderFile();
                 }
                 SetReadOnlyForAllTextFields(true);
             }
-
         }
 
         private int countFilesInFolder(string folderPath)
@@ -154,8 +152,7 @@ namespace TenderProject
                
                 if (result == MessageBoxResult.Yes)
                 {
-                    string newJsonFilePath = MainWindow.DirectoryPath + (countFilesInFolder(MainWindow.DirectoryPath) + 1) + "." + MainWindow.Extension;
-                    SaveData(newJsonFilePath, true);
+                    CreateNewTenderFile();
                 }
                 else if (result == MessageBoxResult.Cancel)
                 {
@@ -173,6 +170,12 @@ namespace TenderProject
                     textBox.IsReadOnly = isReadOnly;
                 }
             }
+        }
+
+        private void CreateNewTenderFile()
+        {
+            string newJsonFilePath = MainWindow.DirectoryPath + (countFilesInFolder(MainWindow.DirectoryPath) + 1) + "." + MainWindow.Extension;
+            SaveData(newJsonFilePath, true);
         }
 
         private void CreateSystemSettingsFile()
