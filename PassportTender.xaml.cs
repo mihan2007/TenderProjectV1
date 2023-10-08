@@ -94,13 +94,7 @@ namespace TenderProject
                         ExpirationDate = ExpirationDateTextBox.Text,
                         Law = LawTextBox.Text,
                         FilePath = filePath,
-                        TenderStatus = selectedTenderStatus,
-                        
-                        ExtraFieldsList = new List<TenderExtraField>
-                        {
-                            new TenderExtraField {Id = "Field1", Value = "val1", Comment = "Comment1"},
-                            new TenderExtraField {Id = "Field2", Value = "val2", Comment = "Comment2"}
-                        }
+                        TenderStatus = selectedTenderStatus
                     }
                 };
 
@@ -187,7 +181,6 @@ namespace TenderProject
         private void CreateSystemSettingsFile()
         {
             SystemSettings systemSettings = new SystemSettings();
-            
             systemSettings.Status = new TenderStatus();
             systemSettings.Status.Items = new List<string>
             {
