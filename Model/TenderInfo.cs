@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
-using System.Text.Json;
-using System.Text.Json.Serialization;
 
 namespace TenderProject.Model
 {
@@ -16,15 +13,39 @@ namespace TenderProject.Model
         public string FilePath { get; set; }
         public string TenderStatus { get; set; }
 
-    }
+        public List<TenderExtraField> ExtraFieldsList { get; set; } = new List<TenderExtraField>();
+        
+        [NonSerialized]
+        private Dictionary<string, TenderExtraField> _extraFields;
+        
+        public Dictionary<string, TenderExtraField> ExtraFields
+        {
+            get
+            {
+                if (_extraFields == null)
+                {
+                    _extraFields = CreateDictionary();
+                }
+                
+                return _extraFields;
+            }
+        }
+        
+        private Dictionary<string, TenderExtraField> CreateDictionary()
+        {
+            var dict = new Dictionary<string, TenderExtraField>();
+            foreach (var item in ExtraFieldsList)
+            {
+                if (dict.ContainsKey(item.Id))
+                {
+                    Console.WriteLine($"Tender {Subject} has duplicate extra field {item.Id}. Value: {item.Value}. Comment: {item.Comment}");
+                    continue;
+                }
 
-    public class SystemSettings
-    {
-        public TenderStatus Status { get; set; }
-    }
+                dict.Add(item.Id, item);
+            }
 
-    public class TenderStatus
-    {
-        public List<string> Items { get; set; }
+            return dict;
+        }
     }
 }
