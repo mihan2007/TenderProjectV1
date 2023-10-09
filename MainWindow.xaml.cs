@@ -10,7 +10,6 @@ using TenderProject.Infrastructure;
 using System.Linq;
 using System.Text.Json;
 
-
 namespace TenderProject
 {
 
@@ -32,7 +31,7 @@ namespace TenderProject
 
         }
 
-        public void MainWindow_Loaded(object sender, RoutedEventArgs e)
+        public  void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
             string[] filePaths = FileHelper.GetFilesInDirectoryWithExtension(DirectoryPath, Extension);
 
@@ -152,9 +151,7 @@ namespace TenderProject
         }
         private void ExportToExcelButtonClick(object sender, RoutedEventArgs e)
         {
-            ExportToExcel(tenderItems);
+            MessageBox.Show("экспорт");
         }
-
-        private void ExportToExcel(List<TenderInfo> tenders) { }
     }
 }
