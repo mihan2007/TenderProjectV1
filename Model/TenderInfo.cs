@@ -13,6 +13,8 @@ namespace TenderProject.Model
         public string FilePath { get; set; }
         public string TenderStatus { get; set; }
 
+       
+        
         public List<TenderExtraField> ExtraFieldsList { get; set; } = new List<TenderExtraField>();
         
         [NonSerialized]
