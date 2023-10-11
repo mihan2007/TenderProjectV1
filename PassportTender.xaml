@@ -4,7 +4,7 @@
         xmlns:local="clr-namespace:TenderProject"
         Title="PassportTender" Height="425" Width="632">
     <Grid Margin="10,0,10,8" ShowGridLines="False">
-        <StackPanel Margin="10,10,10,203" DataContext="{Binding}" >
+        <StackPanel Margin="10,10,10,218" DataContext="{Binding}" >
             <Grid x:Name="MainInfoPanel" >
                 
                 <Grid.ColumnDefinitions>
@@ -14,6 +14,7 @@
                     <ColumnDefinition Width="100" />
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
@@ -38,9 +39,15 @@
                 <TextBox Text="{Binding Customer}" x:Name="CustomerTextBox" Grid.Row="2" Grid.Column="0"/>
                 <TextBox Text="{Binding Law}" x:Name="LawTextBox" Grid.Row="3" Grid.Column="0" />
                 <TextBox Text="{Binding Link}" x:Name="LinkTextBox" Grid.Row="4" Grid.Column="0" />
-                
+
+
             </Grid>
         </StackPanel>
+        
+        <StackPanel Margin="0,183,10,0">
+            <TextBox Text="{Binding ExtraFieldsList[0].Id}" x:Name="TenderExtraField" Grid.Row="5" Grid.Column="0" />
+        </StackPanel>
+        
         <Button Width="128" Click="Button_Click" x:Name="EditBeutton" Height="33" Content="Редактировать" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
     </Grid>
 </Window>

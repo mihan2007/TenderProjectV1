@@ -40,6 +40,11 @@ namespace TenderProject
                     MessageBox.Show($"Error loading system info: {ex}");
                 }
             }
+
+            if (tenderInfo.ExtraFieldsList.Count > 0)
+            {
+                TenderExtraField.Text = $"\"Id\": \"{tenderInfo.ExtraFieldsList[0].Id}\"";
+            }
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

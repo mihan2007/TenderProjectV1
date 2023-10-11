@@ -48,13 +48,11 @@ namespace TenderProject
                 }
                 catch (Exception ex)
                 {
-
                     MessageBox.Show($"Error deserializing file {filePath}: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
             }
 
             TenderList.ItemsSource = tenderItems;
-
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
