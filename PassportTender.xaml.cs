@@ -90,31 +90,34 @@ namespace TenderProject
 
                 string selectedTenderStatus = TenderStatus.SelectedItem as string;
 
+                
+                var extraField = new TenderExtraField
+                {
+                    Id = "Field1", // Or any logic to extract Id from TenderExtraField TextBox
+                    Value = TenderExtraField.Text, // Assuming TenderExtraField is TextBox for Value
+                    Comment = "Comment1" // Or any logic to extract Comment from TenderExtraField TextBox
+                };
+
                 var jsonObject = new[]
                 {
-                    new
-                    {
-                        Subject = SubjectTextBox.Text,
-                        Customer = CustomerTextBox.Text,
-                        ExpirationDate = ExpirationDateTextBox.Text,
-                        Law = LawTextBox.Text,
-                        FilePath = filePath,
-                        TenderStatus = selectedTenderStatus,
-                        
-                        ExtraFieldsList = new List<TenderExtraField>
-                        {
-                            new TenderExtraField {Id = "Field1", Value = "val1", Comment = "Comment1"},
-                            new TenderExtraField {Id = "Field2", Value = "val2", Comment = "Comment2"}
-                        }
-                    }
-                };
+            new
+            {
+                Subject = SubjectTextBox.Text,
+                Customer = CustomerTextBox.Text,
+                ExpirationDate = ExpirationDateTextBox.Text,
+                Law = LawTextBox.Text,
+                FilePath = filePath,
+                TenderStatus = selectedTenderStatus,
+                ExtraFieldsList = new List<TenderExtraField> { extraField }
+            }
+        };
 
                 string jsonData = JsonSerializer.Serialize(jsonObject, new JsonSerializerOptions { WriteIndented = true });
                 File.WriteAllText(filePath, jsonData);
 
                 mainWindow.UpdateTenderList();
-                
-                if(ShowSaveWinodw)
+
+                if (ShowSaveWinodw)
                 {
                     MessageBox.Show("Data saved successfully.");
                 }
@@ -124,6 +127,7 @@ namespace TenderProject
                 MessageBox.Show($"Error saving data: {ex}");
             }
         }
+
 
         public void ReadAndAddTenderStatus(TenderInfo tenderInfo)
         {

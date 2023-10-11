@@ -39,13 +39,14 @@
                 <TextBox Text="{Binding Customer}" x:Name="CustomerTextBox" Grid.Row="2" Grid.Column="0"/>
                 <TextBox Text="{Binding Law}" x:Name="LawTextBox" Grid.Row="3" Grid.Column="0" />
                 <TextBox Text="{Binding Link}" x:Name="LinkTextBox" Grid.Row="4" Grid.Column="0" />
-
+                
+                <TextBox Text="{Binding ExtraFieldsList[0].Value}" x:Name="TenderExtraField" Grid.Row="5" Grid.Column="0" />
 
             </Grid>
         </StackPanel>
         
         <StackPanel Margin="0,183,10,0">
-            <TextBox Text="{Binding ExtraFieldsList[0].Id}" x:Name="TenderExtraField" Grid.Row="5" Grid.Column="0" />
+
         </StackPanel>
         
         <Button Width="128" Click="Button_Click" x:Name="EditBeutton" Height="33" Content="Редактировать" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
