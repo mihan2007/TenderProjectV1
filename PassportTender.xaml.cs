@@ -23,7 +23,11 @@ namespace TenderProject
 
         public void InitializeTenderInfo(TenderInfo tenderInfo)
         {
-            
+            DataSaver dataSaver = new DataSaver();
+            string filePath = "D:\\TenderProject\\TenderProject\\tenderData.json";
+
+            // Сохранение данных в JSON
+            dataSaver.CreateEmptyJsonFile(filePath);
             DataContext = tenderInfo;
             _tenderInfo = tenderInfo;
 
@@ -41,10 +45,6 @@ namespace TenderProject
                 }
             }
 
-            if (tenderInfo.ExtraFieldsList.Count > 0)
-            {
-                TenderExtraField.Text = $"\"Id\": \"{tenderInfo.ExtraFieldsList[0].Id}\"";
-            }
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -90,14 +90,6 @@ namespace TenderProject
 
                 string selectedTenderStatus = TenderStatus.SelectedItem as string;
 
-                
-                var extraField = new TenderExtraField
-                {
-                    Id = "Field1", // Or any logic to extract Id from TenderExtraField TextBox
-                    Value = TenderExtraField.Text, // Assuming TenderExtraField is TextBox for Value
-                    Comment = "Comment1" // Or any logic to extract Comment from TenderExtraField TextBox
-                };
-
                 var jsonObject = new[]
                 {
             new
@@ -108,7 +100,7 @@ namespace TenderProject
                 Law = LawTextBox.Text,
                 FilePath = filePath,
                 TenderStatus = selectedTenderStatus,
-                ExtraFieldsList = new List<TenderExtraField> { extraField }
+
             }
         };
 

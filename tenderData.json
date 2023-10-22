@@ -1,0 +1,25 @@
+{
+  "Subject": null,
+  "Customer": null,
+  "ExpirationDate": null,
+  "Law": null,
+  "Link": null,
+  "FilePath": null,
+  "TenderStatus": null,
+  "ProcedureType": {
+    "Number": null,
+    "Type": null,
+    "Subject": null,
+    "SmallBusinessProcedure": null,
+    "TradePlatformName": null,
+    "TradePlatformSite": null,
+    "ProcedureLink": null,
+    "PublicationDate": null,
+    "ApplicationDeadlineDate": null,
+    "AuctionDate": null,
+    "SummarizingDate": null,
+    "InitialPrice": null,
+    "ApplicationSecurityDeposit": null,
+    "ContractSecurityDeposit": null
+  }
+}

@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "QnivxfKlsMRLpAaYMTlPGA7mhv8F0NgYN3MICnUNlVXOcVPnihDQlqx2W3UJpjbuiNXZWpqXOedGrQXasMK4kg==",
+  "dgSpecHash": "EymTbtJjtnJ5HV/j04JmvKoMFEoaItQp6o/ixaZJ5I9Lwjg6pkD01OzupUjHi1etYwjD9vwxglBJ5gKIDpUn4Q==",
   "success": true,
   "projectFilePath": "D:\\TenderProject\\TenderProject\\TenderProject.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\mihan\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
   "logs": []
 }
