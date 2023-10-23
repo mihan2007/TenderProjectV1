@@ -4,7 +4,7 @@
         xmlns:local="clr-namespace:TenderProject"
         Title="PassportTender" Height="425" Width="632">
     <Grid Margin="10,0,10,8" ShowGridLines="False">
-        <StackPanel Margin="10,10,10,218" DataContext="{Binding}" >
+        <StackPanel Margin="10,10,10,60" DataContext="{Binding}" >
             <Grid x:Name="MainInfoPanel" >
                 
                 <Grid.ColumnDefinitions>
@@ -39,14 +39,31 @@
                 <TextBox Text="{Binding Customer}" x:Name="CustomerTextBox" Grid.Row="2" Grid.Column="0"/>
                 <TextBox Text="{Binding Law}" x:Name="LawTextBox" Grid.Row="3" Grid.Column="0" />
                 <TextBox Text="{Binding Link}" x:Name="LinkTextBox" Grid.Row="4" Grid.Column="0" />
-                
+ 
             </Grid>
-        </StackPanel>
-        
-        <StackPanel Margin="0,183,10,0">
+
+            <Grid x:Name="CustomerInfo">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <TextBox Text="Заказчик" Grid.Row ="0" Grid.Column="0"/>
+                <TextBox Text="INN" Grid.Row ="1" Grid.Column="0"/>
+                <TextBox Text="{Binding Customer.INN}"  Grid.Row ="1" Grid.Column="1"/>
+                <TextBox Text="KPP" Grid.Row ="1" Grid.Column="2"/>
+                <TextBox Text="{Binding Customer.KPP}"  Grid.Row ="1" Grid.Column="3"/>
+            </Grid>
 
         </StackPanel>
-        
+
         <Button Width="128" Click="Button_Click" x:Name="EditBeutton" Height="33" Content="Редактировать" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
     </Grid>
 </Window>
