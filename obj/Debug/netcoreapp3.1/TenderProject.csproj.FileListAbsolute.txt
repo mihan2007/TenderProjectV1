@@ -20,8 +20,6 @@ D:\TenderProject\TenderProject\obj\Debug\netcoreapp3.1\TenderProject.pdb
 D:\TenderProject\TenderProject\obj\Debug\netcoreapp3.1\TenderProject.genruntimeconfig.cache
 D:\TenderProject\TenderProject\obj\Debug\netcoreapp3.1\PassportTender.g.cs
 D:\TenderProject\TenderProject\obj\Debug\netcoreapp3.1\PassportTender.baml
-D:\TenderProject\TenderProject\obj\Debug\netcoreapp3.1\AddTenderWindow.g.cs
-D:\TenderProject\TenderProject\obj\Debug\netcoreapp3.1\AddTenderWindow.baml
 D:\TenderProject\TenderProject\bin\Debug\netcoreapp3.1\SystemSettings\SystemSetting.json
 D:\TenderProject\TenderProject\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
 D:\TenderProject\TenderProject\obj\Debug\netcoreapp3.1\TenderProject.csproj.CopyComplete

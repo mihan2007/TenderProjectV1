@@ -125,7 +125,7 @@ namespace TenderProject {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/TenderProject;V1.0.0.0;component/passporttender.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/TenderProject;component/passporttender.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\PassportTender.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

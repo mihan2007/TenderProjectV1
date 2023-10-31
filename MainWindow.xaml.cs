@@ -10,6 +10,7 @@ using TenderProject.Infrastructure;
 using System.Linq;
 using System.Text.Json;
 
+
 namespace TenderProject
 {
 
@@ -28,7 +29,7 @@ namespace TenderProject
             Loaded += MainWindow_Loaded;
 
             SearchButton.Click += SearchButtonClick;
-
+            //GenerateJsonData(@"C:\tenderproject\123456.json");
         }
 
         public  void MainWindow_Loaded(object sender, RoutedEventArgs e)
@@ -116,14 +117,14 @@ namespace TenderProject
             }
             else
             {
-                var filteredTenders = tenderItems
-                    .Where(tender =>
-                        tender.Customer.ToLower().Contains(searchTerm) ||
-                        tender.Subject.ToLower().Contains(searchTerm) ||
-                        tender.ExpirationDate.ToLower().Contains(searchTerm) ||
-                        tender.Law.ToLower().Contains(searchTerm))
-                    .ToList();
-                TenderList.ItemsSource = filteredTenders;
+                //var filteredTenders = tenderItems
+                //    .Where(tender =>
+                        //tender.Customer.Name.ToLower().Contains(searchTerm) ||
+                        //tender.Subject.ToLower().Contains(searchTerm) ||
+                        //tender.ExpirationDate.ToLower().Contains(searchTerm) ||
+                        //tender.Law.ToLower().Contains(searchTerm))
+                    //.ToList();
+                //TenderList.ItemsSource = filteredTenders;
             }
         }
 
@@ -150,6 +151,54 @@ namespace TenderProject
         private void ExportToExcelButtonClick(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("экспорт");
+        }
+
+        public static void CreateEmptyJsonFile(string filePath)
+        {
+            ProcedureInfo procedureInfo = new ProcedureInfo();
+            Customer customer = new Customer();
+
+            // Создаем объект, который содержит оба класса
+            var data = new { ProcedureInfo = procedureInfo, Customer = customer };
+
+            // Опции для форматирования JSON
+            var jsonOptions = new JsonSerializerOptions
+            {
+                WriteIndented = true // Это делает JSON читаемым
+            };
+
+            // Сериализуем объект в JSON
+            string json = JsonSerializer.Serialize(data, jsonOptions);
+
+            // Указываем путь и имя файла, куда сохранить JSON
+            File.WriteAllText(filePath, json);
+        }
+
+        static void GenerateJsonData(string filePath)
+        {
+            // Создаем экземпляры классов с пустыми полями
+            TenderInfo tenderInfo = new TenderInfo();
+            Customer customer = new Customer();
+            ProcedureInfo procedureInfo = new ProcedureInfo();
+
+            tenderInfo.ProcedureType = procedureInfo;
+            tenderInfo.Customer = customer;
+            tenderInfo.FilePath = filePath;
+
+            // Настройки сериализации JSON
+            var jsonOptions = new JsonSerializerOptions
+            {
+                WriteIndented = true
+            };
+
+            // Сериализуем объект в JSON
+            var list = new List<TenderInfo>() { tenderInfo };
+            string json = JsonSerializer.Serialize(list, jsonOptions);
+            
+            // Записываем JSON в файл
+            File.WriteAllText(filePath, json);
+
+            Console.WriteLine($"JSON файл создан по пути: {filePath}");
         }
     }
 }

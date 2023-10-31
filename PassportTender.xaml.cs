@@ -23,11 +23,7 @@ namespace TenderProject
 
         public void InitializeTenderInfo(TenderInfo tenderInfo)
         {
-            DataSaver dataSaver = new DataSaver();
-            string filePath = "D:\\TenderProject\\TenderProject\\tenderData.json";
-
-            // Сохранение данных в JSON
-            dataSaver.CreateEmptyJsonFile(filePath);
+            
             DataContext = tenderInfo;
             _tenderInfo = tenderInfo;
 
@@ -80,6 +76,7 @@ namespace TenderProject
 
         private void SaveData(string filePath, bool ShowSaveWinodw)
         {
+
             try
             {
                 if (string.IsNullOrEmpty(filePath))
@@ -94,12 +91,18 @@ namespace TenderProject
                 {
             new
             {
-                Subject = SubjectTextBox.Text,
-                Customer = CustomerTextBox.Text,
-                ExpirationDate = ExpirationDateTextBox.Text,
-                Law = LawTextBox.Text,
+
                 FilePath = filePath,
                 TenderStatus = selectedTenderStatus,
+
+                ProcedureInfo = new
+                {
+
+                },
+                Customer = new
+                {
+                    Name = CustomerTextBox.Text
+                },
 
             }
         };

@@ -1,12 +1,5 @@
 {
-  "Subject": null,
-  "Customer": null,
-  "ExpirationDate": null,
-  "Law": null,
-  "Link": null,
-  "FilePath": null,
-  "TenderStatus": null,
-  "ProcedureType": {
+    "ProcedureType": {
     "Number": null,
     "Type": null,
     "Subject": null,

@@ -23,7 +23,7 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
 
-                <Button Content="Добавить" x:Name="CreateNewTender" Click="Button_Click" Width="100" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" Background="White" Margin="0,0,5,0"/>
+                <Button Content="Добавить" x:Name="CreateNewTender" Click="Button_Click" Width="100" HorizontalAlignment="Center" Background="White" Height="30" VerticalAlignment="Top"/>
 
                 <Button Content="Удалить" x:Name="DeletTender_Click" Click ="DeletTenderClick" Width="100" Height="30" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Background="White" Margin="0,0,5,0"/>
 
@@ -42,7 +42,7 @@
                     <ListBox.ItemTemplate>
                         <DataTemplate>
                             <Grid ShowGridLines="true" Background="White">
-                                    <Grid.ColumnDefinitions>
+                                <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="250"/>
                                     <ColumnDefinition Width="30"/>
                                     <ColumnDefinition Width="auto"/>
@@ -61,16 +61,10 @@
                                 <TextBlock Text="Дата аукциона" Grid.Row="2" Grid.Column="4" Margin="5"/>
                                 <TextBlock Text="Дата подведения итогов" Grid.Row="3" Grid.Column="4" Margin="5"/>
 
-                                
+
                                 <TextBlock Text="30.09.2023" Grid.Row="2" Grid.Column="5" Margin="5"/>
                                 <TextBlock Text="16.10.2023" Grid.Row="3" Grid.Column="5" Margin="5"/>
-
-                                <TextBlock Text="{Binding Customer}" Grid.Row="2" Grid.Column="0" Margin="5" TextWrapping="Wrap" />
-                                <TextBlock Text="{Binding Subject}" Grid.Row="1" Grid.Column="0" Margin="5"/>
-                                <TextBlock Text="{Binding Law}" Grid.Row="3" Grid.Column="0" Margin="5"/>
-                                <TextBlock Text="{Binding Link}" Grid.Row="1" Grid.Column="1" Margin="5"/>
-                                <TextBlock Text="{Binding ExpirationDate}" Grid.Row="1" Grid.Column="6" Margin="5"/>
-                                <TextBlock Text="{Binding TenderStatus}" Grid.Row="0" Grid.Column="0" Margin="5"/>
+                                <TextBlock Text="{Binding Customer.Name}" Grid.Row="2" Grid.Column="0" Margin="5" TextWrapping="Wrap" />
                             </Grid>
                         </DataTemplate>
                     </ListBox.ItemTemplate>
