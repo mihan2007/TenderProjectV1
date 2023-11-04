@@ -10,6 +10,7 @@ namespace TenderProject
 {
     public partial class PassportTender : Window
     {
+ 
         private TenderInfo _tenderInfo;
         private bool _EditionMode;
 
@@ -89,23 +90,47 @@ namespace TenderProject
 
                 var jsonObject = new[]
                 {
-            new
-            {
+                    new
+                    {
+                        FilePath = filePath,
+                        TenderStatus = selectedTenderStatus,
 
-                FilePath = filePath,
-                TenderStatus = selectedTenderStatus,
+                        ProcedureInfo = new
+                        {
+                            Number =  ProcuderNumberTextBox.Text,
+                            Law =  ProcedureLawTextBox.Text,
+                            Type =  ProcedureTypeTextBox.Text,
+                            Subject =  ProcedureTypeSubjectTextBox.Text,
+                            Stage =  ProcedureStageTextBox.Text,
+                            SmallBusinessProcedure =  SmallBusinessProcedureTextBox.Text,
+                            TradePlatformName =  ProcedureTradePlatformNameTextBox.Text,
+                            TradePlatformSite =  "N/A",
+                            ProcedureLink =  ProcedureLinkTextBox.Text,
+                            PublicationDate =  ProcedurePublicationDateTextBox.Text,
+                            ApplicationDeadlineDate =  ProcedureApplicationDeadlineDateTextBox.Text,
+                            AuctionDate =  ProcedureAuctionDateTextBox.Text,
+                            SummarizingDate =  ProcedureSummarizingDateTextBox.Text,
+                            InitialPrice =  ProcedureInitialPriceTextBox.Text,
+                            ApplicationSecurityDeposit = ProcedureTradePlatformNameTextBox.Text,
+                            ContractSecurityDeposit =  ProcedureApplicationSecurityDepositTextBox.Text
 
-                ProcedureInfo = new
-                {
+                        },
+                        Customer = new
+                        {
+                            Name =  CustomerNameTextBox.Text,
+                            PostAdress =  "n/a",
+                            INN =  CustomerInnTexBox.Text,
+                            KPP =  CustomerKppTexBox.Text,
+                            OGRN =  "null",
+                            Adress =  "null",
+                            ResponsiblePerson =  "null",
+                            Email =  "null",
+                            PhoneNumber =  "null",
+                            Comments =  "null"
 
-                },
-                Customer = new
-                {
-                    Name = CustomerTextBox.Text
-                },
-
-            }
-        };
+                        },
+                    }
+                };
 
                 string jsonData = JsonSerializer.Serialize(jsonObject, new JsonSerializerOptions { WriteIndented = true });
                 File.WriteAllText(filePath, jsonData);
@@ -173,7 +198,7 @@ namespace TenderProject
  
         private void SetReadOnlyForAllTextFields(bool isReadOnly)
         {
-            foreach (UIElement child in MainInfoPanel.Children)
+            foreach (UIElement child in MainProcedureInfoBox.Children)
             {
                 if (child is TextBox textBox)
                 {

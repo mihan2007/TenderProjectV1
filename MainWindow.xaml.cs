@@ -181,7 +181,7 @@ namespace TenderProject
             Customer customer = new Customer();
             ProcedureInfo procedureInfo = new ProcedureInfo();
 
-            tenderInfo.ProcedureType = procedureInfo;
+            tenderInfo.ProcedureInfo = procedureInfo;
             tenderInfo.Customer = customer;
             tenderInfo.FilePath = filePath;
 
