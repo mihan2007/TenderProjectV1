@@ -111,8 +111,8 @@ namespace TenderProject
                             AuctionDate =  ProcedureAuctionDateTextBox.Text,
                             SummarizingDate =  ProcedureSummarizingDateTextBox.Text,
                             InitialPrice =  ProcedureInitialPriceTextBox.Text,
-                            ApplicationSecurityDeposit = ProcedureTradePlatformNameTextBox.Text,
-                            ContractSecurityDeposit =  ProcedureApplicationSecurityDepositTextBox.Text
+                            ApplicationSecurityDeposit = ProcedureApplicationSecurityDepositTextBox.Text,
+                            ContractSecurityDeposit =  ProcedureContractSecurityDepositTextBox.Text
 
                         },
                         Customer = new
@@ -152,28 +152,32 @@ namespace TenderProject
         public void ReadAndAddTenderStatus(TenderInfo tenderInfo)
         {
             var tenderStatuses = new System.Collections.ObjectModel.ObservableCollection<string>();
-            string jsonContent = File.ReadAllText(MainWindow.SytemSettingFilePath);
-            SystemSettings systemInfo = JsonSerializer.Deserialize<SystemSettings>(jsonContent);
+            try
+            {
+                string jsonContent = File.ReadAllText(MainWindow.SytemSettingFilePath);
+                SystemSettings systemInfo = JsonSerializer.Deserialize<SystemSettings>(jsonContent);
 
-            if (tenderInfo == null)
-            {
-                TenderStatus.ItemsSource = tenderStatuses;
-                SetReadOnlyForAllTextFields(false);
-            }
-            else
-            {
-                TenderStatus.SelectedItem = tenderInfo.TenderStatus;
-                TenderStatus.ItemsSource = tenderStatuses;
-            }
-
-            if (systemInfo != null && systemInfo.Status != null)
-            {
-                foreach (var status in systemInfo.Status.Items)
+                if (systemInfo != null && systemInfo.Status != null)
                 {
-                    tenderStatuses.Add(status);
+                    foreach (var status in systemInfo.Status.Items)
+                    {
+                        tenderStatuses.Add(status);
+                    }
                 }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error reading system settings: {ex.Message}");
+            }
+
+            TenderStatus.ItemsSource = tenderStatuses;
+
+            if (tenderInfo != null)
+            {
+                TenderStatus.SelectedItem = tenderInfo.TenderStatus;
+            }
         }
+
 
         private void PassportTender_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
@@ -199,6 +203,14 @@ namespace TenderProject
         private void SetReadOnlyForAllTextFields(bool isReadOnly)
         {
             foreach (UIElement child in MainProcedureInfoBox.Children)
+            {
+                if (child is TextBox textBox)
+                {
+                    textBox.IsReadOnly = isReadOnly;
+                }
+            }
+
+            foreach (UIElement child in CustomerInfoBox.Children)
             {
                 if (child is TextBox textBox)
                 {
