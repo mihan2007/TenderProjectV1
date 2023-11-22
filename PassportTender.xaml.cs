@@ -111,7 +111,7 @@ namespace TenderProject
                             AuctionDate =  ProcedureAuctionDateTextBox.Text,
                             SummarizingDate =  ProcedureSummarizingDateTextBox.Text,
                             InitialPrice =  ProcedureInitialPriceTextBox.Text,
-                            ApplicationSecurityDeposit = ProcedureApplicationSecurityDepositTextBox.Text,
+                            AplicationSecurityDeposit = ProcedureAplicationSecurityDepositTextBox.Text,
                             ContractSecurityDeposit =  ProcedureContractSecurityDepositTextBox.Text
 
                         },

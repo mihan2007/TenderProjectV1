@@ -16,7 +16,7 @@
         public string AuctionDate { get; set; }
         public string SummarizingDate { get; set; }
         public string InitialPrice { get; set; }
-        public string ApplicationSecurityDeposit { get; set; }
+        public string AplicationSecurityDeposit { get; set; }
         public string ContractSecurityDeposit { get; set; }
 
     }

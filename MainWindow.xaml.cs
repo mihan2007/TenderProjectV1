@@ -119,11 +119,8 @@ namespace TenderProject
             {
                 //var filteredTenders = tenderItems
                 //    .Where(tender =>
-                        //tender.Customer.Name.ToLower().Contains(searchTerm) ||
-                        //tender.Subject.ToLower().Contains(searchTerm) ||
-                        //tender.ExpirationDate.ToLower().Contains(searchTerm) ||
-                        //tender.Law.ToLower().Contains(searchTerm))
-                    //.ToList();
+                //Customer.Name.ToLower().Contains(searchTerm)
+                //.ToList());
                 //TenderList.ItemsSource = filteredTenders;
             }
         }
