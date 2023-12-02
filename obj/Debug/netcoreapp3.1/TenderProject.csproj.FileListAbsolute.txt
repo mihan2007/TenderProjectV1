@@ -23,3 +23,10 @@ D:\TenderProject\TenderProject\obj\Debug\netcoreapp3.1\PassportTender.baml
 D:\TenderProject\TenderProject\bin\Debug\netcoreapp3.1\SystemSettings\SystemSetting.json
 D:\TenderProject\TenderProject\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
 D:\TenderProject\TenderProject\obj\Debug\netcoreapp3.1\TenderProject.csproj.CopyComplete
+D:\TenderProject\TenderProject\bin\Debug\netcoreapp3.1\ClosedXML.dll
+D:\TenderProject\TenderProject\bin\Debug\netcoreapp3.1\DocumentFormat.OpenXml.dll
+D:\TenderProject\TenderProject\bin\Debug\netcoreapp3.1\ExcelNumberFormat.dll
+D:\TenderProject\TenderProject\bin\Debug\netcoreapp3.1\Irony.dll
+D:\TenderProject\TenderProject\bin\Debug\netcoreapp3.1\SixLabors.Fonts.dll
+D:\TenderProject\TenderProject\bin\Debug\netcoreapp3.1\System.IO.Packaging.dll
+D:\TenderProject\TenderProject\bin\Debug\netcoreapp3.1\XLParser.dll

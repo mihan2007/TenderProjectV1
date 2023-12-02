@@ -9,6 +9,8 @@ using TenderProject.Model;
 using TenderProject.Infrastructure;
 using System.Linq;
 using System.Text.Json;
+using ClosedXML.Excel;
+using Microsoft.Win32;
 
 
 namespace TenderProject
@@ -29,12 +31,16 @@ namespace TenderProject
             Loaded += MainWindow_Loaded;
 
             SearchButton.Click += SearchButtonClick;
+
+           // ReadAndSetStatusInTextBox(MainWindow.SytemSettingFilePath);
+
             //GenerateJsonData(@"C:\tenderproject\123456.json");
         }
 
         public  void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
             string[] filePaths = FileHelper.GetFilesInDirectoryWithExtension(DirectoryPath, Extension);
+            var statuses = ReadAndSetStatusInTextBox(MainWindow.SytemSettingFilePath);
 
             foreach (string filePath in filePaths)
             {
@@ -44,7 +50,9 @@ namespace TenderProject
                     List<TenderInfo> tenders = JsonSerializer.Deserialize<List<TenderInfo>>(jsonContent);
                     if (tenders != null)
                     {
+                        
                         tenderItems.AddRange(tenders);
+                        
                     }
                 }
                 catch (Exception ex)
@@ -54,12 +62,14 @@ namespace TenderProject
             }
 
             TenderList.ItemsSource = tenderItems;
+            
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             PassportTender passportTender = new PassportTender();
             passportTender.InitializeTenderInfo(null);
+            passportTender.SetReadOnlyForAllTextFields(false);
             passportTender.Show();
         }
 
@@ -68,6 +78,7 @@ namespace TenderProject
             var selectedTender = (TenderInfo)TenderList.SelectedItem;
             var passportTender = new PassportTender();
             passportTender.InitializeTenderInfo(selectedTender);
+
             passportTender.Show();
         }
 
@@ -117,11 +128,14 @@ namespace TenderProject
             }
             else
             {
-                //var filteredTenders = tenderItems
-                //    .Where(tender =>
-                //Customer.Name.ToLower().Contains(searchTerm)
-                //.ToList());
-                //TenderList.ItemsSource = filteredTenders;
+                var filteredTenders = tenderItems
+                    .Where(tender =>
+                        tender.Customer.Name.ToLower().Contains(searchTerm) ||
+                        tender.ProcedureInfo.Number.ToLower().Contains(searchTerm) ||
+                        tender.ProcedureInfo.Subject.ToLower().Contains(searchTerm))
+                    .ToList();
+
+                TenderList.ItemsSource = filteredTenders;
             }
         }
 
@@ -147,7 +161,47 @@ namespace TenderProject
         }
         private void ExportToExcelButtonClick(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("экспорт");
+            //ExcelExporter.ExportToExcel(this, TenderInfo);
+            SaveFileDialog saveFileDialog = new SaveFileDialog
+            {
+                Filter = "Excel Files|*.xlsx|All Files|*.*",
+                Title = "Выберите место сохранения файла",
+                FileName = "exported_data.xlsx"
+            };
+
+            if (saveFileDialog.ShowDialog() == true)
+            {
+                string filePath = saveFileDialog.FileName;
+
+                if (IsFileInUse(filePath))
+                {
+                    MessageBox.Show("Файл занят другим процессом. Выберите другое место и/или имя файла.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                    return;
+                }
+
+                // Создание нового рабочего книги Excel
+                using (var workbook = new XLWorkbook())
+                {
+                    // Добавление листа в книгу
+                    var worksheet = workbook.Worksheets.Add("Sheet1");
+
+                    // Получение данных из TenderList и запись в Excel
+                    int row = 1;
+                    foreach (var tender in tenderItems)
+                    {
+                        worksheet.Cell($"A{row}").Value = tender.Customer.Name;
+                        //worksheet.Cell($"B{row}").Value = tender.ProcedureInfo.Number;
+                        //worksheet.Cell($"C{row}").Value = tender.ProcedureInfo.Subject;
+                        // ... добавьте другие поля, если необходимо
+                        row++;
+                    }
+
+                    // Сохранение книги в выбранное место
+                    workbook.SaveAs(filePath);
+                }
+
+                MessageBox.Show($"Данные экспортированы в Excel-файл: {filePath}", "Успех");
+            }
         }
 
         public static void CreateEmptyJsonFile(string filePath)
@@ -197,5 +251,45 @@ namespace TenderProject
 
             Console.WriteLine($"JSON файл создан по пути: {filePath}");
         }
+        private List<string> ReadAndSetStatusInTextBox(string filePath)
+        {
+            List<string> tenderStatuses = new List<string>();
+            
+            try
+            {
+                string jsonContent = File.ReadAllText(filePath);
+                SystemSettings systemInfo = JsonSerializer.Deserialize<SystemSettings>(jsonContent);
+
+                if (systemInfo != null && systemInfo.Status != null && systemInfo.Status.Items.Count > 0)
+                {
+                    tenderStatuses = systemInfo.Status.Items;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error reading data from file: {ex.Message}");
+            }
+
+            return tenderStatuses;
+        }
+
+        private bool IsFileInUse(string filePath)
+        {
+            try
+            {
+                using (FileStream fs = new FileStream(filePath, FileMode.Open, FileAccess.ReadWrite, FileShare.None))
+                {
+                    // Если файл открывается без ошибок, это значит, что он не занят другим процессом
+                    return false;
+                }
+            }
+            catch (IOException)
+            {
+                // Если происходит ошибка, это означает, что файл занят другим процессом
+                return true;
+            }
+        }
+
+
     }
 }

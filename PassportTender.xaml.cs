@@ -12,7 +12,8 @@ namespace TenderProject
     {
  
         private TenderInfo _tenderInfo;
-        private bool _EditionMode;
+        public bool _EditionMode;
+        private long _uniqNumber;
 
         MainWindow mainWindow = Application.Current.MainWindow as MainWindow;
 
@@ -41,7 +42,6 @@ namespace TenderProject
                     MessageBox.Show($"Error loading system info: {ex}");
                 }
             }
-
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -65,16 +65,12 @@ namespace TenderProject
                 {
                     CreateNewTenderFile();
                 }
+
                 SetReadOnlyForAllTextFields(true);
             }
         }
 
-        private int countFilesInFolder(string folderPath)
-        {
-            string[] files = Directory.GetFiles(folderPath);
-            return files.Length;
-        }
-
+    
         private void SaveData(string filePath, bool ShowSaveWinodw)
         {
 
@@ -200,7 +196,7 @@ namespace TenderProject
             }
         }
  
-        private void SetReadOnlyForAllTextFields(bool isReadOnly)
+        public void SetReadOnlyForAllTextFields(bool isReadOnly)
         {
             foreach (UIElement child in MainProcedureInfoBox.Children)
             {
@@ -221,8 +217,10 @@ namespace TenderProject
 
         private void CreateNewTenderFile()
         {
-            string newJsonFilePath = MainWindow.DirectoryPath + (countFilesInFolder(MainWindow.DirectoryPath) + 1) + "." + MainWindow.Extension;
+            _uniqNumber = GenerateUniqueFilename();
+            string newJsonFilePath = MainWindow.DirectoryPath + (GenerateUniqueFilename() + "." + MainWindow.Extension);
             SaveData(newJsonFilePath, true);
+
         }
 
         private void CreateSystemSettingsFile()
@@ -240,6 +238,13 @@ namespace TenderProject
             string jsonData = JsonSerializer.Serialize(systemSettings, new JsonSerializerOptions { WriteIndented = true });
             File.WriteAllText(MainWindow.SytemSettingFilePath, jsonData);
         }
+
+        static long GenerateUniqueFilename()
+        {
+            string timestamp = DateTime.Now.ToString("yyyyMMddHHmmss");
+            return long.Parse(timestamp);
+        }
+
     }
 }
 
