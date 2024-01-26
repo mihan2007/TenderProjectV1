@@ -23,7 +23,7 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
 
-                <Button Content="Добавить" x:Name="CreateNewTender" Click="Button_Click" Width="100" HorizontalAlignment="Center" Background="White" Height="30" VerticalAlignment="Top"/>
+                <Button Content="Добавить" x:Name="CreateNewTender" Click="Button_Click" Width="100" HorizontalAlignment="Left"  Height="30" VerticalAlignment="Top" Background="White" Margin="0,0,5,0"/>
 
                 <Button Content="Удалить" x:Name="DeletTender_Click" Click ="DeletTenderClick" Width="100" Height="30" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Background="White" Margin="0,0,5,0"/>
 

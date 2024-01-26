@@ -27,9 +27,11 @@
                 <Label Content=""/>
                 
                 <ComboBox x:Name="TenderStatus" Width="100"  HorizontalAlignment="Left" Grid.Row="0" Grid.Column="0"/>
+                              
+                <TextBox Text="{Binding ProcedureInfo.Subject}" x:Name="ProcedureTypeSubjectTextBox" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2"/>
 
-                <TextBox Text="{Binding ProcedureInfo.Subject}" x:Name="ProcedureTypeSubjectTextBox" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"/>
-
+                <Label Content="Предмет закупки" Grid.Row="1" Grid.Column="0"/>
+                
                 <TextBox Text="{Binding ProcedureInfo.Type}" x:Name="ProcedureTypeTextBox" Grid.Column="0" Grid.Row="2"/>
                 <TextBox Text="{Binding ProcedureInfo.Number}" x:Name="ProcuderNumberTextBox" Grid.Column="1" Grid.Row="2"/>
                 <TextBox Text="{Binding ProcedureInfo.Law}" x:Name="ProcedureLawTextBox" Grid.Column="2" Grid.Row="2"/>
