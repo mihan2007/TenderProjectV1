@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 
-namespace TenderProject.Model
+namespace TenderProject.Model.BuisnessDomain
 {
     public class TenderInfo
     {

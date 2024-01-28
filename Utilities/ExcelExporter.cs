@@ -5,7 +5,7 @@ using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 
-namespace TenderProject
+namespace TenderProject.Utilities
 {
     public static class ExcelExporter
     {
@@ -42,6 +42,6 @@ namespace TenderProject
             }
         }
 
-       
+
     }
 }

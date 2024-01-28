@@ -1,4 +1,4 @@
-﻿namespace TenderProject.Model
+﻿namespace TenderProject.Model.BuisnessDomain
 {
     public class Customer
     {

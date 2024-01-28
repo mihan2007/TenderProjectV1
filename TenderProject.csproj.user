@@ -7,15 +7,15 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="PassportTender.xaml.cs">
+    <Compile Update="UI\PassportTender.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Page Update="MainWindow.xaml">
+    <Page Update="UI\MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="PassportTender.xaml">
+    <Page Update="UI\PassportTender.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

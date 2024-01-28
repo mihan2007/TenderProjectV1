@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace TenderProject.Model
+namespace TenderProject.Model.System
 {
     public class TenderStatus
     {

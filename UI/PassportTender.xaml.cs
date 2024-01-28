@@ -6,6 +6,8 @@ using System.Text.Json;
 using System.Collections.Generic;
 using System.Windows.Controls;
 using System.Windows.Media;
+using TenderProject.Model.BuisnessDomain;
+using TenderProject.Model.System;
 namespace TenderProject
 {
     public partial class PassportTender : Window
@@ -42,15 +44,17 @@ namespace TenderProject
                     MessageBox.Show($"Error loading system info: {ex}");
                 }
             }
+
+ 
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             if (!_EditionMode)
             {
-                _EditionMode = true;
                 EditBeutton.Content = "Сохранить";
                 SetReadOnlyForAllTextFields(false);
+                _EditionMode = true;
             }
             else
             {

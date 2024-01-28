@@ -1,4 +1,4 @@
-namespace TenderProject.Model
+namespace TenderProject.Model.System
 {
     public class SystemSettings
     {

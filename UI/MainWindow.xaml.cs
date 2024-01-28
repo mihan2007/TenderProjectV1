@@ -5,12 +5,13 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Collections.ObjectModel;
-using TenderProject.Model;
-using TenderProject.Infrastructure;
 using System.Linq;
 using System.Text.Json;
 using ClosedXML.Excel;
 using Microsoft.Win32;
+using TenderProject.Model.BuisnessDomain;
+using TenderProject.Model.System;
+using TenderProject.Utilities;
 
 
 namespace TenderProject
@@ -70,6 +71,7 @@ namespace TenderProject
             PassportTender passportTender = new PassportTender();
             passportTender.InitializeTenderInfo(null);
             passportTender.SetReadOnlyForAllTextFields(false);
+            passportTender._EditionMode = true;
             passportTender.Show();
         }
 

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 
-namespace TenderProject.Infrastructure
+namespace TenderProject.Utilities
 {
     public class FileHelper
     {
