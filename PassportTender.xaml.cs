@@ -1,13 +1,12 @@
 ﻿using System;
 using System.IO;
 using System.Windows;
-using TenderProject.Model;
 using System.Text.Json;
 using System.Collections.Generic;
 using System.Windows.Controls;
-using System.Windows.Media;
 using TenderProject.Model.BuisnessDomain;
 using TenderProject.Model.System;
+
 namespace TenderProject
 {
     public partial class PassportTender : Window

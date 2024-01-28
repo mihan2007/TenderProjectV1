@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-
+﻿
 namespace TenderProject.Model.BuisnessDomain
 {
     public class TenderInfo
