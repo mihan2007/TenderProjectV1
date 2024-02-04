@@ -18,9 +18,12 @@ namespace TenderProject
 
     public partial class MainWindow : Window
     {
+
         public const string DirectoryPath = @"C:\tenderproject\";
-        public const string Extension = "json";
+
         public const string SytemSettingFilePath = "SystemSettings\\SystemSetting.json";
+
+        private TendersCollection _tendersCollection;
 
         private List<TenderInfo> tenderItems = new List<TenderInfo>();
 
@@ -39,29 +42,11 @@ namespace TenderProject
 
         public  void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
-            string[] filePaths = FileHelper.GetFilesInDirectoryWithExtension(DirectoryPath, Extension);
-            var statuses = ReadAndSetStatusInTextBox(MainWindow.SytemSettingFilePath);
+            _tendersCollection = new TendersCollection();
 
-            foreach (string filePath in filePaths)
-            {
-                try
-                {
-                    string jsonContent = File.ReadAllText(filePath);
-                    List<TenderInfo> tenders = JsonSerializer.Deserialize<List<TenderInfo>>(jsonContent);
-                    if (tenders != null)
-                    {
-                        
-                        tenderItems.AddRange(tenders);
-                        
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"Error deserializing file {filePath}: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-                }
-            }
+            _tendersCollection.Load(DirectoryPath);
 
-            TenderList.ItemsSource = tenderItems;
+            TenderList.ItemsSource = _tendersCollection.Tenders;
             
         }
 
