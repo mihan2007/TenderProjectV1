@@ -25,8 +25,7 @@ namespace TenderProject
 
         private TendersCollection _tendersCollection;
 
-        private List<TenderInfo> tenderItems = new List<TenderInfo>();
-
+        public event Action SelfLoaded;
         public MainWindow()
         {
             InitializeComponent();
@@ -40,14 +39,23 @@ namespace TenderProject
             //GenerateJsonData(@"C:\tenderproject\123456.json");
         }
 
-        public  void MainWindow_Loaded(object sender, RoutedEventArgs e)
+        private void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
             _tendersCollection = new TendersCollection();
 
+            UpdateTendersInternal();
+
+        }
+        public void UpdateTenderList()
+        {
+            UpdateTendersInternal();
+        }
+
+        private void UpdateTendersInternal()
+        {
             _tendersCollection.Load(DirectoryPath);
 
             TenderList.ItemsSource = _tendersCollection.Tenders;
-            
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -68,32 +76,7 @@ namespace TenderProject
             passportTender.Show();
         }
 
-        public void UpdateTenderList()
-        {
-            string[] filePaths = FileHelper.GetFilesInDirectoryWithExtension(DirectoryPath, Extension);
-            TenderList.ItemsSource = null;
-            tenderItems.Clear();
 
-            foreach (var filePath in filePaths)
-            {
-                try
-                {
-                    string jsonContent = File.ReadAllText(filePath);
-                    List<TenderInfo> tenders = JsonSerializer.Deserialize<List<TenderInfo>>(jsonContent);
-                    if (tenders != null)
-                    {
-                        tenderItems.AddRange(tenders);
-                    }
-                }
-                catch (Exception ex)
-                {
-
-                    MessageBox.Show($"Error deserializing file {filePath}: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-                }
-            }
-
-            TenderList.ItemsSource = tenderItems;
-        }
 
         private void TextBox_GotFocus(object sender, RoutedEventArgs e)
         {
@@ -110,11 +93,11 @@ namespace TenderProject
 
             if (string.IsNullOrEmpty(searchTerm))
             {
-                TenderList.ItemsSource = tenderItems;
+                TenderList.ItemsSource = _tendersCollection.Tenders;
             }
             else
             {
-                var filteredTenders = tenderItems
+                var filteredTenders = _tendersCollection.Tenders
                     .Where(tender =>
                         tender.Customer.Name.ToLower().Contains(searchTerm) ||
                         tender.ProcedureInfo.Number.ToLower().Contains(searchTerm) ||
@@ -173,7 +156,7 @@ namespace TenderProject
 
                     // Получение данных из TenderList и запись в Excel
                     int row = 1;
-                    foreach (var tender in tenderItems)
+                    foreach (var tender in _tendersCollection.Tenders)
                     {
                         worksheet.Cell($"A{row}").Value = tender.Customer.Name;
                         //worksheet.Cell($"B{row}").Value = tender.ProcedureInfo.Number;

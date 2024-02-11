@@ -221,7 +221,7 @@ namespace TenderProject
         private void CreateNewTenderFile()
         {
             _uniqNumber = GenerateUniqueFilename();
-            string newJsonFilePath = MainWindow.DirectoryPath + (GenerateUniqueFilename() + "." + MainWindow.Extension);
+            string newJsonFilePath = MainWindow.DirectoryPath + (GenerateUniqueFilename() + "." + TendersCollection.Extension);
             SaveData(newJsonFilePath, true);
 
         }
