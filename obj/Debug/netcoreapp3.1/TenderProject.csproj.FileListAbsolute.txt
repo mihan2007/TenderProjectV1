@@ -46,9 +46,13 @@ C:\Users\user\Documents\GitHub\TenderProjectV1\bin\Debug\netcoreapp3.1\SixLabors
 C:\Users\user\Documents\GitHub\TenderProjectV1\bin\Debug\netcoreapp3.1\System.IO.Packaging.dll
 C:\Users\user\Documents\GitHub\TenderProjectV1\bin\Debug\netcoreapp3.1\XLParser.dll
 C:\Users\user\Documents\GitHub\TenderProjectV1\obj\Debug\netcoreapp3.1\TenderProject.csproj.AssemblyReference.cache
+C:\Users\user\Documents\GitHub\TenderProjectV1\obj\Debug\netcoreapp3.1\MainWindow.g.cs
+C:\Users\user\Documents\GitHub\TenderProjectV1\obj\Debug\netcoreapp3.1\PassportTender.g.cs
 C:\Users\user\Documents\GitHub\TenderProjectV1\obj\Debug\netcoreapp3.1\App.g.cs
 C:\Users\user\Documents\GitHub\TenderProjectV1\obj\Debug\netcoreapp3.1\TenderProject_MarkupCompile.cache
 C:\Users\user\Documents\GitHub\TenderProjectV1\obj\Debug\netcoreapp3.1\TenderProject_MarkupCompile.lref
+C:\Users\user\Documents\GitHub\TenderProjectV1\obj\Debug\netcoreapp3.1\MainWindow.baml
+C:\Users\user\Documents\GitHub\TenderProjectV1\obj\Debug\netcoreapp3.1\PassportTender.baml
 C:\Users\user\Documents\GitHub\TenderProjectV1\obj\Debug\netcoreapp3.1\TenderProject.g.resources
 C:\Users\user\Documents\GitHub\TenderProjectV1\obj\Debug\netcoreapp3.1\TenderProject.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\user\Documents\GitHub\TenderProjectV1\obj\Debug\netcoreapp3.1\TenderProject.AssemblyInfoInputs.cache
@@ -59,7 +63,3 @@ C:\Users\user\Documents\GitHub\TenderProjectV1\obj\Debug\netcoreapp3.1\TenderPro
 C:\Users\user\Documents\GitHub\TenderProjectV1\obj\Debug\netcoreapp3.1\TenderProject.dll
 C:\Users\user\Documents\GitHub\TenderProjectV1\obj\Debug\netcoreapp3.1\TenderProject.pdb
 C:\Users\user\Documents\GitHub\TenderProjectV1\obj\Debug\netcoreapp3.1\TenderProject.genruntimeconfig.cache
-C:\Users\user\Documents\GitHub\TenderProjectV1\obj\Debug\netcoreapp3.1\UI\MainWindow.g.cs
-C:\Users\user\Documents\GitHub\TenderProjectV1\obj\Debug\netcoreapp3.1\UI\PassportTender.g.cs
-C:\Users\user\Documents\GitHub\TenderProjectV1\obj\Debug\netcoreapp3.1\UI\MainWindow.baml
-C:\Users\user\Documents\GitHub\TenderProjectV1\obj\Debug\netcoreapp3.1\UI\PassportTender.baml
