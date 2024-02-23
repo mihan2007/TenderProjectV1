@@ -34,9 +34,6 @@ namespace TenderProject
 
             SearchButton.Click += SearchButtonClick;
 
-           // ReadAndSetStatusInTextBox(MainWindow.SytemSettingFilePath);
-
-            //GenerateJsonData(@"C:\tenderproject\123456.json");
         }
 
         private void MainWindow_Loaded(object sender, RoutedEventArgs e)
@@ -46,37 +43,43 @@ namespace TenderProject
             UpdateTendersInternal();
 
         }
-        public void UpdateTenderList()
-        {
-            UpdateTendersInternal();
-        }
+
+
 
         private void UpdateTendersInternal()
         {
+            TenderList.ItemsSource = null;
+
             _tendersCollection.Load(DirectoryPath);
 
             TenderList.ItemsSource = _tendersCollection.Tenders;
+
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            OpenPassportTenderWindow(null, false);  
+        }
+
+        private void OpenPassportTenderWindow(TenderInfo source, bool isReadOnly)
+        {
             PassportTender passportTender = new PassportTender();
-            passportTender.InitializeTenderInfo(null);
-            passportTender.SetReadOnlyForAllTextFields(false);
-            passportTender._EditionMode = true;
+            passportTender.Initialize(source, isReadOnly);
+            passportTender.TenderChanged += PassportTender_TenderChanged;
             passportTender.Show();
+        }
+
+        private void PassportTender_TenderChanged(TenderInfo obj)
+        {
+            UpdateTendersInternal();
         }
 
         private void TenderList_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             var selectedTender = (TenderInfo)TenderList.SelectedItem;
-            var passportTender = new PassportTender();
-            passportTender.InitializeTenderInfo(selectedTender);
 
-            passportTender.Show();
+            OpenPassportTenderWindow(selectedTender, true);
         }
-
-
 
         private void TextBox_GotFocus(object sender, RoutedEventArgs e)
         {
@@ -119,14 +122,14 @@ namespace TenderProject
                 if (result == MessageBoxResult.Yes)
                 {
                     File.Delete(selectedTender.FilePath);
-                    UpdateTenderList();
+                    UpdateTendersInternal();
                 }
             }
             else
             {
                 MessageBox.Show("Select Tender");
             }
-           
+
         }
         private void ExportToExcelButtonClick(object sender, RoutedEventArgs e)
         {

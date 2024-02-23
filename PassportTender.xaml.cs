@@ -16,7 +16,7 @@ namespace TenderProject
         public bool _EditionMode;
         private long _uniqNumber;
 
-        MainWindow mainWindow = Application.Current.MainWindow as MainWindow;
+        public event Action<TenderInfo> TenderChanged;
 
         public PassportTender()
         {
@@ -24,13 +24,13 @@ namespace TenderProject
             Closing += PassportTender_Closing;
         }
 
-        public void InitializeTenderInfo(TenderInfo tenderInfo)
+        public void Initialize(TenderInfo tenderInfo, bool isReadOnly)
         {
             
             DataContext = tenderInfo;
             _tenderInfo = tenderInfo;
 
-            SetReadOnlyForAllTextFields(true);
+            SetReadOnlyForAllTextFields(isReadOnly);
 
             if (File.Exists(MainWindow.SytemSettingFilePath))
             {
@@ -43,8 +43,6 @@ namespace TenderProject
                     MessageBox.Show($"Error loading system info: {ex}");
                 }
             }
-
- 
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -134,7 +132,7 @@ namespace TenderProject
                 string jsonData = JsonSerializer.Serialize(jsonObject, new JsonSerializerOptions { WriteIndented = true });
                 File.WriteAllText(filePath, jsonData);
 
-                mainWindow.UpdateTenderList();
+                TenderChanged.Invoke(_tenderInfo);
 
                 if (ShowSaveWinodw)
                 {
