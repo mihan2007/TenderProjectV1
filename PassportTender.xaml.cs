@@ -14,7 +14,8 @@ namespace TenderProject
  
         private TenderInfo _tenderInfo;
         public bool _EditionMode;
-        private long _uniqNumber;
+        
+        
 
         public event Action<TenderInfo> TenderChanged;
 
@@ -24,28 +25,18 @@ namespace TenderProject
             Closing += PassportTender_Closing;
         }
 
-        public void Initialize(TenderInfo tenderInfo, bool isReadOnly)
+        public void Initialize(TenderInfo tenderInfo, bool isReadOnly) // инициализируем паспорт тендера
         {
             
             DataContext = tenderInfo;
             _tenderInfo = tenderInfo;
 
             SetReadOnlyForAllTextFields(isReadOnly);
+            //TenderStatusFill(tenderInfo.TenderStatus);
 
-            if (File.Exists(MainWindow.SytemSettingFilePath))
-            {
-                try
-                {
-                    ReadAndAddTenderStatus(tenderInfo);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"Error loading system info: {ex}");
-                }
-            }
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void EditModeButtonClick(object sender, RoutedEventArgs e)
         {
             if (!_EditionMode)
             {
@@ -60,7 +51,8 @@ namespace TenderProject
 
                 if (_tenderInfo != null)
                 {
-                    SaveData(_tenderInfo.FilePath,true);
+
+                   // tendersCollection.Save(MainWindow.DirectoryPath);
                 }
                 else
                 {
@@ -75,103 +67,25 @@ namespace TenderProject
         private void SaveData(string filePath, bool ShowSaveWinodw)
         {
 
-            try
-            {
-                if (string.IsNullOrEmpty(filePath))
-                {
-                    MessageBox.Show("File path is empty.");
-                    return;
-                }
-
-                string selectedTenderStatus = TenderStatus.SelectedItem as string;
-
-                var jsonObject = new[]
-                {
-                    new
-                    {
-                        FilePath = filePath,
-                        TenderStatus = selectedTenderStatus,
-
-                        ProcedureInfo = new
-                        {
-                            Number =  ProcuderNumberTextBox.Text,
-                            Law =  ProcedureLawTextBox.Text,
-                            Type =  ProcedureTypeTextBox.Text,
-                            Subject =  ProcedureTypeSubjectTextBox.Text,
-                            Stage =  ProcedureStageTextBox.Text,
-                            SmallBusinessProcedure =  SmallBusinessProcedureTextBox.Text,
-                            TradePlatformName =  ProcedureTradePlatformNameTextBox.Text,
-                            TradePlatformSite =  "N/A",
-                            ProcedureLink =  ProcedureLinkTextBox.Text,
-                            PublicationDate =  ProcedurePublicationDateTextBox.Text,
-                            ApplicationDeadlineDate =  ProcedureApplicationDeadlineDateTextBox.Text,
-                            AuctionDate =  ProcedureAuctionDateTextBox.Text,
-                            SummarizingDate =  ProcedureSummarizingDateTextBox.Text,
-                            InitialPrice =  ProcedureInitialPriceTextBox.Text,
-                            AplicationSecurityDeposit = ProcedureAplicationSecurityDepositTextBox.Text,
-                            ContractSecurityDeposit =  ProcedureContractSecurityDepositTextBox.Text
-
-                        },
-                        Customer = new
-                        {
-                            Name =  CustomerNameTextBox.Text,
-                            PostAdress =  "n/a",
-                            INN =  CustomerInnTexBox.Text,
-                            KPP =  CustomerKppTexBox.Text,
-                            OGRN =  "null",
-                            Adress =  "null",
-                            ResponsiblePerson =  "null",
-                            Email =  "null",
-                            PhoneNumber =  "null",
-                            Comments =  "null"
-
-                        },
-                    }
-                };
-
-                string jsonData = JsonSerializer.Serialize(jsonObject, new JsonSerializerOptions { WriteIndented = true });
-                File.WriteAllText(filePath, jsonData);
-
-                TenderChanged.Invoke(_tenderInfo);
-
-                if (ShowSaveWinodw)
-                {
-                    MessageBox.Show("Data saved successfully.");
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error saving data: {ex}");
-            }
+            TenderChanged.Invoke(_tenderInfo);
         }
 
 
-        public void ReadAndAddTenderStatus(TenderInfo tenderInfo)
+        public void TenderStatusFill(string currentStatus)
         {
             var tenderStatuses = new System.Collections.ObjectModel.ObservableCollection<string>();
-            try
-            {
-                string jsonContent = File.ReadAllText(MainWindow.SytemSettingFilePath);
-                SystemSettings systemInfo = JsonSerializer.Deserialize<SystemSettings>(jsonContent);
 
-                if (systemInfo != null && systemInfo.Status != null)
-                {
-                    foreach (var status in systemInfo.Status.Items)
-                    {
-                        tenderStatuses.Add(status);
-                    }
-                }
-            }
-            catch (Exception ex)
+            foreach (var status in SystemSettings.Instance.Status.Items)
             {
-                MessageBox.Show($"Error reading system settings: {ex.Message}");
+                tenderStatuses.Add(status);
             }
 
-            TenderStatus.ItemsSource = tenderStatuses;
+            TenderStatus.ItemsSource = SystemSettings.Instance.Status.Items;
 
-            if (tenderInfo != null)
+          
+            if (currentStatus != null)
             {
-                TenderStatus.SelectedItem = tenderInfo.TenderStatus;
+                TenderStatus.SelectedItem = currentStatus;
             }
         }
 
@@ -218,26 +132,11 @@ namespace TenderProject
 
         private void CreateNewTenderFile()
         {
-            _uniqNumber = GenerateUniqueFilename();
-            string newJsonFilePath = MainWindow.DirectoryPath + (GenerateUniqueFilename() + "." + TendersCollection.Extension);
-            SaveData(newJsonFilePath, true);
+            //_uniqNumber = GenerateUniqueFilename();
+            //string newJsonFilePath = MainWindow.DirectoryPath + (GenerateUniqueFilename() + "." + TendersCollection.Extension);
+            //SaveData(newJsonFilePath, true);
 
-        }
-
-        private void CreateSystemSettingsFile()
-        {
-            SystemSettings systemSettings = new SystemSettings();
-            
-            systemSettings.Status = new TenderStatus();
-            systemSettings.Status.Items = new List<string>
-            {
-                "Статус 1",
-                "Статус 2",
-                "Статус 3"
-            };
-
-            string jsonData = JsonSerializer.Serialize(systemSettings, new JsonSerializerOptions { WriteIndented = true });
-            File.WriteAllText(MainWindow.SytemSettingFilePath, jsonData);
+           
         }
 
         static long GenerateUniqueFilename()

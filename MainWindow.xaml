@@ -23,7 +23,7 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
 
-                <Button Content="Добавить" x:Name="CreateNewTender" Click="Button_Click" Width="100" HorizontalAlignment="Left"  Height="30" VerticalAlignment="Top" Background="White" Margin="0,0,5,0"/>
+                <Button Content="Добавить" x:Name="CreateNewTender" Click="AddNewTenderButtonClick" Width="100" HorizontalAlignment="Left" Background="White"/>
 
                 <Button Content="Удалить" x:Name="DeletTender_Click" Click ="DeletTenderClick" Width="100" Height="30" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Background="White" Margin="0,0,5,0"/>
 
@@ -56,11 +56,11 @@
                                     <RowDefinition Height="Auto"/>
                                     <RowDefinition Height="Auto"/>
                                 </Grid.RowDefinitions>
-                                
+
                                 <TextBlock Text="{Binding ProcedureInfo.InitialPrice}" Grid.Column="2" Margin="5"/>
                                 <TextBlock Text="НМЦК" Grid.Row="0" Grid.Column="1" Margin="5"/>
                                 <TextBlock Text="{Binding ProcedureInfo.Subject}" Grid.Row="1" Grid.Column="0" Margin="5" TextWrapping="Wrap" />
-                                
+
                                 <TextBlock Text="{Binding Customer.Name}" Grid.Row="2" Grid.Column="0" Margin="5"/>
                                 <TextBlock Text="{Binding ProcedureInfo.Number}" Grid.Row="0" Grid.Column="0" Margin="5"/>
                                 <TextBlock Text="{Binding ProcedureInfo.Law}" Grid.Row="3" Grid.Column="0" Margin="5"/>
@@ -73,8 +73,8 @@
 
                                 <TextBlock Text="МСП" Grid.Row="3" Grid.Column="1" Margin="5"/>
                                 <TextBlock Text="Статус" Grid.Row="0" Grid.Column="4" Margin="5" />
-                                <ComboBox x:Name="TenderStatusTextBox" Width="100"  HorizontalAlignment="Left" Grid.Row="0" Grid.Column="5" />
-                                
+                                <ComboBox x:Name="TenderStatusComboBox" Width="100"  HorizontalAlignment="Left" Grid.Row="0" Grid.Column="5" />
+
                                 <TextBlock Text="Дата окончания" Grid.Row="1" Grid.Column="4" Margin="5"/>
                                 <TextBlock Text="{Binding ProcedureInfo.ApplicationDeadlineDate}" Grid.Row="1" Grid.Column="5" Margin="5"/>
                                 <TextBlock Text="Дата аукциона" Grid.Row="2" Grid.Column="4" Margin="5"/>

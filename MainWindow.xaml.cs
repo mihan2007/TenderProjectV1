@@ -11,6 +11,7 @@ using Microsoft.Win32;
 using TenderProject.Model.BuisnessDomain;
 using TenderProject.Model.System;
 using TenderProject.Utilities;
+using System.Security.AccessControl;
 
 
 namespace TenderProject
@@ -19,59 +20,81 @@ namespace TenderProject
     public partial class MainWindow : Window
     {
 
-        public const string DirectoryPath = @"C:\tenderproject\";
+        public const string DirectoryPath = @"C:\tenderproject\1.json";
+
+       // public const string TenderFileName = "1.json";
 
         public const string SytemSettingFilePath = "SystemSettings\\SystemSetting.json";
 
         private TendersCollection _tendersCollection;
 
-        public event Action SelfLoaded;
+        public event Action SelfLoaded; // пример кастомного события
         public MainWindow()
         {
-            InitializeComponent();
+            InitializeComponent(); // инициализируем собственные визуальные компоненты, вызоы который требует фремфорк
             
-            Loaded += MainWindow_Loaded;
+            Loaded += MainWindow_Loaded; // пдписка на событие Loaded (стандртное событие любого окна) когда окно будет загруженно, будет вызван метод MainWindow_Loaded
 
-            SearchButton.Click += SearchButtonClick;
+            SearchButton.Click += SearchButtonClick; // подписка на событие при нажатии кнопуи поиска 
+
+           //GenerateJsonData(DirectoryPath);
 
         }
 
         private void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
-            _tendersCollection = new TendersCollection();
+            _tendersCollection = new TendersCollection(); // создаем экземпляр класса TendersCollection
 
-            UpdateTendersInternal();
+            _tendersCollection.Load(DirectoryPath); // загружаем tendercollection из DirectoryPath
 
+            UpdateTendersInternal(); // обновляем список тендеров 
+
+           // SelfLoaded.Invoke(); // эта строчка ничего не делает но показывает пример того как должно работать событие
         }
-
 
 
         private void UpdateTendersInternal()
         {
-            TenderList.ItemsSource = null;
+            TenderList.ItemsSource = null; // вызывает обновление окна, хак 
 
-            _tendersCollection.Load(DirectoryPath);
+            
 
-            TenderList.ItemsSource = _tendersCollection.Tenders;
+            TenderList.ItemsSource = _tendersCollection.Tenders; // визцальному компоненту TenderList, отображаещему список тендеров передаем только что загруженные тенедры 
+            
+           // for (int i = 0; i < TenderList.Items.Count; i++) {
+
+                // var container = TenderList.Items[i];
+                 //var container = TenderList.ItemContainerGenerator.ContainerFromIndex(i);
+                //var iremgrid = container.FindName("TenderStatusComboBox") as ComboBox;
+                //iremgrid.ItemsSource = SystemSettings.Instance.Status.Items;
+           // }
+   
 
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void AddNewTenderButtonClick(object sender, RoutedEventArgs e)
         {
-            OpenPassportTenderWindow(null, false);  
+           
+            var newTender = _tendersCollection.AddNew();
+            OpenPassportTenderWindow(newTender, false);  
+            UpdateTendersInternal();  // нужно удалить когда заработает PasportTender
+
         }
 
         private void OpenPassportTenderWindow(TenderInfo source, bool isReadOnly)
         {
-            PassportTender passportTender = new PassportTender();
-            passportTender.Initialize(source, isReadOnly);
-            passportTender.TenderChanged += PassportTender_TenderChanged;
-            passportTender.Show();
+            PassportTender passportTender = new PassportTender(); // создвем новый экземпляр класса pasporttender
+            passportTender.Initialize(source, isReadOnly);          // инициализируем паспорт тендера, заполняем значения
+            passportTender.TenderChanged += PassportTender_TenderChanged; // подписываемся на событие было ли изменение
+            passportTender.Show();  // отображаем паспорт тендера
         }
 
         private void PassportTender_TenderChanged(TenderInfo obj)
         {
+
             UpdateTendersInternal();
+
+            _tendersCollection.Save(DirectoryPath);
         }
 
         private void TenderList_MouseDoubleClick(object sender, MouseButtonEventArgs e)
@@ -194,7 +217,7 @@ namespace TenderProject
             string json = JsonSerializer.Serialize(data, jsonOptions);
 
             // Указываем путь и имя файла, куда сохранить JSON
-            File.WriteAllText(filePath, json);
+            File.WriteAllText("C:\\tenderproject\\1", json);
         }
 
         static void GenerateJsonData(string filePath)
