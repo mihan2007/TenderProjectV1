@@ -39,12 +39,11 @@ namespace TenderProject
 
         public TenderInfo AddNew()
         {
-            
-            var newTender = new TenderInfo();
-            newTender.Customer = new Customer();
-            //newTender.Customer.Name = "new tender";
-            Tenders.Add(newTender);
-            return newTender;
+            var newTender = new TenderInfo();  // создаем новый экземпляр класса
+            newTender.ProcedureInfo = new ProcedureInfo(); // создаем пустое знаечени поля ProcedureInfo
+            newTender.Customer = new Customer(); // создаем пустое знаечени поля Customer 
+            Tenders.Add(newTender); // Добовляем в список тендеров новое значение 
+            return newTender;  
         }
 
         public void Save(string direcrotyPath) 
@@ -61,5 +60,11 @@ namespace TenderProject
                 MessageBox.Show($"Error saving file: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
+
+        public void Delete(TenderInfo tenderToDelete)
+        {
+            Tenders.Remove(tenderToDelete); // Удаляем указанный тендер из списка
+        }
+
     }
 }

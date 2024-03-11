@@ -92,7 +92,5 @@
             </Grid>
 
         </StackPanel>
-
-        <Button Width="128" Click="EditModeButtonClick" x:Name="EditBeutton" Height="33" Content="Редактировать" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
     </Grid>
 </Window>

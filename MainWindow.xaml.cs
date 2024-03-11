@@ -10,8 +10,7 @@ using ClosedXML.Excel;
 using Microsoft.Win32;
 using TenderProject.Model.BuisnessDomain;
 using TenderProject.Model.System;
-using TenderProject.Utilities;
-using System.Security.AccessControl;
+
 
 
 namespace TenderProject
@@ -22,13 +21,11 @@ namespace TenderProject
 
         public const string DirectoryPath = @"C:\tenderproject\1.json";
 
-       // public const string TenderFileName = "1.json";
-
         public const string SytemSettingFilePath = "SystemSettings\\SystemSetting.json";
 
         private TendersCollection _tendersCollection;
 
-        public event Action SelfLoaded; // пример кастомного события
+        //public event Action SelfLoaded; // пример кастомного события
         public MainWindow()
         {
             InitializeComponent(); // инициализируем собственные визуальные компоненты, вызоы который требует фремфорк
@@ -57,8 +54,6 @@ namespace TenderProject
         {
             TenderList.ItemsSource = null; // вызывает обновление окна, хак 
 
-            
-
             TenderList.ItemsSource = _tendersCollection.Tenders; // визцальному компоненту TenderList, отображаещему список тендеров передаем только что загруженные тенедры 
             
            // for (int i = 0; i < TenderList.Items.Count; i++) {
@@ -68,23 +63,21 @@ namespace TenderProject
                 //var iremgrid = container.FindName("TenderStatusComboBox") as ComboBox;
                 //iremgrid.ItemsSource = SystemSettings.Instance.Status.Items;
            // }
-   
-
         }
 
         private void AddNewTenderButtonClick(object sender, RoutedEventArgs e)
         {
            
             var newTender = _tendersCollection.AddNew();
-            OpenPassportTenderWindow(newTender, false);  
+            OpenPassportTenderWindow(newTender);  
             UpdateTendersInternal();  // нужно удалить когда заработает PasportTender
 
         }
 
-        private void OpenPassportTenderWindow(TenderInfo source, bool isReadOnly)
+        private void OpenPassportTenderWindow(TenderInfo source)
         {
             PassportTender passportTender = new PassportTender(); // создвем новый экземпляр класса pasporttender
-            passportTender.Initialize(source, isReadOnly);          // инициализируем паспорт тендера, заполняем значения
+            passportTender.Initialize(source);          // инициализируем паспорт тендера, заполняем значения
             passportTender.TenderChanged += PassportTender_TenderChanged; // подписываемся на событие было ли изменение
             passportTender.Show();  // отображаем паспорт тендера
         }
@@ -101,7 +94,7 @@ namespace TenderProject
         {
             var selectedTender = (TenderInfo)TenderList.SelectedItem;
 
-            OpenPassportTenderWindow(selectedTender, true);
+            OpenPassportTenderWindow(selectedTender);
         }
 
         private void TextBox_GotFocus(object sender, RoutedEventArgs e)
@@ -137,22 +130,8 @@ namespace TenderProject
         private void DeletTenderClick(object sender, RoutedEventArgs e)
         {
             var selectedTender = (TenderInfo)TenderList.SelectedItem;
-
-            if (selectedTender != null)
-            {
-                MessageBoxResult result = MessageBox.Show("Are you sure?", "Confirm deleting", MessageBoxButton.YesNo, MessageBoxImage.Warning);
-
-                if (result == MessageBoxResult.Yes)
-                {
-                    File.Delete(selectedTender.FilePath);
-                    UpdateTendersInternal();
-                }
-            }
-            else
-            {
-                MessageBox.Show("Select Tender");
-            }
-
+            _tendersCollection.Delete(selectedTender);
+            UpdateTendersInternal();
         }
         private void ExportToExcelButtonClick(object sender, RoutedEventArgs e)
         {
