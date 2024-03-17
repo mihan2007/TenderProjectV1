@@ -40,10 +40,9 @@ namespace TenderProject
 
         private void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
-            _tendersCollection = new TendersCollection(); // создаем экземпляр класса TendersCollection
-
-            _tendersCollection.Load(DirectoryPath); // загружаем tendercollection из DirectoryPath
-
+           // _tendersCollection = new TendersCollection(new XmlDataProvider()); // создаем экземпляр класса TendersCollection
+            _tendersCollection = new TendersCollection(new JsonDataProvider()); // создаем экземпляр класса TendersCollection
+            _tendersCollection.Load(DirectoryPath);
             UpdateTendersInternal(); // обновляем список тендеров 
 
            // SelfLoaded.Invoke(); // эта строчка ничего не делает но показывает пример того как должно работать событие
@@ -56,13 +55,6 @@ namespace TenderProject
 
             TenderList.ItemsSource = _tendersCollection.Tenders; // визцальному компоненту TenderList, отображаещему список тендеров передаем только что загруженные тенедры 
             
-           // for (int i = 0; i < TenderList.Items.Count; i++) {
-
-                // var container = TenderList.Items[i];
-                 //var container = TenderList.ItemContainerGenerator.ContainerFromIndex(i);
-                //var iremgrid = container.FindName("TenderStatusComboBox") as ComboBox;
-                //iremgrid.ItemsSource = SystemSettings.Instance.Status.Items;
-           // }
         }
 
         private void AddNewTenderButtonClick(object sender, RoutedEventArgs e)
@@ -130,7 +122,7 @@ namespace TenderProject
         private void DeletTenderClick(object sender, RoutedEventArgs e)
         {
             var selectedTender = (TenderInfo)TenderList.SelectedItem;
-            _tendersCollection.Delete(selectedTender);
+            _tendersCollection.Remove(selectedTender);
             UpdateTendersInternal();
         }
         private void ExportToExcelButtonClick(object sender, RoutedEventArgs e)

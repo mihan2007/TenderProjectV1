@@ -38,8 +38,7 @@ namespace TenderProject
                 else if (result == MessageBoxResult.Cancel)
                 {
                     e.Cancel = true;  
-                }
-           
+                }  
         }
 
     }
