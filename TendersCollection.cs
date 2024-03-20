@@ -11,7 +11,7 @@ namespace TenderProject
 {
     public class TendersCollection
     {
-        public List<TenderInfo> Tenders {  get; private set; } // поле класса (property), в котором храняться список тендеров
+        public List<TenderInfo> Tenders { get; private set; } // поле класса (property), в котором храняться список тендеров
 
         public const string Extension = "json"; // расштрение файлов которые необходимо прочитать 
 
