@@ -18,7 +18,6 @@
         public string InitialPrice { get; set; }
         public string AplicationSecurityDeposit { get; set; }
         public string ContractSecurityDeposit { get; set; }
-
     }
 
 }

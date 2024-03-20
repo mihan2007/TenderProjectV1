@@ -28,7 +28,7 @@ namespace TenderProject
             {
                 //string jsonContent = File.ReadAllText(directoryPath); // читаем содержимое файла
                 //List<TenderInfo> tenders = JsonSerializer.Deserialize<List<TenderInfo>>(jsonContent); // десериализуем JSON в список TenderInfo
-                
+
                 List<TenderInfo> tenders = _provider.Get(directoryPath); // десериализуем JSON в список TenderInfo
                 Tenders.Clear(); // очищаем Tenders перед новым заполнением
                 if (tenders != null)
@@ -49,16 +49,16 @@ namespace TenderProject
             newTender.ProcedureInfo = new ProcedureInfo(); // создаем пустое знаечени поля ProcedureInfo
             newTender.Customer = new Customer(); // создаем пустое знаечени поля Customer 
             Tenders.Add(newTender); // Добовляем в список тендеров новое значение 
-            return newTender;  
+            return newTender;
         }
 
-        public void Save(string direcrotyPath) 
+        public void Save(string direcrotyPath)
         {
             try
             {
 
-                    string jsonContent = JsonSerializer.Serialize(Tenders); // Сериализуем список тендеров в JSON
-                    File.WriteAllText(direcrotyPath, jsonContent); // Записываем JSON-контент в файл
+                string jsonContent = JsonSerializer.Serialize(Tenders); // Сериализуем список тендеров в JSON
+                File.WriteAllText(direcrotyPath, jsonContent); // Записываем JSON-контент в файл
 
             }
             catch (Exception ex)

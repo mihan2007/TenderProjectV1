@@ -10,6 +10,7 @@ using ClosedXML.Excel;
 using Microsoft.Win32;
 using TenderProject.Model.BuisnessDomain;
 using TenderProject.Model.System;
+using System.Xml;
 
 
 
@@ -19,7 +20,9 @@ namespace TenderProject
     public partial class MainWindow : Window
     {
 
-        public const string DirectoryPath = @"C:\tenderproject\1.json";
+        public const string DirectoryPathJsonFile = @"C:\tenderproject\1.json";
+
+        public const string DirectoryPathXMLFile = @"C:\tenderproject\File.xml";
 
         public const string SytemSettingFilePath = "SystemSettings\\SystemSetting.json";
 
@@ -40,12 +43,12 @@ namespace TenderProject
 
         private void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
-           // _tendersCollection = new TendersCollection(new XmlDataProvider()); // создаем экземпляр класса TendersCollection
-            _tendersCollection = new TendersCollection(new JsonDataProvider()); // создаем экземпляр класса TendersCollection
-            _tendersCollection.Load(DirectoryPath);
+            //XMLReadTest();
+            //_tendersCollection = new TendersCollection(new JsonDataProvider()); // создаем экземпляр класса TendersCollection
+            //_tendersCollection.Load(DirectoryPathJsonFile);
+            _tendersCollection = new TendersCollection(new XmlDataProvider());
+            _tendersCollection.Load(DirectoryPathXMLFile);
             UpdateTendersInternal(); // обновляем список тендеров 
-
-           // SelfLoaded.Invoke(); // эта строчка ничего не делает но показывает пример того как должно работать событие
         }
 
 
@@ -79,7 +82,7 @@ namespace TenderProject
 
             UpdateTendersInternal();
 
-            _tendersCollection.Save(DirectoryPath);
+            _tendersCollection.Save(DirectoryPathJsonFile);
         }
 
         private void TenderList_MouseDoubleClick(object sender, MouseButtonEventArgs e)
@@ -255,7 +258,11 @@ namespace TenderProject
                 return true;
             }
         }
-
-
+        private void XMLReadTest()
+        {
+            XmlDocument xmlDoc = new XmlDocument();
+            xmlDoc.Load(DirectoryPathXMLFile);
+            MessageBox.Show(xmlDoc.InnerXml);
+        }
     }
 }
