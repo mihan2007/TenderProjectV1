@@ -26,15 +26,15 @@ namespace TenderProject
                     {
                         ProcedureInfo = new ProcedureInfo
                         {
-                            Number = tenderElement.Element("ProcedureInfo").Element("Number").Value,
-                            Law = tenderElement.Element("ProcedureInfo").Element("Law").Value,
-                            Type = tenderElement.Element("ProcedureInfo").Element("Type").Value,
-                            Subject = tenderElement.Element("ProcedureInfo").Element("Subject").Value
+                            Number = tenderElement.Element(nameof(ProcedureInfo)).Element("Number").Value,
+                            Law = tenderElement.Element(nameof(ProcedureInfo)).Element("Law").Value,
+                            Type = tenderElement.Element(nameof(ProcedureInfo)).Element("Type").Value,
+                            Subject = tenderElement.Element(nameof(ProcedureInfo)).Element("Subject").Value
                         },
                         Customer = new Customer
                         {
-                            Name = tenderElement.Element("Customer").Element("Name").Value,
-                            PostAdress = tenderElement.Element("Customer").Element("PostAdress").Value
+                            Name = tenderElement.Element(nameof(Customer)).Element("Name").Value,
+                            PostAdress = tenderElement.Element(nameof(Customer)).Element("PostAdress").Value
                         }
                     };
                     tenderList.Add(tender);
