@@ -13,6 +13,7 @@
         public string ProcedureLink { get; set; }
         public string PublicationDate { get; set; }
         public string ApplicationDeadlineDate { get; set; }
+        public string ApplicationDate { get; set; }
         public string AuctionDate { get; set; }
         public string SummarizingDate { get; set; }
         public string InitialPrice { get; set; }
@@ -20,6 +21,9 @@
         public string ContractSecurityDeposit { get; set; }
         public string QuataionPrice { get; set; }
         public string ResposablePersonContactInfo {  get; set; }
+        public string TradePlatformTarif { get; set; } 
+        public string DeliveryAddress { get; set; }
+        public string DeliveryTime { get; set; }
         public string Comments { get; set; }
 
     }

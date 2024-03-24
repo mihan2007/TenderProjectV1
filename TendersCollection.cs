@@ -54,17 +54,9 @@ namespace TenderProject
 
         public void Save(string direcrotyPath)
         {
-            try
-            {
 
-                string jsonContent = JsonSerializer.Serialize(Tenders); // Сериализуем список тендеров в JSON
-                File.WriteAllText(direcrotyPath, jsonContent); // Записываем JSON-контент в файл
+            _provider.Set(direcrotyPath, Tenders);
 
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error saving file: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
         }
 
         public void Remove(TenderInfo tenderToDelete)

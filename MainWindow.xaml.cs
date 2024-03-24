@@ -82,7 +82,7 @@ namespace TenderProject
 
             UpdateTendersInternal();
 
-            _tendersCollection.Save(DirectoryPathJsonFile);
+            _tendersCollection.Save(DirectoryPathXMLFile);
         }
 
         private void TenderList_MouseDoubleClick(object sender, MouseButtonEventArgs e)
@@ -258,12 +258,6 @@ namespace TenderProject
                 return true;
             }
         }
-        private void XMLReadTest()
-        {
-            XmlDocument xmlDoc = new XmlDocument();
-            xmlDoc.Load(DirectoryPathXMLFile);
-            MessageBox.Show(xmlDoc.InnerXml);
-        }
 
         private void ListViewScrollViewer_PreviewMouseWheel(object sender, System.Windows.Input.MouseWheelEventArgs e)
         {
@@ -271,6 +265,5 @@ namespace TenderProject
             scv.ScrollToVerticalOffset(scv.VerticalOffset - e.Delta);
             e.Handled = true;
         }
-
     }
 }
