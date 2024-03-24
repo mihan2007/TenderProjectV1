@@ -11,6 +11,7 @@ using Microsoft.Win32;
 using TenderProject.Model.BuisnessDomain;
 using TenderProject.Model.System;
 using System.Xml;
+using System.Windows.Media;
 
 
 
@@ -37,8 +38,6 @@ namespace TenderProject
 
             SearchButton.Click += SearchButtonClick; // подписка на событие при нажатии кнопуи поиска 
 
-           //GenerateJsonData(DirectoryPath);
-
         }
 
         private void MainWindow_Loaded(object sender, RoutedEventArgs e)
@@ -48,7 +47,8 @@ namespace TenderProject
             //_tendersCollection.Load(DirectoryPathJsonFile);
             _tendersCollection = new TendersCollection(new XmlDataProvider());
             _tendersCollection.Load(DirectoryPathXMLFile);
-            UpdateTendersInternal(); // обновляем список тендеров 
+            UpdateTendersInternal(); // обновляем список тендеров
+            //TenderList.PreviewMouseWheel += TenderList_PreviewMouseWheel;
         }
 
 
@@ -264,5 +264,13 @@ namespace TenderProject
             xmlDoc.Load(DirectoryPathXMLFile);
             MessageBox.Show(xmlDoc.InnerXml);
         }
+
+        private void ListViewScrollViewer_PreviewMouseWheel(object sender, System.Windows.Input.MouseWheelEventArgs e)
+        {
+            ScrollViewer scv = (ScrollViewer)sender;
+            scv.ScrollToVerticalOffset(scv.VerticalOffset - e.Delta);
+            e.Handled = true;
+        }
+
     }
 }

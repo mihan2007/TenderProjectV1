@@ -36,10 +36,12 @@
 
         </StackPanel>
 
-        <ScrollViewer VerticalScrollBarVisibility="Auto" Margin="10,89,10,10"  >
+        <ScrollViewer VerticalScrollBarVisibility="Auto" Margin="10,89,10,10" PreviewMouseWheel="ListViewScrollViewer_PreviewMouseWheel">
             <StackPanel>
-                <ListBox x:Name="TenderList" MouseDoubleClick="TenderList_MouseDoubleClick" Background="#f0f0f0">
+                <ListBox x:Name="TenderList" MouseDoubleClick="TenderList_MouseDoubleClick" Background="#f0f0f0" >
+                
                     <ListBox.ItemTemplate>
+
                         <DataTemplate>
                             <Grid ShowGridLines="True" Background="White">
                                 <Grid.ColumnDefinitions>
@@ -83,14 +85,17 @@
                                 <TextBlock Text="{Binding ProcedureInfo.SummarizingDate}" Grid.Row="3" Grid.Column="5" Margin="5" />
                             </Grid>
                         </DataTemplate>
+
                     </ListBox.ItemTemplate>
+
                     <ListBox.ItemContainerStyle>
                         <Style TargetType="ListBoxItem">
                             <Setter Property="Margin" Value="0,0,0,10"/>
                         </Style>
                     </ListBox.ItemContainerStyle>
-                </ListBox>
-            </StackPanel>
+            </ListBox>
+
+        </StackPanel>
         </ScrollViewer>
     </Grid>
 </Window>

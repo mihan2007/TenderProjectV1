@@ -18,6 +18,10 @@
         public string InitialPrice { get; set; }
         public string AplicationSecurityDeposit { get; set; }
         public string ContractSecurityDeposit { get; set; }
+        public string QuataionPrice { get; set; }
+        public string ResposablePersonContactInfo {  get; set; }
+        public string Comments { get; set; }
+
     }
 
 }

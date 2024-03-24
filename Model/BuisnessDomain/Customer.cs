@@ -7,11 +7,7 @@
         public string INN { get; set; }
         public string KPP { get; set; }
         public string OGRN { get; set; }
-        public string Adress { get; set; }
-        public string ResponsiblePerson { get; set; }
-        public string Email { get; set; }
-        public string PhoneNumber { get; set; }
-        public string Comments { get; set; }
+        public string CustomerContactInfo { get; set; }
 
     }
 }

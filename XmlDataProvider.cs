@@ -29,7 +29,19 @@ namespace TenderProject
                             Number = tenderElement.Element(nameof(ProcedureInfo)).Element("Number").Value,
                             Law = tenderElement.Element(nameof(ProcedureInfo)).Element("Law").Value,
                             Type = tenderElement.Element(nameof(ProcedureInfo)).Element("Type").Value,
-                            Subject = tenderElement.Element(nameof(ProcedureInfo)).Element("Subject").Value
+                            Subject = tenderElement.Element(nameof(ProcedureInfo)).Element("Subject").Value,
+                            //Stage = tenderElement.Element(nameof(ProcedureInfo)).Element("Stage").Value,
+                           // SmallBusinessProcedure = tenderElement.Element(nameof(ProcedureInfo)).Element("SmallBusinessProcedure").Value,
+                            TradePlatformName = tenderElement.Element(nameof(ProcedureInfo)).Element("TradePlatformName").Value,
+                            //TradePlatformSite = tenderElement.Element(nameof(ProcedureInfo)).Element("TradePlatformSite").Value,
+                            //ProcedureLink = tenderElement.Element(nameof(ProcedureInfo)).Element("ProcedureLink").Value,
+                            //PublicationDate = tenderElement.Element(nameof(ProcedureInfo)).Element("PublicationDate").Value,
+                            ApplicationDeadlineDate = tenderElement.Element(nameof(ProcedureInfo)).Element("ApplicationDeadlineDate").Value,
+                            //AuctionDate = tenderElement.Element(nameof(ProcedureInfo)).Element("AuctionDate").Value,
+                            SummarizingDate = tenderElement.Element(nameof(ProcedureInfo)).Element("SummarizingDate").Value,
+                            InitialPrice = tenderElement.Element(nameof(ProcedureInfo)).Element("InitialPrice").Value,
+                            AplicationSecurityDeposit = tenderElement.Element(nameof(ProcedureInfo)).Element("AplicationSecurityDeposit").Value,
+                            ContractSecurityDeposit = tenderElement.Element(nameof(ProcedureInfo)).Element("ContractSecurityDeposit").Value
                         },
                         Customer = new Customer
                         {
