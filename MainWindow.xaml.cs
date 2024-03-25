@@ -42,13 +42,10 @@ namespace TenderProject
 
         private void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
-            //XMLReadTest();
-            //_tendersCollection = new TendersCollection(new JsonDataProvider()); // создаем экземпляр класса TendersCollection
-            //_tendersCollection.Load(DirectoryPathJsonFile);
+
             _tendersCollection = new TendersCollection(new XmlDataProvider());
             _tendersCollection.Load(DirectoryPathXMLFile);
             UpdateTendersInternal(); // обновляем список тендеров
-            //TenderList.PreviewMouseWheel += TenderList_PreviewMouseWheel;
         }
 
 
@@ -79,7 +76,6 @@ namespace TenderProject
 
         private void PassportTender_TenderChanged(TenderInfo obj)
         {
-
             UpdateTendersInternal();
 
             _tendersCollection.Save(DirectoryPathXMLFile);
@@ -121,6 +117,13 @@ namespace TenderProject
                 TenderList.ItemsSource = filteredTenders;
             }
         }
+
+        private void SearchTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            // Вызываем метод SearchButtonClick для выполнения поиска
+            //SearchButtonClick(sender, e);
+        }
+
 
         private void DeletTenderClick(object sender, RoutedEventArgs e)
         {

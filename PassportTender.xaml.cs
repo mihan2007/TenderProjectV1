@@ -28,6 +28,13 @@ namespace TenderProject
 
         }
 
+        public void OpenCustomerProfileWindow(object sender, MouseButtonEventArgs e)
+        {
+            CustomerProfileWindow customerProfileWindow = new CustomerProfileWindow();
+            customerProfileWindow.Initialize(_tenderInfo);
+            customerProfileWindow.Show();
+        }
+
 
         private void PassportTender_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {

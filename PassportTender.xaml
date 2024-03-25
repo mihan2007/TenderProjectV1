@@ -35,7 +35,8 @@
                 <Label Content="Заказчик" x:Name="CustomerLable" Grid.Column="1" Grid.Row="0"/>
                 
                 <TextBox Text="{Binding ProcedureInfo.Number}" x:Name="ProcedureNumberTextBox" Grid.Row="1" Grid.Column="0"/>
-                <TextBox Text="{Binding Customer.Name}" x:Name="ProcedureTypeSubjectTextBox" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2"/>
+                <TextBox Text="{Binding Customer.Name}" x:Name="ProcedureTypeSubjectTextBox" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2"
+                         MouseDoubleClick="OpenCustomerProfileWindow"/>
                 
                 <Label Content="Тип/кол-во" x:Name="ProcedureItemsLable" Grid.Column="0" Grid.Row="2"/>
                 <Label Content="Дата окончания" x:Name="ProcedureDeadLineLable" Grid.Column="1" Grid.Row="2"/>

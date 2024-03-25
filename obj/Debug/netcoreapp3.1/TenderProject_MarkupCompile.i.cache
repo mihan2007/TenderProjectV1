@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1;
 C:\Users\user\Documents\GitHub\TenderProjectV1\App.xaml
-2-1634179774
+3-1007779181
 
-17-1651898850
+18-481043605
 199-2091767011
-MainWindow.xaml;PassportTender.xaml;
+CustomerProfileWindow.xaml;MainWindow.xaml;PassportTender.xaml;
 
-False
+True
 
