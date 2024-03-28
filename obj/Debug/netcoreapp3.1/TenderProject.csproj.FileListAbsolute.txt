@@ -65,3 +65,5 @@ C:\Users\user\Documents\GitHub\TenderProjectV1\obj\Debug\netcoreapp3.1\TenderPro
 C:\Users\user\Documents\GitHub\TenderProjectV1\obj\Debug\netcoreapp3.1\TenderProject.genruntimeconfig.cache
 C:\Users\user\Documents\GitHub\TenderProjectV1\obj\Debug\netcoreapp3.1\CustomerProfileWindow.g.cs
 C:\Users\user\Documents\GitHub\TenderProjectV1\obj\Debug\netcoreapp3.1\CustomerProfileWindow.baml
+C:\Users\user\Documents\GitHub\TenderProjectV1\obj\Debug\netcoreapp3.1\UserControl1.g.cs
+C:\Users\user\Documents\GitHub\TenderProjectV1\obj\Debug\netcoreapp3.1\UserControl1.baml

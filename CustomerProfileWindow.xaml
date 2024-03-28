@@ -31,13 +31,13 @@
                 <TextBox Text="{Binding Customer.Name}" x:Name="CustomerNameTextBox" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3"/>
                 
                 <Label Content="ИНН" Grid.Row="3" Grid.Column="0" />
-                <TextBox Text="{Binding Customer.INN}" x:Name="INNTextBox" Grid.Row="4" Grid.Column="0"/>  
+                <TextBox Text="{Binding Customer.INN}" x:Name="INNTextBox" Grid.Row="4" Grid.Column="0"  Margin="0,0,2,0"/>  
                 
                 <Label Content="КПП" Grid.Row="3" Grid.Column="1" />
-                <TextBox Text="{Binding Customer.KPP}" x:Name="KPPTextBox" Grid.Row="4" Grid.Column="1"/>
+                <TextBox Text="{Binding Customer.KPP}" x:Name="KPPTextBox" Grid.Row="4" Grid.Column="1" Margin="2,0,2,0"/>
                 
                 <Label Content="ОГРН" Grid.Row="3" Grid.Column="2" />
-                <TextBox Text="{Binding Customer.OGRN}" x:Name="OGRNTextBox" Grid.Row="4" Grid.Column="2"/>
+                <TextBox Text="{Binding Customer.OGRN}" x:Name="OGRNTextBox" Grid.Row="4" Grid.Column="2" Margin="2,0,0,0"/>
 
                 <Label Content="Почтовый адрес" Grid.Row="5" Grid.Column="0" />
                 <TextBox Text="{Binding Customer.PostAdress}" x:Name="PostAddressTextBox" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="3"/>

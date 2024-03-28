@@ -110,6 +110,9 @@ namespace TenderProject
                 var filteredTenders = _tendersCollection.Tenders
                     .Where(tender =>
                         tender.Customer.Name.ToLower().Contains(searchTerm) ||
+                        tender.Customer.INN.ToLower().Contains(searchTerm) ||
+                        tender.Customer.KPP.ToLower().Contains(searchTerm) ||
+                        tender.Customer.OGRN.ToLower().Contains(searchTerm) ||
                         tender.ProcedureInfo.Number.ToLower().Contains(searchTerm) ||
                         tender.ProcedureInfo.Subject.ToLower().Contains(searchTerm))
                     .ToList();

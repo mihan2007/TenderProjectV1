@@ -7,17 +7,6 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800"
         MinWidth="250" MinHeight="250">
-
-        <Window.Resources>
-            <!-- Добавляем стиль для выделения найденных элементов -->
-            <Style x:Key="HighlightedItemStyle" TargetType="ListBoxItem">
-                <Style.Triggers>
-                    <DataTrigger Binding="{Binding IsHighlighted}" Value="True">
-                        <Setter Property="FontWeight" Value="Bold"/>
-                    </DataTrigger>
-                </Style.Triggers>
-            </Style>
-        </Window.Resources>
     
     <Grid>
 
@@ -33,6 +22,10 @@
                     <!-- Ширина кнопок будет фиксированной -->
                     <ColumnDefinition Width="Auto"/>
                     <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
 
                 <Button Content="Добавить" x:Name="CreateNewTender" Click="AddNewTenderButtonClick" Width="100" HorizontalAlignment="Left" Background="White"/>
@@ -46,6 +39,9 @@
 
 
                 <Button Content="Поиск" x:Name="SearchButton" Click="SearchButtonClick" Width="100" Height="30" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Left" Background="White"/>
+
+
+
             </Grid>
 
         </StackPanel>
