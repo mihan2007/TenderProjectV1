@@ -119,43 +119,48 @@ namespace TenderProject
 
                 TenderList.ItemsSource = filteredTenders;
                 TenderList.UpdateLayout();
+
                 // Подсветить искомый текст
                 foreach (var tender in filteredTenders)
                 {
                     var listBoxItem = TenderList.ItemContainerGenerator.ContainerFromItem(tender) as ListBoxItem;
                     if (listBoxItem != null)
                     {
-                        HighlightTextBlock highlightTextBlock = FindVisualChild<HighlightTextBlock>(listBoxItem);
-                        if (highlightTextBlock != null)
+                        List<HighlightTextBlock> highlightTextBlocks = FindVisualChildren<HighlightTextBlock>(listBoxItem);
+                        foreach (var highlightTextBlock in highlightTextBlocks)
                         {
                             highlightTextBlock.HighlightText = searchTerm;
                         }
                     }
                 }
-
-
             }
         }
 
 
-        private T FindVisualChild<T>(DependencyObject obj) where T : DependencyObject
+
+
+        private List<T> FindVisualChildren<T>(DependencyObject obj) where T : DependencyObject
         {
-            for (int i = 0; i < VisualTreeHelper.GetChildrenCount(obj); i++)
+            List<T> foundChildren = new List<T>();
+
+            int childrenCount = VisualTreeHelper.GetChildrenCount(obj);
+            for (int i = 0; i < childrenCount; i++)
             {
                 DependencyObject child = VisualTreeHelper.GetChild(obj, i);
                 if (child != null && child is T)
                 {
-                    return (T)child;
+                    foundChildren.Add((T)child);
                 }
                 else
                 {
-                    T childOfChild = FindVisualChild<T>(child);
+                    List<T> childOfChild = FindVisualChildren<T>(child);
                     if (childOfChild != null)
-                        return childOfChild;
+                        foundChildren.AddRange(childOfChild);
                 }
             }
-            return null;
+            return foundChildren;
         }
+
 
 
         private void SearchTextBox_TextChanged(object sender, TextChangedEventArgs e)
