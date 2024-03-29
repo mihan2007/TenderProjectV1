@@ -100,15 +100,27 @@ namespace TenderProject
         private void SearchButtonClick(object sender, RoutedEventArgs e)
         {
             string searchTerm = SearchTextBox.Text.Trim().ToLower();
-            
-            
+
             if (string.IsNullOrEmpty(searchTerm))
             {
                 TenderList.ItemsSource = _tendersCollection.Tenders;
             }
             else
             {
-                foreach (var tender in _tendersCollection.Tenders)
+                var filteredTenders = _tendersCollection.Tenders
+                    .Where(tender =>
+                        tender.Customer.Name.ToLower().Contains(searchTerm) ||
+                        tender.Customer.INN.ToLower().Contains(searchTerm) ||
+                        tender.Customer.KPP.ToLower().Contains(searchTerm) ||
+                        tender.Customer.OGRN.ToLower().Contains(searchTerm) ||
+                        tender.ProcedureInfo.Number.ToLower().Contains(searchTerm) ||
+                        tender.ProcedureInfo.Subject.ToLower().Contains(searchTerm))
+                    .ToList();
+
+                TenderList.ItemsSource = filteredTenders;
+                TenderList.UpdateLayout();
+                // Подсветить искомый текст
+                foreach (var tender in filteredTenders)
                 {
                     var listBoxItem = TenderList.ItemContainerGenerator.ContainerFromItem(tender) as ListBoxItem;
                     if (listBoxItem != null)
@@ -116,14 +128,15 @@ namespace TenderProject
                         HighlightTextBlock highlightTextBlock = FindVisualChild<HighlightTextBlock>(listBoxItem);
                         if (highlightTextBlock != null)
                         {
-                           
-
                             highlightTextBlock.HighlightText = searchTerm;
                         }
                     }
                 }
+
+
             }
         }
+
 
         private T FindVisualChild<T>(DependencyObject obj) where T : DependencyObject
         {
