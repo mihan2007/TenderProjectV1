@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("HighlightTextBlockControl")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6f3293759f4e504776e306b9ca657fc21a3228ff")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cb148cfe1d265827198ecbcb79c59f5b04ea8d18")]
 [assembly: System.Reflection.AssemblyProductAttribute("HighlightTextBlockControl")]
 [assembly: System.Reflection.AssemblyTitleAttribute("HighlightTextBlockControl")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

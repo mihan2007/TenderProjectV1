@@ -83,40 +83,44 @@ namespace HighlightTextBlockControl
 
         private void UpdateHighlightDisplay()
         {
-            if(_displayTextBlock != null)
+            if (_displayTextBlock != null)
             {
                 _displayTextBlock.Inlines.Clear();
 
-                int highlightTextLength = HighlightText.Length;
-                if(highlightTextLength == 0)
+                string lowerText = Text.ToLower();
+                string lowerHighlightText = HighlightText.ToLower();
+
+                int highlightTextLength = lowerHighlightText.Length;
+                if (highlightTextLength == 0)
                 {
                     _displayTextBlock.Text = Text;
                 }
                 else
                 {
-                    for (int i = 0; i < Text.Length; i++)
+                    for (int i = 0; i < lowerText.Length; i++)
                     {
-                        if(i + highlightTextLength > Text.Length)
+                        if (i + highlightTextLength > lowerText.Length)
                         {
                             _displayTextBlock.Inlines.Add(new Run(Text.Substring(i)));
                             break;
                         }
 
-                        int nextHighlightTextIndex = Text.IndexOf(HighlightText, i);
-                        if(nextHighlightTextIndex == -1)
+                        int nextHighlightTextIndex = lowerText.IndexOf(lowerHighlightText, i, StringComparison.OrdinalIgnoreCase);
+                        if (nextHighlightTextIndex == -1)
                         {
                             _displayTextBlock.Inlines.Add(new Run(Text.Substring(i)));
                             break;
                         }
 
                         _displayTextBlock.Inlines.Add(new Run(Text.Substring(i, nextHighlightTextIndex - i)));
-                        _displayTextBlock.Inlines.Add(CreateHighlightedRun(HighlightText));
+                        _displayTextBlock.Inlines.Add(CreateHighlightedRun(Text.Substring(nextHighlightTextIndex, highlightTextLength)));
 
                         i = nextHighlightTextIndex + highlightTextLength - 1;
                     }
-                }    
+                }
             }
         }
+
 
         private Run CreateHighlightedRun(string text)
         {
