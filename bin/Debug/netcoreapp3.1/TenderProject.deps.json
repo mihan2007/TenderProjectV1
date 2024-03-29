@@ -9,6 +9,7 @@
       "TenderProject/1.0.0": {
         "dependencies": {
           "ClosedXML": "0.102.1",
+          "HighlightTextBlockControl": "1.0.0",
           "Newtonsoft.Json": "13.0.3",
           "System.Linq": "4.3.0"
         },
@@ -769,6 +770,11 @@
             "fileVersion": "1.5.2.0"
           }
         }
+      },
+      "HighlightTextBlockControl/1.0.0": {
+        "runtime": {
+          "HighlightTextBlockControl.dll": {}
+        }
       }
     }
   },
@@ -1344,6 +1350,11 @@
       "sha512": "sha512-8tnUCmMbn6c/HGuHFyq1sulHym8YReTKDNXFFQk0U8nldNx6RGrwRvLh0+aQjEc7YoC3Q1ztH1npLt7dClKqjw==",
       "path": "xlparser/1.5.2",
       "hashPath": "xlparser.1.5.2.nupkg.sha512"
+    },
+    "HighlightTextBlockControl/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     }
   }
 }

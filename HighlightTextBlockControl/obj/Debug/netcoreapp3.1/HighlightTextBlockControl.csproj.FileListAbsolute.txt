@@ -1,0 +1,15 @@
+C:\Users\user\Documents\GitHub\TenderProjectV1\HighlightTextBlockControl\bin\Debug\netcoreapp3.1\HighlightTextBlockControl.deps.json
+C:\Users\user\Documents\GitHub\TenderProjectV1\HighlightTextBlockControl\bin\Debug\netcoreapp3.1\HighlightTextBlockControl.dll
+C:\Users\user\Documents\GitHub\TenderProjectV1\HighlightTextBlockControl\bin\Debug\netcoreapp3.1\HighlightTextBlockControl.pdb
+C:\Users\user\Documents\GitHub\TenderProjectV1\HighlightTextBlockControl\obj\Debug\netcoreapp3.1\GeneratedInternalTypeHelper.g.cs
+C:\Users\user\Documents\GitHub\TenderProjectV1\HighlightTextBlockControl\obj\Debug\netcoreapp3.1\HighlightTextBlockControl_MarkupCompile.cache
+C:\Users\user\Documents\GitHub\TenderProjectV1\HighlightTextBlockControl\obj\Debug\netcoreapp3.1\HighlightTextBlockControl_MarkupCompile.lref
+C:\Users\user\Documents\GitHub\TenderProjectV1\HighlightTextBlockControl\obj\Debug\netcoreapp3.1\Themes\Generic.baml
+C:\Users\user\Documents\GitHub\TenderProjectV1\HighlightTextBlockControl\obj\Debug\netcoreapp3.1\HighlightTextBlockControl.g.resources
+C:\Users\user\Documents\GitHub\TenderProjectV1\HighlightTextBlockControl\obj\Debug\netcoreapp3.1\HighlightTextBlockControl.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\Documents\GitHub\TenderProjectV1\HighlightTextBlockControl\obj\Debug\netcoreapp3.1\HighlightTextBlockControl.AssemblyInfoInputs.cache
+C:\Users\user\Documents\GitHub\TenderProjectV1\HighlightTextBlockControl\obj\Debug\netcoreapp3.1\HighlightTextBlockControl.AssemblyInfo.cs
+C:\Users\user\Documents\GitHub\TenderProjectV1\HighlightTextBlockControl\obj\Debug\netcoreapp3.1\HighlightTextBlockControl.csproj.CoreCompileInputs.cache
+C:\Users\user\Documents\GitHub\TenderProjectV1\HighlightTextBlockControl\obj\Debug\netcoreapp3.1\HighlightTextBlockControl.sourcelink.json
+C:\Users\user\Documents\GitHub\TenderProjectV1\HighlightTextBlockControl\obj\Debug\netcoreapp3.1\HighlightTextBlockControl.dll
+C:\Users\user\Documents\GitHub\TenderProjectV1\HighlightTextBlockControl\obj\Debug\netcoreapp3.1\HighlightTextBlockControl.pdb

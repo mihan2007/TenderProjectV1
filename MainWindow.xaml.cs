@@ -12,7 +12,7 @@ using TenderProject.Model.BuisnessDomain;
 using TenderProject.Model.System;
 using System.Xml;
 using System.Windows.Media;
-
+using HighlightTextBlockControl;
 
 
 namespace TenderProject
@@ -100,26 +100,50 @@ namespace TenderProject
         private void SearchButtonClick(object sender, RoutedEventArgs e)
         {
             string searchTerm = SearchTextBox.Text.Trim().ToLower();
-
+            
+            
             if (string.IsNullOrEmpty(searchTerm))
             {
                 TenderList.ItemsSource = _tendersCollection.Tenders;
             }
             else
             {
-                var filteredTenders = _tendersCollection.Tenders
-                    .Where(tender =>
-                        tender.Customer.Name.ToLower().Contains(searchTerm) ||
-                        tender.Customer.INN.ToLower().Contains(searchTerm) ||
-                        tender.Customer.KPP.ToLower().Contains(searchTerm) ||
-                        tender.Customer.OGRN.ToLower().Contains(searchTerm) ||
-                        tender.ProcedureInfo.Number.ToLower().Contains(searchTerm) ||
-                        tender.ProcedureInfo.Subject.ToLower().Contains(searchTerm))
-                    .ToList();
+                foreach (var tender in _tendersCollection.Tenders)
+                {
+                    var listBoxItem = TenderList.ItemContainerGenerator.ContainerFromItem(tender) as ListBoxItem;
+                    if (listBoxItem != null)
+                    {
+                        HighlightTextBlock highlightTextBlock = FindVisualChild<HighlightTextBlock>(listBoxItem);
+                        if (highlightTextBlock != null)
+                        {
+                           
 
-                TenderList.ItemsSource = filteredTenders;
+                            highlightTextBlock.HighlightText = searchTerm;
+                        }
+                    }
+                }
             }
         }
+
+        private T FindVisualChild<T>(DependencyObject obj) where T : DependencyObject
+        {
+            for (int i = 0; i < VisualTreeHelper.GetChildrenCount(obj); i++)
+            {
+                DependencyObject child = VisualTreeHelper.GetChild(obj, i);
+                if (child != null && child is T)
+                {
+                    return (T)child;
+                }
+                else
+                {
+                    T childOfChild = FindVisualChild<T>(child);
+                    if (childOfChild != null)
+                        return childOfChild;
+                }
+            }
+            return null;
+        }
+
 
         private void SearchTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {

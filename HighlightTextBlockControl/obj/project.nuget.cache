@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "5CeqnrOQ9ey5S3m7GIuQ1EyTfmtEfk/R31cEUgyxRwsiP83ykmvhaHW6EeWL+3W6hvEaUwnUOoxy9u2E3UiVsA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\user\\Documents\\GitHub\\TenderProjectV1\\HighlightTextBlockControl\\HighlightTextBlockControl.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\user\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\3.1.0\\microsoft.windowsdesktop.app.ref.3.1.0.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\microsoft.netcore.app.ref\\3.1.0\\microsoft.netcore.app.ref.3.1.0.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.10\\microsoft.aspnetcore.app.ref.3.1.10.nupkg.sha512"
+  ],
+  "logs": []
+}

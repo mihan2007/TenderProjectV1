@@ -1404,6 +1404,19 @@
         "runtime": {
           "lib/netstandard1.6/XLParser.dll": {}
         }
+      },
+      "HighlightTextBlockControl/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "compile": {
+          "bin/placeholder/HighlightTextBlockControl.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HighlightTextBlockControl.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
       }
     }
   },
@@ -4791,11 +4804,17 @@
         "xlparser.1.5.2.nupkg.sha512",
         "xlparser.nuspec"
       ]
+    },
+    "HighlightTextBlockControl/1.0.0": {
+      "type": "project",
+      "path": "HighlightTextBlockControl/HighlightTextBlockControl.csproj",
+      "msbuildProject": "HighlightTextBlockControl/HighlightTextBlockControl.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
       "ClosedXML >= 0.102.1",
+      "HighlightTextBlockControl >= 1.0.0",
       "Newtonsoft.Json >= 13.0.3",
       "System.Linq >= 4.3.0"
     ]
@@ -4831,7 +4850,11 @@
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\user\\Documents\\GitHub\\TenderProjectV1\\HighlightTextBlockControl\\HighlightTextBlockControl.csproj": {
+              "projectPath": "C:\\Users\\user\\Documents\\GitHub\\TenderProjectV1\\HighlightTextBlockControl\\HighlightTextBlockControl.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
