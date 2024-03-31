@@ -75,7 +75,7 @@
                                 <custom:HighlightTextBlock Text="{Binding ProcedureInfo.Subject}" Grid.Row="1" Grid.Column="0" Margin="5" />
 
                                 <custom:HighlightTextBlock Text="{Binding Customer.Name}" Grid.Row="2" Grid.Column="0" Margin="5"/>
-                                <TextBlock Text="{Binding ProcedureInfo.Number}" Grid.Row="0" Grid.Column="0" Margin="5"/>
+                                <custom:HighlightTextBlock Text="{Binding ProcedureInfo.Number}" Grid.Row="0" Grid.Column="0" Margin="5"/>
                                 <TextBlock Text="{Binding ProcedureInfo.Law}" Grid.Row="3" Grid.Column="0" Margin="5"/>
                                 
                                 <TextBlock Text="Обеспечение заявки" Grid.Row="1" Grid.Column="1" Margin="5"/>

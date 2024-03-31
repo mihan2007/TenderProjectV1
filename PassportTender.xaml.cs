@@ -11,6 +11,8 @@ namespace TenderProject
     {
  
         private TenderInfo _tenderInfo; // создаем локальную переменную типа TenderInfo 
+
+        private TenderInfo _sourceTenderInfo;
         
         public event Action<TenderInfo> TenderChanged; // создаем событие 
 
@@ -25,7 +27,7 @@ namespace TenderProject
             
             DataContext = tenderInfo; // указываем контекст, тобы можно было биндить данные в визуальную форму
             _tenderInfo = tenderInfo; //
-
+            
         }
 
         public void OpenCustomerProfileWindow(object sender, MouseButtonEventArgs e)
