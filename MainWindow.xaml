@@ -52,9 +52,48 @@
                 <ListBox x:Name="TenderList" MouseDoubleClick="TenderList_MouseDoubleClick" Background="#f0f0f0" >
                 
                     <ListBox.ItemTemplate>
-                        
+
                         <DataTemplate>
-                            <local:ListTenderItem DataContext="{Binding ProcedureInfo}" />
+                            <Grid ShowGridLines="True" Background="White">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="250"/>
+                                    <ColumnDefinition Width="150"/>
+                                    <ColumnDefinition Width="auto"/>
+                                    <ColumnDefinition Width="20"/>
+                                    <ColumnDefinition Width="auto"/>
+                                    <ColumnDefinition Width="auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+
+                                <TextBlock Text="{Binding ProcedureInfo.InitialPrice}" Grid.Column="2" Margin="5"/>
+                                <TextBlock Text="НМЦК" Grid.Row="0" Grid.Column="1" Margin="5"/>
+                                <custom:HighlightTextBlock Text="{Binding ProcedureInfo.Subject}" Grid.Row="1" Grid.Column="0" Margin="5" />
+
+                                <custom:HighlightTextBlock Text="{Binding Customer.Name}" Grid.Row="2" Grid.Column="0" Margin="5"/>
+                                <TextBlock Text="{Binding ProcedureInfo.Number}" Grid.Row="0" Grid.Column="0" Margin="5"/>
+                                <TextBlock Text="{Binding ProcedureInfo.Law}" Grid.Row="3" Grid.Column="0" Margin="5"/>
+                                
+                                <TextBlock Text="Обеспечение заявки" Grid.Row="1" Grid.Column="1" Margin="5"/>
+                                <TextBlock Text="{Binding ProcedureInfo.AplicationSecurityDeposit}"  Grid.Row="1" Grid.Column="2" Margin="5"/>
+                                <TextBlock Text="Обеспечение контракта" Grid.Row="2" Grid.Column="1" Margin="5"/>
+                                <TextBlock Text="{Binding ProcedureInfo.ContractSecurityDeposit}" Grid.Row="2" Grid.Column="2" Margin="5" />
+
+                                <TextBlock Text="МСП" Grid.Row="3" Grid.Column="1" Margin="5"/>
+                                <TextBlock Text="Статус" Grid.Row="0" Grid.Column="4" Margin="5" />
+                                <ComboBox x:Name="TenderStatusComboBox" Width="100"  HorizontalAlignment="Left" Grid.Row="0" Grid.Column="5" />
+
+                                <TextBlock Text="Дата окончания" Grid.Row="1" Grid.Column="4" Margin="5"/>
+                                <TextBlock Text="{Binding ProcedureInfo.ApplicationDeadlineDate}" Grid.Row="1" Grid.Column="5" Margin="5"/>
+                                <TextBlock Text="Дата аукциона" Grid.Row="2" Grid.Column="4" Margin="5"/>
+                                <TextBlock Text="{Binding ProcedureInfo.AuctionDate}" Grid.Row="2" Grid.Column="5" Margin="5"/>
+                                <TextBlock Text="Дата подведения итогов" Grid.Row="3" Grid.Column="4" Margin="5"/>
+                                <TextBlock Text="{Binding ProcedureInfo.SummarizingDate}" Grid.Row="3" Grid.Column="5" Margin="5" />
+                            </Grid>
                         </DataTemplate>
 
                     </ListBox.ItemTemplate>
