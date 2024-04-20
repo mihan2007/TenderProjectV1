@@ -51,10 +51,9 @@ namespace TenderProject
 
         private void UpdateTendersInternal()
         {
-            TenderList.ItemsSource = null;
+            TenderList.ItemsSource = null; // вызывает обновление окна, хак 
+
             TenderList.ItemsSource = _tendersCollection.Tenders; // визцальному компоненту TenderList, отображаещему список тендеров передаем только что загруженные тенедры 
-            TenderList.UpdateLayout();
-           
             
         }
 

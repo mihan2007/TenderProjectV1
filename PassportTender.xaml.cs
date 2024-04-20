@@ -23,10 +23,11 @@ namespace TenderProject
         }
 
         public void Initialize(TenderInfo tenderInfo) // инициализируем паспорт тендера
-        {         
-            _sourceTenderInfo = tenderInfo; //
-            _tenderInfo = _sourceTenderInfo.Copy();
-            DataContext = _tenderInfo; // указываем контекст, тобы можно было биндить данные в визуальную форму            
+        {
+            
+            DataContext = tenderInfo; // указываем контекст, тобы можно было биндить данные в визуальную форму
+            _tenderInfo = tenderInfo; //
+            
         }
 
         public void OpenCustomerProfileWindow(object sender, MouseButtonEventArgs e)
@@ -39,26 +40,18 @@ namespace TenderProject
 
         private void PassportTender_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-           
             // сенить фокус , закончить редактирование в текущем поле 
             RemoveFocusFromTextBoxes();
-            if (_sourceTenderInfo.Equals(_tenderInfo))
-            {
-                return;
-            }
-
-            MessageBoxResult result = MessageBox.Show("Do you want to save changes?", "Confirm", MessageBoxButton.YesNoCancel, MessageBoxImage.Question);
-
-
-            if (result == MessageBoxResult.Yes)
-            {
-                _sourceTenderInfo.Reinit(_tenderInfo);
-                TenderChanged.Invoke(_tenderInfo);
-            }
-            else if (result == MessageBoxResult.Cancel)
-            {
-                e.Cancel = true;
-            }
+                MessageBoxResult result = MessageBox.Show("Do you want to save changes?", "Confirm", MessageBoxButton.YesNoCancel, MessageBoxImage.Question);
+               
+                if (result == MessageBoxResult.Yes)
+                {
+                    TenderChanged.Invoke(_tenderInfo);
+                }
+                else if (result == MessageBoxResult.Cancel)
+                {
+                    e.Cancel = true;  
+                }  
         }
 
         private void RemoveFocusFromTextBoxes()
