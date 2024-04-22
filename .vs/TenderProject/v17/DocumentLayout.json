@@ -1,12 +1,186 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\user\\Documents\\GitHub\\TenderProjectV1\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{4128B277-5596-46A9-B584-05ED7475717E}|TenderProject.csproj|c:\\users\\user\\documents\\github\\tenderprojectv1\\tenderlistitem.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{4128B277-5596-46A9-B584-05ED7475717E}|TenderProject.csproj|solutionrelative:tenderlistitem.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4128B277-5596-46A9-B584-05ED7475717E}|TenderProject.csproj|c:\\users\\user\\documents\\github\\tenderprojectv1\\tenderscollection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4128B277-5596-46A9-B584-05ED7475717E}|TenderProject.csproj|solutionrelative:tenderscollection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4128B277-5596-46A9-B584-05ED7475717E}|TenderProject.csproj|c:\\users\\user\\documents\\github\\tenderprojectv1\\tenderlistitem.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4128B277-5596-46A9-B584-05ED7475717E}|TenderProject.csproj|solutionrelative:tenderlistitem.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EF2D1452-EA92-45A0-83CF-5CF3A5AF62BB}|HighlightTextBlockControl\\HighlightTextBlockControl.csproj|c:\\users\\user\\documents\\github\\tenderprojectv1\\highlighttextblockcontrol\\themes\\generic.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{EF2D1452-EA92-45A0-83CF-5CF3A5AF62BB}|HighlightTextBlockControl\\HighlightTextBlockControl.csproj|solutionrelative:highlighttextblockcontrol\\themes\\generic.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EF2D1452-EA92-45A0-83CF-5CF3A5AF62BB}|HighlightTextBlockControl\\HighlightTextBlockControl.csproj|c:\\users\\user\\documents\\github\\tenderprojectv1\\highlighttextblockcontrol\\assemblyinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EF2D1452-EA92-45A0-83CF-5CF3A5AF62BB}|HighlightTextBlockControl\\HighlightTextBlockControl.csproj|solutionrelative:highlighttextblockcontrol\\assemblyinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EF2D1452-EA92-45A0-83CF-5CF3A5AF62BB}|HighlightTextBlockControl\\HighlightTextBlockControl.csproj|c:\\users\\user\\documents\\github\\tenderprojectv1\\highlighttextblockcontrol\\highlighttextblock.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EF2D1452-EA92-45A0-83CF-5CF3A5AF62BB}|HighlightTextBlockControl\\HighlightTextBlockControl.csproj|solutionrelative:highlighttextblockcontrol\\highlighttextblock.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EF2D1452-EA92-45A0-83CF-5CF3A5AF62BB}|HighlightTextBlockControl\\HighlightTextBlockControl.csproj|c:\\users\\user\\documents\\github\\tenderprojectv1\\highlighttextblockcontrol\\highlighttextblockcontrol.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{EF2D1452-EA92-45A0-83CF-5CF3A5AF62BB}|HighlightTextBlockControl\\HighlightTextBlockControl.csproj|solutionrelative:highlighttextblockcontrol\\highlighttextblockcontrol.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4128B277-5596-46A9-B584-05ED7475717E}|TenderProject.csproj|c:\\users\\user\\documents\\github\\tenderprojectv1\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{4128B277-5596-46A9-B584-05ED7475717E}|TenderProject.csproj|solutionrelative:mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4128B277-5596-46A9-B584-05ED7475717E}|TenderProject.csproj|c:\\users\\user\\documents\\github\\tenderprojectv1\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4128B277-5596-46A9-B584-05ED7475717E}|TenderProject.csproj|solutionrelative:mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4128B277-5596-46A9-B584-05ED7475717E}|TenderProject.csproj|c:\\users\\user\\documents\\github\\tenderprojectv1\\tenderproject.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{4128B277-5596-46A9-B584-05ED7475717E}|TenderProject.csproj|solutionrelative:tenderproject.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "TendersCollection.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\TenderProjectV1\\TendersCollection.cs",
+              "RelativeDocumentMoniker": "TendersCollection.cs",
+              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\TenderProjectV1\\TendersCollection.cs",
+              "RelativeToolTip": "TendersCollection.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-22T16:34:09.556Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Generic.xaml",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\TenderProjectV1\\HighlightTextBlockControl\\Themes\\Generic.xaml",
+              "RelativeDocumentMoniker": "HighlightTextBlockControl\\Themes\\Generic.xaml",
+              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\TenderProjectV1\\HighlightTextBlockControl\\Themes\\Generic.xaml",
+              "RelativeToolTip": "HighlightTextBlockControl\\Themes\\Generic.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-04-22T16:33:18.009Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "HighlightTextBlock.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\TenderProjectV1\\HighlightTextBlockControl\\HighlightTextBlock.cs",
+              "RelativeDocumentMoniker": "HighlightTextBlockControl\\HighlightTextBlock.cs",
+              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\TenderProjectV1\\HighlightTextBlockControl\\HighlightTextBlock.cs",
+              "RelativeToolTip": "HighlightTextBlockControl\\HighlightTextBlock.cs",
+              "ViewState": "AQIAABQAAAAAAAAAAAAAwAoAAAAbAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-22T16:32:55.505Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AssemblyInfo.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\TenderProjectV1\\HighlightTextBlockControl\\AssemblyInfo.cs",
+              "RelativeDocumentMoniker": "HighlightTextBlockControl\\AssemblyInfo.cs",
+              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\TenderProjectV1\\HighlightTextBlockControl\\AssemblyInfo.cs",
+              "RelativeToolTip": "HighlightTextBlockControl\\AssemblyInfo.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-22T16:33:00.492Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "TenderListItem.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\TenderProjectV1\\TenderListItem.xaml.cs",
+              "RelativeDocumentMoniker": "TenderListItem.xaml.cs",
+              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\TenderProjectV1\\TenderListItem.xaml.cs",
+              "RelativeToolTip": "TenderListItem.xaml.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-20T15:20:57.858Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "TenderListItem.xaml",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\TenderProjectV1\\TenderListItem.xaml",
+              "RelativeDocumentMoniker": "TenderListItem.xaml",
+              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\TenderProjectV1\\TenderListItem.xaml",
+              "RelativeToolTip": "TenderListItem.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-04-20T15:20:53.099Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "HighlightTextBlockControl",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\TenderProjectV1\\HighlightTextBlockControl\\HighlightTextBlockControl.csproj",
+              "RelativeDocumentMoniker": "HighlightTextBlockControl\\HighlightTextBlockControl.csproj",
+              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\TenderProjectV1\\HighlightTextBlockControl\\HighlightTextBlockControl.csproj",
+              "RelativeToolTip": "HighlightTextBlockControl\\HighlightTextBlockControl.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-04-22T16:32:50.947Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\TenderProjectV1\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\TenderProjectV1\\MainWindow.xaml.cs",
+              "RelativeToolTip": "MainWindow.xaml.cs",
+              "ViewState": "AQIAACYAAAAAAAAAAAAYwDcAAAAWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-22T15:22:42.468Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\TenderProjectV1\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "MainWindow.xaml",
+              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\TenderProjectV1\\MainWindow.xaml",
+              "RelativeToolTip": "MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-04-20T15:21:17.138Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "TenderProject.csproj",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\TenderProjectV1\\TenderProject.csproj",
+              "RelativeDocumentMoniker": "TenderProject.csproj",
+              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\TenderProjectV1\\TenderProject.csproj",
+              "RelativeToolTip": "TenderProject.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-04-20T15:19:48.992Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }

@@ -69,3 +69,6 @@ C:\Users\user\Documents\GitHub\TenderProjectV1\obj\Debug\netcoreapp3.1\UserContr
 C:\Users\user\Documents\GitHub\TenderProjectV1\bin\Debug\netcoreapp3.1\HighlightTextBlockControl.dll
 C:\Users\user\Documents\GitHub\TenderProjectV1\bin\Debug\netcoreapp3.1\HighlightTextBlockControl.pdb
 C:\Users\user\Documents\GitHub\TenderProjectV1\obj\Debug\netcoreapp3.1\TenderPr.CF5C4CFF.Up2Date
+C:\Users\user\Documents\GitHub\TenderProjectV1\obj\Debug\netcoreapp3.1\TenderListItem.g.cs
+C:\Users\user\Documents\GitHub\TenderProjectV1\obj\Debug\netcoreapp3.1\GeneratedInternalTypeHelper.g.cs
+C:\Users\user\Documents\GitHub\TenderProjectV1\obj\Debug\netcoreapp3.1\TenderListItem.baml
