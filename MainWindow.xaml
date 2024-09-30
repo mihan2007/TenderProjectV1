@@ -8,7 +8,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800"
         MinWidth="250" MinHeight="250">
-    
+
     <Grid>
 
         <StackPanel >
@@ -33,38 +33,34 @@
 
                 <Button Content="Удалить" x:Name="DeletTender_Click" Click ="DeletTenderClick" Width="100" Height="30" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Background="White" Margin="0,0,5,0"/>
 
-                <Button Content="Экспорт" x:Name="EportToExcel" Click="ExportToExcelButtonClick"  Width="100" Height="30" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Top" Background="White" Margin="0,0,5,0"/>
+                <Button Content="Экспорт" x:Name="EportToExcel" Click="ExportToExcelButtonClick"  Width="100" Grid.Column="2" HorizontalAlignment="Left" Background="White"/>
+
+                <Button Content="Ближайшие" x:Name="SortByDate" Click="SortByDateClick" Width="100" Grid.Column="3" HorizontalAlignment="Left" />
 
                 <TextBox Text="Введите текст поиска" x:Name="SearchTextBox" Height="25" Grid.ColumnSpan="2" Grid.Column="0" Grid.Row="1" Margin="0,10,5,11" VerticalAlignment="Center"  
                          Padding="0,2,0,0" GotMouseCapture="TextBox_GotFocus" TextChanged="SearchTextBox_TextChanged"/>
 
-
                 <Button Content="Поиск" x:Name="SearchButton" Click="SearchButtonClick" Width="100" Height="30" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Left" Background="White"/>
 
-                
+
 
             </Grid>
 
         </StackPanel>
-        
+
         <ScrollViewer VerticalScrollBarVisibility="Auto" Margin="10,89,10,10" PreviewMouseWheel="ListViewScrollViewer_PreviewMouseWheel">
             <StackPanel>
-                
-               
-                
+
                 <ListBox x:Name="TenderList" MouseDoubleClick="TenderList_MouseDoubleClick" Background="#f0f0f0" >
-                    
+
                     <ListBox.ItemTemplate>
                         <DataTemplate>
-                            <!-- Replace ListBox item with custom control -->
-                            <local:TenderListItem />
+                            <local:TenderListItem Margin="0,0,0,5"/>
                         </DataTemplate>
                     </ListBox.ItemTemplate>
+                </ListBox>
 
-                    
-            </ListBox>
-
-        </StackPanel>
+            </StackPanel>
         </ScrollViewer>
     </Grid>
 </Window>

@@ -8,43 +8,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="65978175-b3c0-4b24-9332-7a1be3022f73" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.TenderProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TenderProject/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.vs/ProjectEvaluation/tenderproject.metadata.v7.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/ProjectEvaluation/tenderproject.metadata.v7.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.vs/ProjectEvaluation/tenderproject.projects.v7.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/ProjectEvaluation/tenderproject.projects.v7.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.vs/TenderProject/DesignTimeBuild/.dtbcache.v2" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/TenderProject/DesignTimeBuild/.dtbcache.v2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/TenderProject/FileContentIndex/abdc45bf-0c65-4d81-ba68-bc6d198b54b7.vsidx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/TenderProject/FileContentIndex/317cca72-f500-426b-a06d-9dbaf9ea5384.vsidx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/TenderProject/FileContentIndex/9d0a15b7-78c1-4883-b24b-b52f28e68927.vsidx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.vs/TenderProject/v17/.futdcache.v2" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/TenderProject/v17/.futdcache.v2" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.vs/TenderProject/v17/DocumentLayout.json" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/TenderProject/v17/DocumentLayout.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HighlightTextBlockControl/bin/Debug/netcoreapp3.1/HighlightTextBlockControl.dll" beforeDir="false" afterPath="$PROJECT_DIR$/HighlightTextBlockControl/bin/Debug/netcoreapp3.1/HighlightTextBlockControl.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HighlightTextBlockControl/bin/Debug/netcoreapp3.1/HighlightTextBlockControl.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/HighlightTextBlockControl/bin/Debug/netcoreapp3.1/HighlightTextBlockControl.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HighlightTextBlockControl/obj/Debug/netcoreapp3.1/HighlightTextBlockControl.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HighlightTextBlockControl/obj/Debug/netcoreapp3.1/HighlightTextBlockControl.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HighlightTextBlockControl/obj/Debug/netcoreapp3.1/HighlightTextBlockControl.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/HighlightTextBlockControl/obj/Debug/netcoreapp3.1/HighlightTextBlockControl.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HighlightTextBlockControl/obj/Debug/netcoreapp3.1/HighlightTextBlockControl.dll" beforeDir="false" afterPath="$PROJECT_DIR$/HighlightTextBlockControl/obj/Debug/netcoreapp3.1/HighlightTextBlockControl.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HighlightTextBlockControl/obj/Debug/netcoreapp3.1/HighlightTextBlockControl.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/HighlightTextBlockControl/obj/Debug/netcoreapp3.1/HighlightTextBlockControl.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HighlightTextBlockControl/obj/Debug/netcoreapp3.1/HighlightTextBlockControl.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/HighlightTextBlockControl/obj/Debug/netcoreapp3.1/HighlightTextBlockControl.sourcelink.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HighlightTextBlockControl/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/HighlightTextBlockControl/obj/project.packagespec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HighlightTextBlockControl/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/HighlightTextBlockControl/obj/rider.project.model.nuget.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HighlightTextBlockControl/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/HighlightTextBlockControl/obj/rider.project.restore.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MainWindow.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/MainWindow.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TenderProject.csproj.user" beforeDir="false" afterPath="$PROJECT_DIR$/TenderProject.csproj.user" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainWindow.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MainWindow.xaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TenderListItem.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/TenderListItem.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TendersCollection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TendersCollection.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/XmlDataProvider.cs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/netcoreapp3.1/TenderProject.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/netcoreapp3.1/TenderProject.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/netcoreapp3.1/TenderProject.exe" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/netcoreapp3.1/TenderProject.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/netcoreapp3.1/TenderProject.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/netcoreapp3.1/TenderProject.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/netcoreapp3.1/App.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/netcoreapp3.1/App.g.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/netcoreapp3.1/MainWindow.g.i.cs" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/netcoreapp3.1/MainWindow.g.i.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/netcoreapp3.1/PassportTender.g.i.cs" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/netcoreapp3.1/PassportTender.g.i.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/netcoreapp3.1/TenderProject.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/netcoreapp3.1/TenderProject.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/netcoreapp3.1/TenderProject.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/netcoreapp3.1/TenderProject.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/netcoreapp3.1/TenderProject.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/netcoreapp3.1/TenderProject.csproj.AssemblyReference.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/netcoreapp3.1/TenderProject.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/netcoreapp3.1/TenderProject.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/netcoreapp3.1/TenderProject.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/netcoreapp3.1/TenderProject.csproj.FileListAbsolute.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/netcoreapp3.1/TenderProject.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/netcoreapp3.1/TenderProject.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/netcoreapp3.1/TenderProject.g.resources" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/netcoreapp3.1/TenderProject.g.resources" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/netcoreapp3.1/TenderProject.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/netcoreapp3.1/TenderProject.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/netcoreapp3.1/TenderProject_MarkupCompile.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/netcoreapp3.1/TenderProject_MarkupCompile.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/netcoreapp3.1/UserControl1.g.i.cs" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/netcoreapp3.1/UserControl1.g.i.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/netcoreapp3.1/apphost.exe" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/netcoreapp3.1/apphost.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/project.packagespec.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,27 +55,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main__2",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "settings.editor.selected.configurable": "preferences.sourceCode.C#",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main__2&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode.C#&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "rider.external.source.directories": [
-      "C:\\Users\\user\\AppData\\Roaming\\JetBrains\\Rider2023.2\\resharper-host\\DecompilerCache",
-      "C:\\Users\\user\\AppData\\Roaming\\JetBrains\\Rider2023.2\\resharper-host\\SourcesCache",
-      "C:\\Users\\user\\AppData\\Local\\Symbols\\src"
+  &quot;keyToStringList&quot;: {
+    &quot;rider.external.source.directories&quot;: [
+      &quot;C:\\Users\\user\\AppData\\Roaming\\JetBrains\\Rider2023.2\\resharper-host\\DecompilerCache&quot;,
+      &quot;C:\\Users\\user\\AppData\\Roaming\\JetBrains\\Rider2023.2\\resharper-host\\SourcesCache&quot;,
+      &quot;C:\\Users\\user\\AppData\\Local\\Symbols\\src&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="TenderProject" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="" />
@@ -128,6 +117,7 @@
       <workItem from="1711627951114" duration="4106000" />
       <workItem from="1711724195349" duration="2211000" />
       <workItem from="1713799947920" duration="2232000" />
+      <workItem from="1724108466583" duration="41000" />
     </task>
     <servers />
   </component>

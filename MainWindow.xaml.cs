@@ -43,8 +43,9 @@ namespace TenderProject
         private void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
 
-            _tendersCollection = new TendersCollection(new XmlDataProvider());
-            _tendersCollection.Load(DirectoryPathXMLFile);
+            _tendersCollection = new TendersCollection(new JsonDataProvider());
+            _tendersCollection.Load(DirectoryPathJsonFile);
+            _tendersCollection.SortTendersByApplicationDeadlineDateAscending();
             UpdateTendersInternal(); // обновляем список тендеров
         }
 
@@ -137,7 +138,10 @@ namespace TenderProject
         }
 
 
+        private void SortByDateClick(object sender, RoutedEventArgs e)
+        {
 
+        }
 
         private List<T> FindVisualChildren<T>(DependencyObject obj) where T : DependencyObject
         {
