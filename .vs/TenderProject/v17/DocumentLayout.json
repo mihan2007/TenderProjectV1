@@ -89,7 +89,8 @@
               "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\TenderProjectV1\\MainWindow.xaml",
               "RelativeToolTip": "MainWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-04-20T15:21:17.138Z"
+              "WhenOpened": "2024-04-20T15:21:17.138Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -101,8 +102,7 @@
               "RelativeToolTip": "MainWindow.xaml.cs",
               "ViewState": "AQIAACIAAAAAAAAAAIAwwCoAAAASAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-22T15:22:42.468Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-22T15:22:42.468Z"
             },
             {
               "$type": "Document",
@@ -151,8 +151,7 @@
               "RelativeToolTip": "TenderListItem.xaml.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAARAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-20T15:20:57.858Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-20T15:20:57.858Z"
             },
             {
               "$type": "Document",
