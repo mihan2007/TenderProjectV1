@@ -55,14 +55,27 @@ Separation of concerns: domain models, data providers, and UI.
 Flexible storage architecture — easily switch between XML, JSON, or databases in the future.
 
 📂 Project Structure
-TenderProjectV1/
-├── Model/
-│   ├── BusinessDomain/    # Core domain models (TenderInfo, ProcedureInfo, Customer)
-│   └── System/            # System settings and statuses
-├── DataProviders/         # XML & JSON storage implementations
-├── Utilities/             # Excel export via ClosedXML
-├── HighlightTextBlockControl/  # Custom control for search highlighting
-└── TenderListItem/        # Custom list item prototype
+├── 📁 Model/ # Data models
+│ ├── 📁 BusinessDomain/ # Core domain models:
+│ │ ├── TenderInfo.cs # Main tender entity
+│ │ ├── ProcedureInfo.cs # Procedure details (dates, prices, guarantees, etc.)
+│ │ └── Customer.cs # Customer details (name, INN, KPP, OGRN, contacts)
+│ └── 📁 System/ # System settings and statuses
+│ └── SystemSettings.cs # Configuration & tender statuses
+│
+├── 📁 DataProviders/ # Storage implementations
+│ ├── DataProviderBase.cs # Abstract data provider
+│ ├── XmlDataProvider.cs # XML storage support
+│ └── JsonDataProvider.cs # JSON storage prototype
+│
+├── 📁 Utilities/ # Utility modules
+│ └── ExcelExporter.cs # Excel export via ClosedXML
+│
+├── 📁 HighlightTextBlockControl/ # Custom WPF control
+│ └── HighlightTextBlock.cs # Search result highlighting
+│
+└── 📁 TenderListItem/ # Custom list item prototype
+└── ListTenderItem.xaml # WPF user control
 
 🚀 Current Status & Next Steps
 
