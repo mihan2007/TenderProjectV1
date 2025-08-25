@@ -26,9 +26,9 @@ Add, update, and delete entries seamlessly.
 
 📊 Excel Export (Prototype)
 
-Ready-to-use ClosedXML integration for generating Excel reports.
+Integrated ClosedXML for generating Excel reports.
 
-Flexible design to expand into full reporting later.
+Ready for extension to full-featured reporting.
 
 ⚙️ System Configuration
 
@@ -50,44 +50,16 @@ XmlSerializer — XML data storage
 
 Architecture:
 
-Separation of concerns: domain models, data providers, and UI.
+Clear separation of concerns: domain models, data providers, and UI.
 
-Flexible storage architecture — easily switch between XML, JSON, or databases in the future.
-## Project Structure
+Flexible storage architecture — seamlessly switch between XML, JSON, or database solutions.
 
-📂 Project Structure
-├── 📁 Model/ # Data models
-│ ├── 📁 BusinessDomain/ # Core domain models:
-│ │ ├── TenderInfo.cs # Main tender entity
-│ │ ├── ProcedureInfo.cs # Procedure details (dates, prices, guarantees, etc.)
-│ │ └── Customer.cs # Customer details (name, INN, KPP, OGRN, contacts)
-│ └── 📁 System/ # System settings and statuses
-│ └── SystemSettings.cs # Configuration & tender statuses
+TenderProjectV1/
+├── Model/
+│   ├── BusinessDomain/        # Core domain models (TenderInfo, ProcedureInfo, Customer)
+│   └── System/                # System settings and statuses
 │
-├── 📁 DataProviders/ # Storage implementations
-│ ├── DataProviderBase.cs # Abstract data provider
-│ ├── XmlDataProvider.cs # XML storage support
-│ └── JsonDataProvider.cs # JSON storage prototype
-│
-├── 📁 Utilities/ # Utility modules
-│ └── ExcelExporter.cs # Excel export via ClosedXML
-│
-├── 📁 HighlightTextBlockControl/ # Custom WPF control
-│ └── HighlightTextBlock.cs # Search result highlighting
-│
-└── 📁 TenderListItem/ # Custom list item prototype
-└── ListTenderItem.xaml # WPF user control
-
-🚀 Current Status & Next Steps
-
-✅ Core domain model designed (TenderInfo, ProcedureInfo, Customer)
-
-✅ XML storage provider fully implemented
-
-✅ JSON storage provider prototype added
-
-✅ Smart search with inline highlighting
-
-⚠️ Excel export: functional prototype
-
-⏸ Development paused — preparing for migration to a full-featured web platform.
+├── DataProviders/             # XML & JSON storage implementations
+├── Utilities/                 # Excel export via ClosedXML
+├── HighlightTextBlockControl/ # Custom control for search highlighting
+└── TenderListItem/            # Custom list item prototype
