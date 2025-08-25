@@ -53,7 +53,7 @@ Architecture:
 Clear separation of concerns: domain models, data providers, and UI.
 
 Flexible storage architecture — seamlessly switch between XML, JSON, or database solutions.
-
+```text
 TenderProjectV1/
 ├── Model/
 │   ├── BusinessDomain/        # Core domain models (TenderInfo, ProcedureInfo, Customer)
