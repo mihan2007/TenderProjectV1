@@ -53,6 +53,7 @@ Architecture:
 Separation of concerns: domain models, data providers, and UI.
 
 Flexible storage architecture — easily switch between XML, JSON, or databases in the future.
+## Project Structure
 
 📂 Project Structure
 ├── 📁 Model/ # Data models
