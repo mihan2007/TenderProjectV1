@@ -7,12 +7,28 @@
       "RelativeMoniker": "D:0:0:{4128B277-5596-46A9-B584-05ED7475717E}|TenderProject.csproj|solutionrelative:tenderscollection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4128B277-5596-46A9-B584-05ED7475717E}|TenderProject.csproj|c:\\users\\user\\documents\\github\\tenderprojectv1\\tenderlistitem.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4128B277-5596-46A9-B584-05ED7475717E}|TenderProject.csproj|solutionrelative:tenderlistitem.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{4128B277-5596-46A9-B584-05ED7475717E}|TenderProject.csproj|c:\\users\\user\\documents\\github\\tenderprojectv1\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4128B277-5596-46A9-B584-05ED7475717E}|TenderProject.csproj|solutionrelative:mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4128B277-5596-46A9-B584-05ED7475717E}|TenderProject.csproj|c:\\users\\user\\documents\\github\\tenderprojectv1\\dataproviderbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4128B277-5596-46A9-B584-05ED7475717E}|TenderProject.csproj|solutionrelative:dataproviderbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4128B277-5596-46A9-B584-05ED7475717E}|TenderProject.csproj|c:\\users\\user\\documents\\github\\tenderprojectv1\\jsondataprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4128B277-5596-46A9-B584-05ED7475717E}|TenderProject.csproj|solutionrelative:jsondataprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4128B277-5596-46A9-B584-05ED7475717E}|TenderProject.csproj|c:\\users\\user\\documents\\github\\tenderprojectv1\\utilities\\filehelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4128B277-5596-46A9-B584-05ED7475717E}|TenderProject.csproj|solutionrelative:utilities\\filehelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4128B277-5596-46A9-B584-05ED7475717E}|TenderProject.csproj|c:\\users\\user\\documents\\github\\tenderprojectv1\\utilities\\excelexporter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4128B277-5596-46A9-B584-05ED7475717E}|TenderProject.csproj|solutionrelative:utilities\\excelexporter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4128B277-5596-46A9-B584-05ED7475717E}|TenderProject.csproj|c:\\users\\user\\documents\\github\\tenderprojectv1\\systemsettings\\systemsetting.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{4128B277-5596-46A9-B584-05ED7475717E}|TenderProject.csproj|solutionrelative:systemsettings\\systemsetting.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4128B277-5596-46A9-B584-05ED7475717E}|TenderProject.csproj|c:\\users\\user\\documents\\github\\tenderprojectv1\\model\\buisnessdomain\\tenderinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -23,12 +39,24 @@
       "RelativeMoniker": "D:0:0:{4128B277-5596-46A9-B584-05ED7475717E}|TenderProject.csproj|solutionrelative:model\\buisnessdomain\\procedureinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4128B277-5596-46A9-B584-05ED7475717E}|TenderProject.csproj|c:\\users\\user\\documents\\github\\tenderprojectv1\\xmldataproviderfast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4128B277-5596-46A9-B584-05ED7475717E}|TenderProject.csproj|solutionrelative:xmldataproviderfast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4128B277-5596-46A9-B584-05ED7475717E}|TenderProject.csproj|c:\\users\\user\\documents\\github\\tenderprojectv1\\model\\buisnessdomain\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4128B277-5596-46A9-B584-05ED7475717E}|TenderProject.csproj|solutionrelative:model\\buisnessdomain\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4128B277-5596-46A9-B584-05ED7475717E}|TenderProject.csproj|c:\\users\\user\\documents\\github\\tenderprojectv1\\jsondataprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4128B277-5596-46A9-B584-05ED7475717E}|TenderProject.csproj|solutionrelative:jsondataprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4128B277-5596-46A9-B584-05ED7475717E}|TenderProject.csproj|c:\\users\\user\\documents\\github\\tenderprojectv1\\tenderlistitem.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{4128B277-5596-46A9-B584-05ED7475717E}|TenderProject.csproj|solutionrelative:tenderlistitem.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4128B277-5596-46A9-B584-05ED7475717E}|TenderProject.csproj|c:\\users\\user\\documents\\github\\tenderprojectv1\\usercontrol1.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{4128B277-5596-46A9-B584-05ED7475717E}|TenderProject.csproj|solutionrelative:usercontrol1.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4128B277-5596-46A9-B584-05ED7475717E}|TenderProject.csproj|c:\\users\\user\\documents\\github\\tenderprojectv1\\tenderlistitem.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4128B277-5596-46A9-B584-05ED7475717E}|TenderProject.csproj|solutionrelative:tenderlistitem.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4128B277-5596-46A9-B584-05ED7475717E}|TenderProject.csproj|c:\\users\\user\\documents\\github\\tenderprojectv1\\xmldataproviderfast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4128B277-5596-46A9-B584-05ED7475717E}|TenderProject.csproj|solutionrelative:xmldataproviderfast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4128B277-5596-46A9-B584-05ED7475717E}|TenderProject.csproj|c:\\users\\user\\documents\\github\\tenderprojectv1\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
@@ -41,14 +69,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{EF2D1452-EA92-45A0-83CF-5CF3A5AF62BB}|HighlightTextBlockControl\\HighlightTextBlockControl.csproj|c:\\users\\user\\documents\\github\\tenderprojectv1\\highlighttextblockcontrol\\highlighttextblock.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EF2D1452-EA92-45A0-83CF-5CF3A5AF62BB}|HighlightTextBlockControl\\HighlightTextBlockControl.csproj|solutionrelative:highlighttextblockcontrol\\highlighttextblock.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4128B277-5596-46A9-B584-05ED7475717E}|TenderProject.csproj|c:\\users\\user\\documents\\github\\tenderprojectv1\\tenderlistitem.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{4128B277-5596-46A9-B584-05ED7475717E}|TenderProject.csproj|solutionrelative:tenderlistitem.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4128B277-5596-46A9-B584-05ED7475717E}|TenderProject.csproj|c:\\users\\user\\documents\\github\\tenderprojectv1\\model\\buisnessdomain\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4128B277-5596-46A9-B584-05ED7475717E}|TenderProject.csproj|solutionrelative:model\\buisnessdomain\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4128B277-5596-46A9-B584-05ED7475717E}|TenderProject.csproj|c:\\users\\user\\documents\\github\\tenderprojectv1\\tenderproject.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
@@ -78,31 +98,85 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "MainWindow.xaml",
-              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\TenderProjectV1\\MainWindow.xaml",
-              "RelativeDocumentMoniker": "MainWindow.xaml",
-              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\TenderProjectV1\\MainWindow.xaml",
-              "RelativeToolTip": "MainWindow.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-04-20T15:21:17.138Z",
+              "DocumentIndex": 4,
+              "Title": "FileHelper.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\TenderProjectV1\\Utilities\\FileHelper.cs",
+              "RelativeDocumentMoniker": "Utilities\\FileHelper.cs",
+              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\TenderProjectV1\\Utilities\\FileHelper.cs",
+              "RelativeToolTip": "Utilities\\FileHelper.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-21T07:22:16.766Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ExcelExporter.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\TenderProjectV1\\Utilities\\ExcelExporter.cs",
+              "RelativeDocumentMoniker": "Utilities\\ExcelExporter.cs",
+              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\TenderProjectV1\\Utilities\\ExcelExporter.cs",
+              "RelativeToolTip": "Utilities\\ExcelExporter.cs",
+              "ViewState": "AQIAABUAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-21T07:22:03.209Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "SystemSetting.json",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\TenderProjectV1\\SystemSettings\\SystemSetting.json",
+              "RelativeDocumentMoniker": "SystemSettings\\SystemSetting.json",
+              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\TenderProjectV1\\SystemSettings\\SystemSetting.json",
+              "RelativeToolTip": "SystemSettings\\SystemSetting.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-09-21T07:21:54.103Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "DataProviderBase.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\TenderProjectV1\\DataProviderBase.cs",
+              "RelativeDocumentMoniker": "DataProviderBase.cs",
+              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\TenderProjectV1\\DataProviderBase.cs",
+              "RelativeToolTip": "DataProviderBase.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-21T07:21:15.108Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "JsonDataProvider.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\TenderProjectV1\\JsonDataProvider.cs",
+              "RelativeDocumentMoniker": "JsonDataProvider.cs",
+              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\TenderProjectV1\\JsonDataProvider.cs",
+              "RelativeToolTip": "JsonDataProvider.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-11T09:49:19.844Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "MainWindow.xaml.cs",
               "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\TenderProjectV1\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "MainWindow.xaml.cs",
               "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\TenderProjectV1\\MainWindow.xaml.cs",
               "RelativeToolTip": "MainWindow.xaml.cs",
-              "ViewState": "AQIAACIAAAAAAAAAAIAwwCoAAAASAAAA",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAAAB0AAAAaAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-22T15:22:42.468Z"
+              "WhenOpened": "2024-04-22T15:22:42.468Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -112,26 +186,14 @@
               "RelativeDocumentMoniker": "TendersCollection.cs",
               "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\TenderProjectV1\\TendersCollection.cs",
               "RelativeToolTip": "TendersCollection.cs",
-              "ViewState": "AQIAADAAAAAAAAAAAAAAABEAAAArAAAA",
+              "ViewState": "AQIAABIAAAAAAAAAAAAAAAsAAAAiAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-22T16:34:09.556Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ProcedureInfo.cs",
-              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\TenderProjectV1\\Model\\BuisnessDomain\\ProcedureInfo.cs",
-              "RelativeDocumentMoniker": "Model\\BuisnessDomain\\ProcedureInfo.cs",
-              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\TenderProjectV1\\Model\\BuisnessDomain\\ProcedureInfo.cs",
-              "RelativeToolTip": "Model\\BuisnessDomain\\ProcedureInfo.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAA3AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-23T12:19:59.018Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 7,
               "Title": "TenderInfo.cs",
               "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\TenderProjectV1\\Model\\BuisnessDomain\\TenderInfo.cs",
               "RelativeDocumentMoniker": "Model\\BuisnessDomain\\TenderInfo.cs",
@@ -139,11 +201,25 @@
               "RelativeToolTip": "Model\\BuisnessDomain\\TenderInfo.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAbAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-23T12:19:56.866Z"
+              "WhenOpened": "2024-04-23T12:19:56.866Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 8,
+              "Title": "ProcedureInfo.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\TenderProjectV1\\Model\\BuisnessDomain\\ProcedureInfo.cs",
+              "RelativeDocumentMoniker": "Model\\BuisnessDomain\\ProcedureInfo.cs",
+              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\TenderProjectV1\\Model\\BuisnessDomain\\ProcedureInfo.cs",
+              "RelativeToolTip": "Model\\BuisnessDomain\\ProcedureInfo.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAA3AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-23T12:19:59.018Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
               "Title": "TenderListItem.xaml.cs",
               "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\TenderProjectV1\\TenderListItem.xaml.cs",
               "RelativeDocumentMoniker": "TenderListItem.xaml.cs",
@@ -155,7 +231,56 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 10,
+              "Title": "TenderListItem.xaml",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\TenderProjectV1\\TenderListItem.xaml",
+              "RelativeDocumentMoniker": "TenderListItem.xaml",
+              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\TenderProjectV1\\TenderListItem.xaml",
+              "RelativeToolTip": "TenderListItem.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-05-05T16:14:11.814Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Customer.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\TenderProjectV1\\Model\\BuisnessDomain\\Customer.cs",
+              "RelativeDocumentMoniker": "Model\\BuisnessDomain\\Customer.cs",
+              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\TenderProjectV1\\Model\\BuisnessDomain\\Customer.cs",
+              "RelativeToolTip": "Model\\BuisnessDomain\\Customer.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-06T15:51:01.533Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "UserControl1.xaml",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\TenderProjectV1\\UserControl1.xaml",
+              "RelativeDocumentMoniker": "UserControl1.xaml",
+              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\TenderProjectV1\\UserControl1.xaml",
+              "RelativeToolTip": "UserControl1.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-09-21T07:20:02.911Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\TenderProjectV1\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "MainWindow.xaml",
+              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\TenderProjectV1\\MainWindow.xaml",
+              "RelativeToolTip": "MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-04-20T15:21:17.138Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
               "Title": "XMLDataProviderFast.cs",
               "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\TenderProjectV1\\XMLDataProviderFast.cs",
               "RelativeDocumentMoniker": "XMLDataProviderFast.cs",
@@ -167,7 +292,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 15,
               "Title": "XmlDataProviderSlow.cs",
               "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\TenderProjectV1\\XmlDataProviderSlow.cs",
               "RelativeDocumentMoniker": "XmlDataProviderSlow.cs",
@@ -179,19 +304,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "JsonDataProvider.cs",
-              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\TenderProjectV1\\JsonDataProvider.cs",
-              "RelativeDocumentMoniker": "JsonDataProvider.cs",
-              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\TenderProjectV1\\JsonDataProvider.cs",
-              "RelativeToolTip": "JsonDataProvider.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAkAAAAhAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-11T09:49:19.844Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 16,
               "Title": "HighlightTextBlock.cs",
               "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\TenderProjectV1\\HighlightTextBlockControl\\HighlightTextBlock.cs",
               "RelativeDocumentMoniker": "HighlightTextBlockControl\\HighlightTextBlock.cs",
@@ -203,30 +316,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "TenderListItem.xaml",
-              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\TenderProjectV1\\TenderListItem.xaml",
-              "RelativeDocumentMoniker": "TenderListItem.xaml",
-              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\TenderProjectV1\\TenderListItem.xaml",
-              "RelativeToolTip": "TenderListItem.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-05-05T16:14:11.814Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Customer.cs",
-              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\TenderProjectV1\\Model\\BuisnessDomain\\Customer.cs",
-              "RelativeDocumentMoniker": "Model\\BuisnessDomain\\Customer.cs",
-              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\TenderProjectV1\\Model\\BuisnessDomain\\Customer.cs",
-              "RelativeToolTip": "Model\\BuisnessDomain\\Customer.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-06T15:51:01.533Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 18,
               "Title": "HighlightTextBlockControl.csproj",
               "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\TenderProjectV1\\HighlightTextBlockControl\\HighlightTextBlockControl.csproj",
               "RelativeDocumentMoniker": "HighlightTextBlockControl\\HighlightTextBlockControl.csproj",
@@ -238,7 +328,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 17,
               "Title": "TenderProject.csproj",
               "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\TenderProjectV1\\TenderProject.csproj",
               "RelativeDocumentMoniker": "TenderProject.csproj",
@@ -250,7 +340,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 19,
               "Title": "AssemblyInfo.cs",
               "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\TenderProjectV1\\HighlightTextBlockControl\\AssemblyInfo.cs",
               "RelativeDocumentMoniker": "HighlightTextBlockControl\\AssemblyInfo.cs",
@@ -262,18 +352,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 21,
               "Title": "Generic.xaml",
               "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\TenderProjectV1\\HighlightTextBlockControl\\Themes\\Generic.xaml",
               "RelativeDocumentMoniker": "HighlightTextBlockControl\\Themes\\Generic.xaml",
               "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\TenderProjectV1\\HighlightTextBlockControl\\Themes\\Generic.xaml",
               "RelativeToolTip": "HighlightTextBlockControl\\Themes\\Generic.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-04-22T16:33:18.009Z"
+              "WhenOpened": "2024-04-22T16:33:18.009Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 20,
               "Title": "PassportTender.xaml",
               "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\TenderProjectV1\\PassportTender.xaml",
               "RelativeDocumentMoniker": "PassportTender.xaml",
